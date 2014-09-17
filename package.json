@@ -1,0 +1,43 @@
+{
+  "name": "trigrams",
+  "version": "0.0.1",
+  "description": "Trigram files for 380+ languages",
+  "license": "MIT",
+  "keywords": [
+    "universal",
+    "declaration",
+    "human",
+    "rights",
+    "unicode",
+    "udhr",
+    "trigram",
+    "language",
+    "detection",
+    "guessing"
+  ],
+  "author": "Titus Wormer <tituswormer@gmail.com>",
+  "devDependencies": {
+    "eslint": "^0.7.4",
+    "istanbul": "^0.3.0",
+    "jscs": "^1.5.3",
+    "mocha": "^1.20.4",
+    "udhr": "^0.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/trigrams.git"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports spec/trigrams.spec.js",
+    "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports spec/trigrams.spec.js",
+    "lint": "npm run lint-api && npm run lint-test && npm run lint-style",
+    "lint-api": "node_modules/.bin/eslint index.js build-data.js build-supported-trigrams.js --env node --env browser --rule 'quotes: [2, single]'",
+    "lint-test": "node_modules/.bin/eslint spec/trigrams.spec.js --env node --env mocha --rule 'quotes: [2, single]'",
+    "lint-style": "node_modules/.bin/jscs index.js build-data.js build-supported-trigrams.js spec/trigrams.spec.js --reporter=inline",
+    "build-data": "node build-data.js",
+    "build-supported-trigrams": "node build-supported-trigrams.js",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- spec/trigrams.spec.js",
+    "prepublish": "npm run build-data && npm run build-supported-trigrams",
+    "make": "npm run lint && npm run coverage"
+  }
+}
