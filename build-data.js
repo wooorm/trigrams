@@ -4,6 +4,7 @@ var udhr,
     writeFile,
     json,
     information,
+    getTrigrams,
     highestTrigramCount,
     highestTrigram,
     highestTrigramLanguage,
@@ -17,6 +18,7 @@ udhr = require('udhr');
 writeFile = require('fs').writeFileSync;
 json = udhr.json();
 information = udhr.information();
+getTrigrams = require('n-gram').trigram;
 
 function all(object, key) {
     var results = [],
@@ -55,34 +57,6 @@ function sort(a, b) {
 }
 
 /**
- * Get trigrams from a given value.
- *
- * @example Pads the start and end of the value.
- *     getTrigrams('a') // ['  a', ' a ', 'a  '];
- *
- * @param {string} value
- * @return {string[]} - An array containing the trigrams;
- * @api private
- */
-
-function getTrigrams(value) {
-    var iterator = -3,
-        trigrams = [],
-        length;
-
-    value = value.split('');
-    length = value.length;
-
-    while (++iterator < length) {
-        trigrams[iterator + 2] = (value[iterator] || ' ') +
-            (value[iterator + 1] || ' ') +
-            (value[iterator + 2] || ' ');
-    }
-
-    return trigrams;
-}
-
-/**
  * Get an object with trigrams as its attributes, and their occurence count
  * as their values
  *
@@ -92,7 +66,7 @@ function getTrigrams(value) {
  */
 
 function getObjectModel(value) {
-    var trigrams = getTrigrams(value),
+    var trigrams = getTrigrams(' ' + value + ' '),
         objectModel = {},
         iterator = -1,
         length = trigrams.length,
