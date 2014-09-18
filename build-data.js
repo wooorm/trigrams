@@ -80,7 +80,7 @@ function all(object, key) {
 
 function clean(value) {
     return value
-        .replace(EXPRESSION_SYMBOLS, '')
+        .replace(EXPRESSION_SYMBOLS, ' ')
         .replace(/\s+/g, ' ')
         .toLowerCase();
 }
