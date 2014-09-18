@@ -25,13 +25,13 @@ trigrams.all(); /* or `top`, or `min`. */
 trigrams.all().eng;
 /**
  * {
- *   '  w': 1,
+ *   'nou': 1,
  *   'n  ': 1,
- *   'ruc': 1,
+ *   ' ai': 1,
  *   ...
  *   ' an': 129,
- *   ' th': 150,
- *   'the': 152
+ *   'the': 152,
+ *   ' th': 154
  * }
  */
 ```
@@ -48,13 +48,13 @@ Every value is the an object containing trigrams as its keys and integers (occur
 trigrams.top().eng;
 /**
  * {
- *   'era': 8,
- *   'ral': 8,
- *   'tho': 8,
+ *   ' ag': 8,
+ *   's f': 8,
+ *   'd e': 8,
  *   ...
  *   ' an': 129,
- *   ' th': 150,
- *   'the': 152
+ *   'the': 152,
+ *   ' th': 154
  * }
  */
 ```
@@ -67,13 +67,13 @@ Same as `trigrams.all()`, but for every declaration object, returns only the top
 trigrams.top().eng;
 /**
  * [
- *   'era',
- *   'ral',
- *   'tho',
+ *   ' ag',
+ *   's f',
+ *   'd e',
  *   ...
  *   ' an',
- *   ' th',
- *   'the'
+ *   'th ',
+ *   ' th'
  * ]
  */
 ```
