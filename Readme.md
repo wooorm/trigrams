@@ -45,16 +45,16 @@ Every value is the an object containing trigrams as its keys and integers (occur
 ### trigrams.top()
 
 ```js
-trigrams.top().eng;
+trigrams.top().pam;
 /**
  * {
- *   ' ag': 8,
- *   's f': 8,
- *   'd e': 8,
+ *   'anm': 8,
+ *   'obr': 8,
+ *   'gpa': 8,
  *   ...
- *   ' an': 129,
- *   'the': 152,
- *   ' th': 154
+ *   'ang': 374,
+ *   'ing': 420,
+ *   'ng ': 805
  * }
  */
 ```
@@ -64,16 +64,16 @@ Same as `trigrams.all()`, but for every declaration object, returns only the top
 ### trigrams.min()
 
 ```js
-trigrams.top().eng;
+trigrams.top().nld;
 /**
  * [
- *   ' ag',
- *   's f',
- *   'd e',
+ *   'als',
+ *   'oon',
+ *   'rdi',
  *   ...
- *   ' an',
- *   'th ',
- *   ' th'
+ *   'an ',
+ *   'de ',
+ *   'en '
  * ]
  */
 ```
