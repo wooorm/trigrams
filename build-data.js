@@ -190,20 +190,20 @@ Object.keys(json).forEach(function (code) {
     allIndex.add(code, code + '.json');
 
     writeFile('./data/all/' + code + '.json', JSON.stringify(
-        tuplesToObject(trigrams)
+        tuplesToObject(trigrams), 0, 2
     ));
 
     if (topTrigrams.length === 300) {
         topTrigramCount++;
 
         writeFile('./data/top/' + code + '.json', JSON.stringify(
-            tuplesToObject(topTrigrams)
+            tuplesToObject(topTrigrams), 0, 2
         ));
 
         writeFile('./data/min/' + code + '.json', JSON.stringify(
             topTrigrams.map(function (trigram) {
                 return trigram[0];
-            })
+            }), 0, 2
         ));
 
         topIndex.add(code, code + '.json');
