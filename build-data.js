@@ -5,6 +5,7 @@ var udhr,
     json,
     information,
     getTrigrams,
+    EXPRESSION_SYMBOLS,
     highestTrigramCount,
     highestTrigram,
     highestTrigramLanguage,
@@ -19,6 +20,43 @@ writeFile = require('fs').writeFileSync;
 json = udhr.json();
 information = udhr.information();
 getTrigrams = require('n-gram').trigram;
+
+/**
+ * - 'EXCLAMATION MARK' (U+0021)
+ * - 'QUOTATION MARK' (U+0022)
+ * - 'NUMBER SIGN' (U+0023)
+ * - 'DOLLAR SIGN' (U+0024)
+ * - 'PERCENT SIGN' (U+0025)
+ * - 'AMPERSAND' (U+0026)
+ * - 'APOSTROPHE' (U+0027)
+ * - 'LEFT PARENTHESIS' (U+0028)
+ * - 'RIGHT PARENTHESIS' (U+0029)
+ * - 'ASTERISK' (U+002A)
+ * - 'PLUS SIGN' (U+002B)
+ * - 'COMMA' (U+002C)
+ * - 'HYPHEN-MINUS' (U+002D)
+ * - 'FULL STOP' (U+002E)
+ * - 'SOLIDUS' (U+002F)
+ * - 'DIGIT ZERO' (U+0030)
+ * - 'DIGIT ONE' (U+0031)
+ * - 'DIGIT TWO' (U+0032)
+ * - 'DIGIT THREE' (U+0033)
+ * - 'DIGIT FOUR' (U+0034)
+ * - 'DIGIT FIVE' (U+0035)
+ * - 'DIGIT SIX' (U+0036)
+ * - 'DIGIT SEVEN' (U+0037)
+ * - 'DIGIT EIGHT' (U+0038)
+ * - 'DIGIT NINE' (U+0039)
+ * - 'COLON' (U+003A)
+ * - 'SEMICOLON' (U+003B)
+ * - 'LESS-THAN SIGN' (U+003C)
+ * - 'EQUALS SIGN' (U+003D)
+ * - 'GREATER-THAN SIGN' (U+003E)
+ * - 'QUESTION MARK' (U+003F)
+ * - 'COMMERCIAL AT' (U+0040)
+ */
+
+EXPRESSION_SYMBOLS = /[\u0021-\u0040]+/g
 
 function all(object, key) {
     var results = [],
@@ -38,9 +76,11 @@ function all(object, key) {
     return results;
 }
 
+
+
 function clean(value) {
     return value
-        .replace(/[\u0021-\u0040]+/g, '')
+        .replace(EXPRESSION_SYMBOLS, '')
         .replace(/\s+/g, ' ')
         .toLowerCase();
 }
