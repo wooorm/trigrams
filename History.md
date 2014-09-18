@@ -1,5 +1,5 @@
 
-n.n.n / 2014-09-18
+0.0.2 / 2014-09-18
 ==================
 
  * Update examples to be a bit more multicultural
