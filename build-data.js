@@ -8,8 +8,6 @@ var udhr,
     highestTrigramCount,
     highestTrigram,
     highestTrigramLanguage,
-    topTrigramCount,
-    trigramCount,
     allIndex,
     minIndex,
     topIndex;
@@ -39,16 +37,14 @@ function all(object, key) {
 }
 
 highestTrigramCount = 0;
-topTrigramCount = 0;
-trigramCount = 0;
 
 function createIndexFile(type) {
     var queue = [];
 
-    function addFile(code, path) {
+    function addFile(code) {
         queue.push({
             'code' : code,
-            'path' : path
+            'path' : code + '.json'
         });
     }
 
@@ -67,9 +63,14 @@ function createIndexFile(type) {
             '}\n';
     }
 
+    function count() {
+        return queue.length;
+    }
+
     return {
         'toString' : done,
-        'add' : addFile
+        'add' : addFile,
+        'count' : count
     };
 }
 
@@ -109,16 +110,13 @@ Object.keys(json).forEach(function (code) {
         highestTrigramLanguage = language;
     }
 
-    trigramCount++;
-    allIndex.add(code, code + '.json');
+    allIndex.add(code);
 
     writeFile('./data/all/' + code + '.json', JSON.stringify(
         trigramUtils.tuplesAsDictionary(trigrams), 0, 2
     ));
 
     if (topTrigrams.length === 300) {
-        topTrigramCount++;
-
         writeFile('./data/top/' + code + '.json', JSON.stringify(
             trigramUtils.tuplesAsDictionary(topTrigrams), 0, 2
         ));
@@ -129,15 +127,17 @@ Object.keys(json).forEach(function (code) {
             }), 0, 2
         ));
 
-        topIndex.add(code, code + '.json');
-        minIndex.add(code, code + '.json');
+        topIndex.add(code);
+        minIndex.add(code);
 
         console.log(
-            '- Top & min trigram file: yes.'
+            '- Top trigram file:       yes;\n' +
+            '- Min trigram file:       yes.'
         );
     } else {
         console.log(
-            '- Top & min trigram file: no.'
+            '- Top trigram file:       no;\n' +
+            '- Min trigram file:       no.'
         );
     }
 
@@ -152,19 +152,19 @@ console.log(
 writeFile('./data/all.js', allIndex);
 
 console.log(
-    'Finished writing ' + trigramCount + ' files.\n'
+    'Finished writing ' + allIndex.count() + ' files.\n'
 );
 
 writeFile('./data/top.js', topIndex);
 
 console.log(
-    'Finished writing ' + topTrigramCount + ' top files ' +
-    '(ignoring ' + (trigramCount - topTrigramCount) + ').\n'
+    'Finished writing ' + topIndex.count() + ' top files ' +
+    '(ignoring ' + (allIndex.count() - topIndex.count()) + ').\n'
 );
 
 writeFile('./data/min.js', minIndex);
 
 console.log(
-    'Finished writing ' + topTrigramCount + ' min files ' +
-    '(ignoring ' + (trigramCount - topTrigramCount) + ').\n'
+    'Finished writing ' + minIndex.count() + ' min files ' +
+    '(ignoring ' + (allIndex.count() - minIndex.count()) + ').\n'
 );
