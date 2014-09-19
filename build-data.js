@@ -82,6 +82,7 @@ Object.keys(json).forEach(function (code) {
     var plain,
         trigrams,
         topTrigrams,
+        totalTopTrigramOccurrences,
         trigram,
         language;
 
@@ -90,6 +91,10 @@ Object.keys(json).forEach(function (code) {
     topTrigrams = trigrams.slice(-300);
     trigram = topTrigrams[topTrigrams.length - 1];
     language = information[code].name;
+
+    totalTopTrigramOccurrences = topTrigrams.reduce(function (a, b) {
+        return a + b[1];
+    }, 0);
 
     if (information[code].namedVersion) {
         language += ' ' + information[code].namedVersion;
@@ -101,7 +106,8 @@ Object.keys(json).forEach(function (code) {
         '- Highest trigram:       "' + trigram[0] + '";\n' +
         '- Highest trigram count:  ' + trigram[1] + ';\n' +
         '- Total trigrams:         ' + trigrams.length + ';\n' +
-        '- Cleaned string length:  ' + plain.length + ';'
+        '- Top trigrams count:     ' + totalTopTrigramOccurrences + ';\n' +
+        '- String length:          ' + plain.length + ';'
     );
 
     if (trigram[1] > highestTrigramCount) {
@@ -116,7 +122,11 @@ Object.keys(json).forEach(function (code) {
         trigramUtils.tuplesAsDictionary(trigrams), 0, 2
     ));
 
-    if (topTrigrams.length === 300) {
+    if (
+        topTrigrams.length === 300 &&
+        trigram[1] > 30 &&
+        (plain.length / totalTopTrigramOccurrences) < 2.5
+    ) {
         writeFile('./data/top/' + code + '.json', JSON.stringify(
             trigramUtils.tuplesAsDictionary(topTrigrams), 0, 2
         ));

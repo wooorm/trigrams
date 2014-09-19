@@ -86,8 +86,8 @@ Tip: See the [Unicode website](http://www.unicode.org/udhr/index.html) or [UDHR]
 | cjk_AO | Chokwe (Angola) |  | [cjk](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjk) | [Yes](data/all/cjk_AO.json) | [Yes](data/top/cjk_AO.json) | [Yes](data/min/cjk_AO.json) |
 | cjs | Shor |  | [cjs](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjs) | [Yes](data/all/cjs.json) | [Yes](data/top/cjs.json) | [Yes](data/min/cjs.json) |
 | ckb | Kurdish, Central |  | [kdb1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kdb1) | [Yes](data/all/ckb.json) | [Yes](data/top/ckb.json) | [Yes](data/min/ckb.json) |
-| cmn_hans | Chinese, Mandarin (Simplified) |  | [chn](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=chn) | [Yes](data/all/cmn_hans.json) | [Yes](data/top/cmn_hans.json) | [Yes](data/min/cmn_hans.json) |
-| cmn_hant | Chinese, Mandarin (Traditional) |  |  | [Yes](data/all/cmn_hant.json) | [Yes](data/top/cmn_hant.json) | [Yes](data/min/cmn_hant.json) |
+| cmn_hans | Chinese, Mandarin (Simplified) |  | [chn](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=chn) | [Yes](data/all/cmn_hans.json) | No | No |
+| cmn_hant | Chinese, Mandarin (Traditional) |  |  | [Yes](data/all/cmn_hant.json) | No | No |
 | cnh | Chin, Haka |  | [hak](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hak) | [Yes](data/all/cnh.json) | [Yes](data/top/cnh.json) | [Yes](data/min/cnh.json) |
 | cni | Asháninka |  | [cni](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cni) | [Yes](data/all/cni.json) | [Yes](data/top/cni.json) | [Yes](data/min/cni.json) |
 | cof | Colorado |  | [cof](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cof) | [Yes](data/all/cof.json) | [Yes](data/top/cof.json) | [Yes](data/min/cof.json) |
@@ -173,7 +173,7 @@ Tip: See the [Unicode website](http://www.unicode.org/udhr/index.html) or [UDHR]
 | ibb | Ibibio |  | [ibb](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ibb) | [Yes](data/all/ibb.json) | [Yes](data/top/ibb.json) | [Yes](data/min/ibb.json) |
 | ibo | Igbo |  | [igr](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=igr) | [Yes](data/all/ibo.json) | [Yes](data/top/ibo.json) | [Yes](data/min/ibo.json) |
 | ido | Ido |  | [1120](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1120) | [Yes](data/all/ido.json) | [Yes](data/top/ido.json) | [Yes](data/min/ido.json) |
-| iii | Yi, Sichuan |  | [iii](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=iii) | [Yes](data/all/iii.json) | [Yes](data/top/iii.json) | [Yes](data/min/iii.json) |
+| iii | Yi, Sichuan |  | [iii](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=iii) | [Yes](data/all/iii.json) | No | No |
 | ike | Inuktitut, Eastern Canadian |  | [esb](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=esb) | [Yes](data/all/ike.json) | [Yes](data/top/ike.json) | [Yes](data/min/ike.json) |
 | ilo | Ilocano |  | [ilo](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ilo) | [Yes](data/all/ilo.json) | [Yes](data/top/ilo.json) | [Yes](data/min/ilo.json) |
 | ina | Interlingua |  | [1119](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1119) | [Yes](data/all/ina.json) | [Yes](data/top/ina.json) | [Yes](data/min/ina.json) |
