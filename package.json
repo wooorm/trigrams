@@ -21,7 +21,7 @@
     "istanbul": "^0.3.0",
     "jscs": "^1.5.3",
     "mocha": "^1.20.4",
-    "n-gram": "^0.0.1",
+    "trigram-utils": "^0.0.2",
     "udhr": "^0.0.4"
   },
   "repository": {
