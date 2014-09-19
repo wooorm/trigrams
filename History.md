@@ -1,4 +1,12 @@
 
+n.n.n / 2014-09-19
+==================
+
+ * Update eslint
+ * Removed three insignificant top and min files
+ * Refactor index json creation in build-data
+ * Add dependency on trigram-utils (instead of n-gram)
+
 0.0.2 / 2014-09-18
 ==================
 
