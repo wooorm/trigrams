@@ -1,4 +1,11 @@
 
+n.n.n / 2014-10-05
+==================
+
+ * Update udhr to 0.0.7 (fixes npm CRLF line-ending bug)
+ * Add markdown-table as a dependency
+ * Update udhr
+
 0.0.3 / 2014-09-19
 ==================
 
