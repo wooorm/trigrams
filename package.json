@@ -23,7 +23,7 @@
     "markdown-table": "^0.0.1",
     "mocha": "^1.20.0",
     "trigram-utils": "^0.0.2",
-    "udhr": "^0.0.6"
+    "udhr": "^0.0.7"
   },
   "repository": {
     "type": "git",
