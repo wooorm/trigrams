@@ -1,5 +1,5 @@
 
-n.n.n / 2014-10-05
+0.0.4 / 2014-10-05
 ==================
 
  * Update udhr to 0.0.7 (fixes npm CRLF line-ending bug)
