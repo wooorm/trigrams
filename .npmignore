@@ -1,4 +1,10 @@
-node_modules
-.DS_Store
-coverage
-.travis.yml
+.*
+*.log
+coverage/
+data/udhr-xml/
+node_modules/
+spec/
+build-data.js
+build-supported-trigrams.js
+History.md
+Supported-trigrams.md
