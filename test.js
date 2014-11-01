@@ -1,9 +1,18 @@
 'use strict';
 
-var trigrams, assert;
+/**
+ * Dependencies.
+ */
+
+var trigrams,
+    assert;
 
 trigrams = require('./');
 assert = require('assert');
+
+/**
+ * Tests.
+ */
 
 describe('trigrams', function () {
     it('should be an `Object`', function () {
@@ -14,9 +23,11 @@ describe('trigrams', function () {
 describe('trigrams.all()', function () {
     var allTrigrams;
 
-    it('should return an object', function () {
+    before(function () {
         allTrigrams = trigrams.all();
+    });
 
+    it('should return an object', function () {
         assert(typeof allTrigrams === 'object');
     });
 
@@ -41,9 +52,11 @@ describe('trigrams.all()', function () {
 describe('trigrams.top()', function () {
     var topTrigrams;
 
-    it('should return an object', function () {
+    before(function () {
         topTrigrams = trigrams.top();
+    });
 
+    it('should return an object', function () {
         assert(typeof topTrigrams === 'object');
     });
 
@@ -74,9 +87,11 @@ describe('trigrams.top()', function () {
 describe('trigrams.min()', function () {
     var minTrigrams;
 
-    it('should return an object', function () {
+    before(function () {
         minTrigrams = trigrams.min();
+    });
 
+    it('should return an object', function () {
         assert(typeof minTrigrams === 'object');
     });
 
