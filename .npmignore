@@ -3,8 +3,8 @@
 coverage/
 data/udhr-xml/
 node_modules/
-spec/
 build-data.js
 build-supported-trigrams.js
+test.js
 History.md
 Supported-trigrams.md

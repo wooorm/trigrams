@@ -2,7 +2,7 @@
 
 var trigrams, assert;
 
-trigrams = require('..');
+trigrams = require('./');
 assert = require('assert');
 
 describe('trigrams', function () {
