@@ -1,18 +1,35 @@
 'use strict';
 
+/**
+ * Dependencies.
+ */
+
 var fs,
     table,
-    udhr,
+    udhr;
+
+fs = require('fs');
+table = require('markdown-table');
+udhr = require('udhr');
+
+/**
+ * Data.
+ */
+
+var information,
     allTrigrams,
     topTrigrams,
     minTrigrams;
 
-fs = require('fs');
-table = require('markdown-table');
-udhr = require('udhr').information();
+information = udhr.information();
+
 allTrigrams = require('../').all();
 topTrigrams = require('../').top();
 minTrigrams = require('../').min();
+
+/**
+ * Write support information.
+ */
 
 fs.writeFileSync('Supported-trigrams.md',
     'Supported Trigrams\n' +
@@ -27,7 +44,7 @@ fs.writeFileSync('Supported-trigrams.md',
                 'Code', 'Name', 'Named version', 'OHCHR', 'All?',
                 'Top?', 'Min?'
             ]
-        ].concat(Object.keys(udhr).map(function (code) {
+        ].concat(Object.keys(information).map(function (code) {
             var hasAll,
                 hasMin,
                 hasTop,
@@ -51,18 +68,18 @@ fs.writeFileSync('Supported-trigrams.md',
                 hasTop = 'No';
             }
 
-            if (udhr[code].OHCHR) {
-                ohchr = '[' + udhr[code].OHCHR + ']' +
+            if (information[code].OHCHR) {
+                ohchr = '[' + information[code].OHCHR + ']' +
                     '(http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?' +
-                    'LangID=' + udhr[code].OHCHR + ')';
+                    'LangID=' + information[code].OHCHR + ')';
             } else {
                 ohchr = '';
             }
 
             return [
                 code,
-                udhr[code].name,
-                (udhr[code].namedVersion || ''),
+                information[code].name,
+                (information[code].namedVersion || ''),
                 ohchr,
                 hasAll,
                 hasTop,
