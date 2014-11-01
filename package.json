@@ -15,6 +15,10 @@
     "detection",
     "guessing"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/trigrams.git"
+  },
   "author": "Titus Wormer <tituswormer@gmail.com>",
   "devDependencies": {
     "eslint": "^0.9.0",
@@ -25,21 +29,17 @@
     "trigram-utils": "^0.1.0",
     "udhr": "^0.1.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wooorm/trigrams.git"
-  },
   "scripts": {
     "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports spec/trigrams.spec.js",
     "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports spec/trigrams.spec.js",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- spec/trigrams.spec.js",
     "lint": "npm run lint-api && npm run lint-test && npm run lint-style",
     "lint-api": "node_modules/.bin/eslint index.js build-data.js build-supported-trigrams.js --env node --env browser --rule 'quotes: [2, single]'",
     "lint-test": "node_modules/.bin/eslint spec/trigrams.spec.js --env node --env mocha --rule 'quotes: [2, single]'",
     "lint-style": "node_modules/.bin/jscs index.js build-data.js build-supported-trigrams.js spec/trigrams.spec.js --reporter=inline",
+    "make": "npm run lint && npm run coverage",
     "build-data": "node build-data.js",
     "build-supported-trigrams": "node build-supported-trigrams.js",
-    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- spec/trigrams.spec.js",
-    "prepublish": "npm run build-data && npm run build-supported-trigrams",
-    "make": "npm run lint && npm run coverage"
+    "prepublish": "npm run build-data && npm run build-supported-trigrams"
   }
 }
