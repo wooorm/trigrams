@@ -1,4 +1,4 @@
-# trigrams [![Build Status](https://travis-ci.org/wooorm/trigrams.svg?branch=master)](https://travis-ci.org/wooorm/trigrams) [![Coverage Status](https://img.shields.io/coveralls/wooorm/trigrams.svg)](https://coveralls.io/r/wooorm/trigrams?branch=master)
+# trigrams [![Build Status](https://img.shields.io/travis/wooorm/trigrams.svg?style=flat)](https://travis-ci.org/wooorm/trigrams) [![Coverage Status](https://img.shields.io/coveralls/wooorm/trigrams.svg?style=flat)](https://coveralls.io/r/wooorm/trigrams?branch=master)
 
 Trigrams for 380+ languages.
 
