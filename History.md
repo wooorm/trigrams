@@ -1,4 +1,22 @@
 
+n.n.n / 2014-11-01
+==================
+
+ * Fix style in index files
+ * Refactor `script/build-support.js`
+ * Refactor `script/build-data.js`
+ * Refactor test
+ * Add flat badges to `Readme.md`
+ * Add `.eslintrc`
+ * Move build scripts to `script/`
+ * Move `spec/trigrams.spec.js` to `test.js`
+ * Refactor `.jscs.json`
+ * Refactor to disallow space after object keys
+ * Refactor property order in `package.json`
+ * Remove browser test
+ * Update `.gitignore`, `.npmignore`
+ * Update eslint, markdown-table, mocha, trigram-utils, udhr
+
 0.0.4 / 2014-10-05
 ==================
 
