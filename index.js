@@ -29,7 +29,7 @@ function min() {
  */
 
 module.exports = {
-    'all' : all,
-    'min' : min,
-    'top' : top
+    'all': all,
+    'min': min,
+    'top': top
 };

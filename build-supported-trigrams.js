@@ -70,7 +70,7 @@ fs.writeFileSync('Supported-trigrams.md',
             ];
         })),
         {
-            'align' : ['r']
+            'align': ['r']
         }
     ) +
 

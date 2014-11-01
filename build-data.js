@@ -43,8 +43,8 @@ function createIndexFile(type) {
 
     function addFile(code) {
         queue.push({
-            'code' : code,
-            'path' : code + '.json'
+            'code': code,
+            'path': code + '.json'
         });
     }
 
@@ -59,7 +59,7 @@ function createIndexFile(type) {
         return '\'use strict\';\n' +
             '\n' +
             'module.exports = {\n' +
-            '  ' +  lines.join(',\n  ') + '\n' +
+            '  ' + lines.join(',\n  ') + '\n' +
             '}\n';
     }
 
@@ -68,9 +68,9 @@ function createIndexFile(type) {
     }
 
     return {
-        'toString' : done,
-        'add' : addFile,
-        'count' : count
+        'toString': done,
+        'add': addFile,
+        'count': count
     };
 }
 
