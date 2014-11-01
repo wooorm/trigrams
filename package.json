@@ -17,13 +17,13 @@
   ],
   "author": "Titus Wormer <tituswormer@gmail.com>",
   "devDependencies": {
-    "eslint": "^0.8.0",
+    "eslint": "^0.9.0",
     "istanbul": "^0.3.0",
-    "jscs": "^1.6.0",
-    "markdown-table": "^0.0.1",
-    "mocha": "^1.20.0",
-    "trigram-utils": "^0.0.2",
-    "udhr": "^0.0.7"
+    "jscs": "^1.7.0",
+    "markdown-table": "^0.1.0",
+    "mocha": "^2.0.0",
+    "trigram-utils": "^0.1.0",
+    "udhr": "^0.1.0"
   },
   "repository": {
     "type": "git",
