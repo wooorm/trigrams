@@ -1,27 +1,59 @@
 'use strict';
 
+/**
+ * Dependencies.
+ */
+
 var udhr,
-    writeFile,
-    json,
-    information,
-    trigramUtils,
-    highestTrigramCount,
-    highestTrigram,
-    highestTrigramLanguage,
-    allIndex,
-    minIndex,
-    topIndex;
+    fs,
+    trigramUtils;
 
 udhr = require('udhr');
-writeFile = require('fs').writeFileSync;
-json = udhr.json();
-information = udhr.information();
+fs = require('fs');
 trigramUtils = require('trigram-utils');
 
+/**
+ * Cached methods.
+ */
+
+var writeFile;
+
+writeFile = fs.writeFileSync;
+
+/**
+ * Data.
+ */
+
+var json,
+    information;
+
+json = udhr.json();
+information = udhr.information();
+
+/**
+ * Variables to keep track of some information.
+ */
+
+var highestTrigramCount,
+    highestTrigram,
+    highestTrigramLanguage;
+
+highestTrigramCount = 0;
+
+/**
+ * Get all keys, recursively, in an object.
+ *
+ * @param {Object} object
+ * @param {string} key
+ * @return {Array.<*>}
+ */
+
 function all(object, key) {
-    var results = [],
+    var results,
         property,
         value;
+
+    results = [];
 
     for (property in object) {
         value = object[property];
@@ -36,10 +68,22 @@ function all(object, key) {
     return results;
 }
 
-highestTrigramCount = 0;
+/**
+ * Create an `index` file.
+ *
+ * @param {string} type
+ */
 
 function createIndexFile(type) {
-    var queue = [];
+    var queue;
+
+    queue = [];
+
+    /**
+     * Add a file to the index.
+     *
+     * @param {string} code - Language code.
+     */
 
     function addFile(code) {
         queue.push({
@@ -47,6 +91,13 @@ function createIndexFile(type) {
             'path': code + '.json'
         });
     }
+
+    /**
+     * Get the value of the index.
+     *
+     * @return {string} JavaScript representation of
+     *   the index.
+     */
 
     function done() {
         var lines;
@@ -63,6 +114,12 @@ function createIndexFile(type) {
             '}\n';
     }
 
+    /**
+     * Get the number of files in the index.
+     *
+     * @return {number}
+     */
+
     function count() {
         return queue.length;
     }
@@ -74,9 +131,21 @@ function createIndexFile(type) {
     };
 }
 
+/**
+ * Automated index files.
+ */
+
+var allIndex,
+    minIndex,
+    topIndex;
+
 allIndex = createIndexFile('all');
 minIndex = createIndexFile('min');
 topIndex = createIndexFile('top');
+
+/**
+ * Create data.
+ */
 
 Object.keys(json).forEach(function (code) {
     var plain,
@@ -154,10 +223,18 @@ Object.keys(json).forEach(function (code) {
     console.log('');
 });
 
+/**
+ * Log information regarding the highest trigram.
+ */
+
 console.log(
     'The highest trigram was "' + highestTrigram + '" which occurred ' +
     highestTrigramCount + ' times in ' + highestTrigramLanguage + '.\n'
 );
+
+/**
+ * Write the file containing all trigrams.
+ */
 
 writeFile('./data/all.js', allIndex);
 
@@ -165,12 +242,20 @@ console.log(
     'Finished writing ' + allIndex.count() + ' files.\n'
 );
 
+/**
+ * Write the file containing top trigrams.
+ */
+
 writeFile('./data/top.js', topIndex);
 
 console.log(
     'Finished writing ' + topIndex.count() + ' top files ' +
     '(ignoring ' + (allIndex.count() - topIndex.count()) + ').\n'
 );
+
+/**
+ * Write the file containing top trigrams as an array.
+ */
 
 writeFile('./data/min.js', minIndex);
 
