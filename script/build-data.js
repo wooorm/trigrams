@@ -111,7 +111,7 @@ function createIndexFile(type) {
             '\n' +
             'module.exports = {\n' +
             '  ' + lines.join(',\n  ') + '\n' +
-            '}\n';
+            '};\n';
     }
 
     /**

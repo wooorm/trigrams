@@ -378,4 +378,4 @@ module.exports = {
   'zro': require('./min/zro.json'),
   'ztu': require('./min/ztu.json'),
   'zul': require('./min/zul.json')
-}
+};
