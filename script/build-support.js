@@ -10,9 +10,9 @@ var fs,
 fs = require('fs');
 table = require('markdown-table');
 udhr = require('udhr').information();
-allTrigrams = require('./').all();
-topTrigrams = require('./').top();
-minTrigrams = require('./').min();
+allTrigrams = require('../').all();
+topTrigrams = require('../').top();
+minTrigrams = require('../').min();
 
 fs.writeFileSync('Supported-trigrams.md',
     'Supported Trigrams\n' +
