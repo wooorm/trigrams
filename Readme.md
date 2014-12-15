@@ -102,4 +102,4 @@ Additionally, the input is padded with two spaces.
 
 ## License
 
-MIT © Titus Wormer
+MIT © [Titus Wormer](http://wooorm.com)
