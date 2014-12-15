@@ -1,4 +1,11 @@
 
+n.n.n / 2014-12-15
+==================
+
+ * Refactor npm script targets in `package.json`
+ * Add link to personal website to copyright in `Readme.md`
+ * Fix incorrect executive rights on `test.js`
+
 0.1.0 / 2014-11-01
 ==================
 
