@@ -10,9 +10,6 @@ Trigrams for 400+ languages.
 npm install trigrams
 ```
 
-**trigrams** is also available as an AMD, CommonJS, and globals
-module, [uncompressed and compressed][releases].
-
 ## Usage
 
 ```js
