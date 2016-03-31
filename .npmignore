@@ -1,9 +1,0 @@
-.*
-*.log
-coverage/
-data/udhr-xml/
-node_modules/
-script/
-test.js
-history.md
-supported-trigrams.md
