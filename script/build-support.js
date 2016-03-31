@@ -31,7 +31,7 @@ minTrigrams = require('../').min();
  * Write support information.
  */
 
-fs.writeFileSync('Supported-trigrams.md',
+fs.writeFileSync('supported-trigrams.md',
     'Supported Trigrams\n' +
     '=================\n' +
     '\n' +

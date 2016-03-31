@@ -82,7 +82,7 @@ A bit like `trigrams.top()`, but instead of a declaration object, returns an arr
 
 ## Supported trigrams
 
-For a complete list of supported trigrams, see [Supported-trigrams.md](Supported-trigrams.md).
+For a complete list of supported trigrams, see [supported-trigrams.md](supported-trigrams.md).
 
 ## Data
 

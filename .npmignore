@@ -5,5 +5,5 @@ data/udhr-xml/
 node_modules/
 script/
 test.js
-History.md
-Supported-trigrams.md
+history.md
+supported-trigrams.md
