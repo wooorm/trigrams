@@ -1,7 +1,7 @@
 {
   "name": "trigrams",
   "version": "0.1.1",
-  "description": "Trigram files for 380+ languages",
+  "description": "Trigram files for 400+ languages",
   "license": "MIT",
   "keywords": [
     "universal",
@@ -22,12 +22,12 @@
   "author": "Titus Wormer <tituswormer@gmail.com>",
   "devDependencies": {
     "eslint": "^0.10.0",
-    "istanbul": "^0.3.0",
-    "jscs": "^1.0.0",
-    "markdown-table": "^0.2.0",
+    "istanbul": "^0.4.0",
+    "jscs": "^2.0.0",
+    "markdown-table": "^0.4.0",
     "mocha": "^2.0.0",
     "trigram-utils": "^0.1.0",
-    "udhr": "^0.1.0"
+    "udhr": "^1.0.0"
   },
   "scripts": {
     "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports test.js",

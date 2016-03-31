@@ -1,6 +1,6 @@
 # trigrams [![Build Status](https://img.shields.io/travis/wooorm/trigrams.svg?style=flat)](https://travis-ci.org/wooorm/trigrams) [![Coverage Status](https://img.shields.io/coveralls/wooorm/trigrams.svg?style=flat)](https://coveralls.io/r/wooorm/trigrams?branch=master)
 
-Trigrams for 380+ languages.
+Trigrams for 400+ languages.
 
 ## Installation
 
