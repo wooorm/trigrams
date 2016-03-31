@@ -41,7 +41,7 @@ fs.writeFileSync('supported-trigrams.md',
 
     table([
             [
-                'Code', 'Name', 'Named version', 'OHCHR', 'All?',
+                'Code', 'Name', 'OHCHR', 'All?',
                 'Top?', 'Min?'
             ]
         ].concat(Object.keys(information).map(function (code) {
@@ -79,7 +79,6 @@ fs.writeFileSync('supported-trigrams.md',
             return [
                 code,
                 information[code].name,
-                (information[code].namedVersion || ''),
                 ohchr,
                 hasAll,
                 hasTop,

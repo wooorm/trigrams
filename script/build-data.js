@@ -165,10 +165,6 @@ Object.keys(json).forEach(function (code) {
         return a + b[1];
     }, 0);
 
-    if (information[code].namedVersion) {
-        language += ' ' + information[code].namedVersion;
-    }
-
     console.log(
         'Writing trigram file for: ' + language + '\n' +
         '- Code:                  "' + code + '";\n' +
