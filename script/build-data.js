@@ -1,3 +1,11 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2014 Titus Wormer
+ * @license MIT
+ * @module trigrams:script
+ * @fileoverview Build databases from `udhr`.
+ */
+
 'use strict';
 
 /* eslint-env node */

@@ -1,3 +1,11 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2014 Titus Wormer
+ * @license MIT
+ * @module trigrams:script
+ * @fileoverview Build `supported-trigrams.md`.
+ */
+
 'use strict';
 
 /* eslint-env node */

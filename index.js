@@ -1,3 +1,11 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2014 Titus Wormer
+ * @license MIT
+ * @module trigrams
+ * @fileoverview Interace for `trigrams`.
+ */
+
 'use strict';
 
 /* eslint-env commonjs */
