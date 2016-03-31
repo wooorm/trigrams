@@ -1,59 +1,49 @@
 'use strict';
 
-/**
+/* eslint-env node */
+
+/* eslint-disable no-console */
+
+/*
  * Dependencies.
  */
 
-var udhr,
-    fs,
-    trigramUtils;
+var udhr = require('udhr');
+var fs = require('fs');
+var trigramUtils = require('trigram-utils');
 
-udhr = require('udhr');
-fs = require('fs');
-trigramUtils = require('trigram-utils');
-
-/**
+/*
  * Cached methods.
  */
 
-var writeFile;
+var writeFile = fs.writeFileSync;
 
-writeFile = fs.writeFileSync;
-
-/**
+/*
  * Data.
  */
 
-var json,
-    information;
+var json = udhr.json();
+var information = udhr.information();
 
-json = udhr.json();
-information = udhr.information();
-
-/**
+/*
  * Variables to keep track of some information.
  */
 
-var highestTrigramCount,
-    highestTrigram,
-    highestTrigramLanguage;
-
-highestTrigramCount = 0;
+var highestTrigramCount = 0;
+var highestTrigram;
+var highestTrigramLanguage;
 
 /**
  * Get all keys, recursively, in an object.
  *
- * @param {Object} object
- * @param {string} key
- * @return {Array.<*>}
+ * @param {Object} object - Context object.
+ * @param {string} key - Key to get.
+ * @return {Array.<*>} - Results.
  */
-
 function all(object, key) {
-    var results,
-        property,
-        value;
-
-    results = [];
+    var results = [];
+    var property;
+    var value;
 
     for (property in object) {
         value = object[property];
@@ -71,20 +61,16 @@ function all(object, key) {
 /**
  * Create an `index` file.
  *
- * @param {string} type
+ * @param {string} type - Name.
  */
-
 function createIndexFile(type) {
-    var queue;
-
-    queue = [];
+    var queue = [];
 
     /**
      * Add a file to the index.
      *
      * @param {string} code - Language code.
      */
-
     function addFile(code) {
         queue.push({
             'code': code,
@@ -98,28 +84,26 @@ function createIndexFile(type) {
      * @return {string} JavaScript representation of
      *   the index.
      */
-
     function done() {
-        var lines;
-
-        lines = queue.map(function (file) {
+        var lines = queue.map(function (file) {
             return '\'' + file.code +
                 '\': require(\'./' + type + '/' + file.path + '\')';
         });
 
         return '\'use strict\';\n' +
             '\n' +
+            '/* eslint-env commonjs */\n' +
+            '\n' +
             'module.exports = {\n' +
-            '  ' + lines.join(',\n  ') + '\n' +
+            '    ' + lines.join(',\n    ') + '\n' +
             '};\n';
     }
 
     /**
      * Get the number of files in the index.
      *
-     * @return {number}
+     * @return {number} - Length.
      */
-
     function count() {
         return queue.length;
     }
@@ -131,35 +115,25 @@ function createIndexFile(type) {
     };
 }
 
-/**
+/*
  * Automated index files.
  */
 
-var allIndex,
-    minIndex,
-    topIndex;
+var allIndex = createIndexFile('all');
+var minIndex = createIndexFile('min');
+var topIndex = createIndexFile('top');
 
-allIndex = createIndexFile('all');
-minIndex = createIndexFile('min');
-topIndex = createIndexFile('top');
-
-/**
+/*
  * Create data.
  */
 
 Object.keys(json).forEach(function (code) {
-    var plain,
-        trigrams,
-        topTrigrams,
-        totalTopTrigramOccurrences,
-        trigram,
-        language;
-
-    plain = all(json[code], 'para').join('');
-    trigrams = trigramUtils.asTuples(plain);
-    topTrigrams = trigrams.slice(-300);
-    trigram = topTrigrams[topTrigrams.length - 1];
-    language = information[code].name;
+    var plain = all(json[code], 'para').join('');
+    var trigrams = trigramUtils.asTuples(plain);
+    var topTrigrams = trigrams.slice(-300);
+    var trigram = topTrigrams[topTrigrams.length - 1];
+    var language = information[code].name;
+    var totalTopTrigramOccurrences;
 
     totalTopTrigramOccurrences = topTrigrams.reduce(function (a, b) {
         return a + b[1];
@@ -219,7 +193,7 @@ Object.keys(json).forEach(function (code) {
     console.log('');
 });
 
-/**
+/*
  * Log information regarding the highest trigram.
  */
 
@@ -228,7 +202,7 @@ console.log(
     highestTrigramCount + ' times in ' + highestTrigramLanguage + '.\n'
 );
 
-/**
+/*
  * Write the file containing all trigrams.
  */
 
@@ -238,7 +212,7 @@ console.log(
     'Finished writing ' + allIndex.count() + ' files.\n'
 );
 
-/**
+/*
  * Write the file containing top trigrams.
  */
 
@@ -249,7 +223,7 @@ console.log(
     '(ignoring ' + (allIndex.count() - topIndex.count()) + ').\n'
 );
 
-/**
+/*
  * Write the file containing top trigrams as an array.
  */
 

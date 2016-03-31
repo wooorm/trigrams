@@ -1,33 +1,25 @@
 'use strict';
 
-/**
+/* eslint-env node */
+
+/*
  * Dependencies.
  */
 
-var fs,
-    table,
-    udhr;
+var fs = require('fs');
+var table = require('markdown-table');
+var udhr = require('udhr');
 
-fs = require('fs');
-table = require('markdown-table');
-udhr = require('udhr');
-
-/**
+/*
  * Data.
  */
 
-var information,
-    allTrigrams,
-    topTrigrams,
-    minTrigrams;
+var information = udhr.information();
+var allTrigrams = require('../').all();
+var topTrigrams = require('../').top();
+var minTrigrams = require('../').min();
 
-information = udhr.information();
-
-allTrigrams = require('../').all();
-topTrigrams = require('../').top();
-minTrigrams = require('../').min();
-
-/**
+/*
  * Write support information.
  */
 
@@ -45,10 +37,10 @@ fs.writeFileSync('supported-trigrams.md',
                 'Top?', 'Min?'
             ]
         ].concat(Object.keys(information).map(function (code) {
-            var hasAll,
-                hasMin,
-                hasTop,
-                ohchr;
+            var hasAll;
+            var hasMin;
+            var hasTop;
+            var ohchr;
 
             if (code in allTrigrams) {
                 hasAll = '[Yes](data/all/' + code + '.json)';

@@ -1,9 +1,10 @@
 'use strict';
 
+/* eslint-env commonjs */
+
 /**
  * Require all UDHR trigram information.
  */
-
 function all() {
     return require('./data/all.js');
 }
@@ -11,7 +12,6 @@ function all() {
 /**
  * Require top 300 UDHR trigram information (with occurance count).
  */
-
 function top() {
     return require('./data/top.js');
 }
@@ -19,7 +19,6 @@ function top() {
 /**
  * Require top 300 UDHR trigram information (without occurance count).
  */
-
 function min() {
     return require('./data/min.js');
 }

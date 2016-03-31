@@ -1,16 +1,15 @@
 'use strict';
 
-/**
+/* eslint-env node, mocha */
+
+/*
  * Dependencies.
  */
 
-var trigrams,
-    assert;
+var assert = require('assert');
+var trigrams = require('./');
 
-trigrams = require('./');
-assert = require('assert');
-
-/**
+/*
  * Tests.
  */
 
