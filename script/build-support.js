@@ -35,8 +35,9 @@ fs.writeFileSync('supported-trigrams.md',
     'Supported Trigrams\n' +
     '=================\n' +
     '\n' +
-    'Tip: See the [Unicode website](http://www.unicode.org/udhr/index.html)' +
-    ' or [UDHR](https://github.com/wooorm/udhr/) for more information.\n' +
+    'Tip: See the [Unicode website](http://www.unicode.org/udhr/' +
+    'index.html)\nor [UDHR](https://github.com/wooorm/udhr/) for' +
+    'more information.\n' +
     '\n' +
 
     table([

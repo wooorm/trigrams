@@ -1,7 +1,8 @@
 Supported Trigrams
 =================
 
-Tip: See the [Unicode website](http://www.unicode.org/udhr/index.html) or [UDHR](https://github.com/wooorm/udhr/) for more information.
+Tip: See the [Unicode website](http://www.unicode.org/udhr/index.html)
+or [UDHR](https://github.com/wooorm/udhr/) formore information.
 
 |          Code | Name                                                | OHCHR                                                                  | All?                               | Top?                               | Min?                               |
 | ------------: | --------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
