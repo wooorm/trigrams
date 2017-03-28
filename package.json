@@ -30,23 +30,30 @@
     "data"
   ],
   "devDependencies": {
-    "eslint": "^2.0.0",
     "istanbul": "^0.4.0",
-    "jscs": "^2.0.0",
     "markdown-table": "^0.4.0",
     "mocha": "^2.0.0",
     "trigram-utils": "^0.1.0",
-    "udhr": "^1.0.0"
+    "udhr": "^1.0.0",
+    "xo": "^0.18.1"
   },
   "scripts": {
     "build-data": "node script/build-data.js",
     "build-support": "node script/build-support.js",
     "build": "npm run build-data && npm run build-support",
-    "lint-api": "eslint .",
-    "lint-style": "jscs . --reporter=inline",
-    "lint": "npm run lint-api && npm run lint-style",
+    "lint": "xo",
     "test-api": "_mocha --reporter spec --check-leaks -u exports test.js",
     "test-coverage": "istanbul cover _mocha -- -- test.js",
     "test": "npm run build && npm run lint && npm run test-coverage"
+  },
+  "xo": {
+    "space": true,
+    "esnext": false,
+    "rules": {
+      "guard-for-in": "off"
+    },
+    "ignores": [
+      "data/*.js"
+    ]
   }
 }
