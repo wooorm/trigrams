@@ -15,11 +15,7 @@
     "detection",
     "guessing"
   ],
-  "dependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wooorm/trigrams.git"
-  },
+  "repository": "https://github.com/wooorm/trigrams",
   "bugs": "https://github.com/wooorm/trigrams/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
@@ -29,6 +25,7 @@
     "index.js",
     "data"
   ],
+  "dependencies": {},
   "devDependencies": {
     "mdast-zone": "^3.0.0",
     "nyc": "^10.1.2",
