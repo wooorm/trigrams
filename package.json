@@ -30,9 +30,9 @@
     "data"
   ],
   "devDependencies": {
-    "istanbul": "^0.4.0",
     "markdown-table": "^0.4.0",
-    "mocha": "^2.0.0",
+    "nyc": "^10.1.2",
+    "tape": "^4.6.3",
     "trigram-utils": "^0.1.0",
     "udhr": "^1.0.0",
     "xo": "^0.18.1"
@@ -42,8 +42,8 @@
     "build-support": "node script/build-support.js",
     "build": "npm run build-data && npm run build-support",
     "lint": "xo",
-    "test-api": "_mocha --reporter spec --check-leaks -u exports test.js",
-    "test-coverage": "istanbul cover _mocha -- -- test.js",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
     "test": "npm run build && npm run lint && npm run test-coverage"
   },
   "xo": {
@@ -55,5 +55,11 @@
     "ignores": [
       "data/*.js"
     ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
   }
 }
