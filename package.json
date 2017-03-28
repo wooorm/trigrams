@@ -30,17 +30,21 @@
     "data"
   ],
   "devDependencies": {
-    "markdown-table": "^0.4.0",
+    "mdast-zone": "^3.0.0",
     "nyc": "^10.1.2",
+    "remark-cli": "^3.0.0",
+    "remark-preset-wooorm": "^2.0.0",
     "tape": "^4.6.3",
     "trigram-utils": "^0.1.0",
     "udhr": "^2.0.0",
+    "unist-builder": "^1.0.2",
     "xo": "^0.18.1"
   },
   "scripts": {
-    "build-data": "node script/build-data.js",
-    "build-support": "node script/build-support.js",
-    "build": "npm run build-data && npm run build-support",
+    "build-md": "remark . -qfo",
+    "build-data": "node script/build-data",
+    "build-support": "node script/build-support",
+    "build": "npm run build-md && npm run build-data && npm run build-support",
     "lint": "xo",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",
@@ -61,5 +65,11 @@
     "lines": 100,
     "functions": 100,
     "branches": 100
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm",
+      "./script/build-support"
+    ]
   }
 }

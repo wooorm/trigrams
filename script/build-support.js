@@ -1,65 +1,77 @@
 'use strict';
 
-var fs = require('fs');
-var table = require('markdown-table');
+var zone = require('mdast-zone');
+var u = require('unist-builder');
 var udhr = require('udhr');
 
-var information = udhr.information();
-var allTrigrams = require('../').all();
-var topTrigrams = require('../').top();
-var minTrigrams = require('../').min();
+var info = udhr.information();
+var all = require('../').all();
+var top = require('../').top();
+var min = require('../').min();
 
-fs.writeFileSync('supported-trigrams.md',
-  'Supported Trigrams\n' +
-  '=================\n' +
-  '\n' +
-  'Tip: See the [Unicode website](http://www.unicode.org/udhr/' +
-  'index.html)\nor [UDHR](https://github.com/wooorm/udhr/) for' +
-  'more information.\n' +
-  '\n' +
-  table([
-    ['Code', 'Name', 'OHCHR', 'All?', 'Top?', 'Min?']
-  ].concat(Object.keys(information).map(function (code) {
+module.exports = support;
+
+function support() {
+  return transformer;
+}
+
+function transformer(tree) {
+  zone(tree, 'support', replace);
+}
+
+function replace(start, nodes, end) {
+  return [start, table(), end];
+}
+
+function table() {
+  var header = ['Code', 'Name', 'OHCHR', 'All?', 'Top?', 'Min?'];
+
+  return u('table', {align: []}, [
+    u('tableRow', header.map(cell))
+  ].concat(Object.keys(info).map(function (code) {
     var hasAll;
     var hasMin;
     var hasTop;
     var ohchr;
 
-    if (code in allTrigrams) {
-      hasAll = '[Yes](data/all/' + code + '.json)';
+    if (code in all) {
+      hasAll = u('link', {url: 'data/all/' + code + '.json'}, [u('text', 'Yes')]);
     } else {
-      hasAll = 'No';
+      hasAll = u('text', 'No');
     }
 
-    if (code in minTrigrams) {
-      hasMin = '[Yes](data/min/' + code + '.json)';
+    if (code in min) {
+      hasMin = u('link', {url: 'data/min/' + code + '.json'}, [u('text', 'Yes')]);
     } else {
-      hasMin = 'No';
+      hasMin = u('text', 'No');
     }
 
-    if (code in topTrigrams) {
-      hasTop = '[Yes](data/top/' + code + '.json)';
+    if (code in top) {
+      hasTop = u('link', {url: 'data/top/' + code + '.json'}, [u('text', 'Yes')]);
     } else {
-      hasTop = 'No';
+      hasTop = u('text', 'No');
     }
 
-    if (information[code].OHCHR) {
-      ohchr = '[' + information[code].OHCHR + ']' +
-        '(http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?' +
-        'LangID=' + information[code].OHCHR + ')';
+    if (info[code].OHCHR) {
+      ohchr = u('link', {
+        url: 'http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' + info[code].OHCHR
+      }, [u('text', info[code].OHCHR)]);
     } else {
-      ohchr = '';
+      ohchr = u('text', 'No');
     }
 
-    return [
-      code,
-      information[code].name,
-      ohchr,
-      hasAll,
-      hasTop,
-      hasMin
-    ];
-  })), {align: ['r']}
-  ) +
-  '\n'
-);
+    return u('tableRow', [
+      cell(code),
+      cell(info[code].name),
+      cell(ohchr || ''),
+      cell(hasAll),
+      cell(hasTop),
+      cell(hasMin)
+    ]);
+  })));
+
+  function cell(value) {
+    var val = typeof value === 'string' ? u('text', value) : value;
+    return u('tableCell', [val]);
+  }
+}
