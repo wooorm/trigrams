@@ -100,10 +100,10 @@ The files are created from all paragraphs made available by
 Before creating trigrams,
 
 *   The unicode characters from `\u0021` to `\u0040` (both including)
-    are removed;
+    are removed
 *   One or more white space characters (`\s+`) are replaced with a
-    single space;
-*   Alphabetic characters are lower cased (`[A-Z]`).
+    single space
+*   Alphabetic characters are lower cased (`[A-Z]`)
 
 Additionally, the input is padded with two spaces.
 
