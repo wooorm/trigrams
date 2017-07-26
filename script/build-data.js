@@ -20,7 +20,7 @@ var minIndex = createIndexFile('min');
 var topIndex = createIndexFile('top');
 
 /* Create data. */
-Object.keys(json).forEach(function (code) {
+Object.keys(json).filter(filter).forEach(function (code) {
   var plain = all(json[code], 'para').join('');
   var trigrams = trigramUtils.asTuples(plain);
   var topTrigrams = trigrams.slice(-300);
@@ -71,6 +71,11 @@ Object.keys(json).forEach(function (code) {
         return trigram[0];
       }), 0, 2)
     );
+
+    if (code === 'ccp') {
+      console.log('ccp: ');
+      console.log(topTrigrams.length);
+    }
 
     topIndex.add(code);
     minIndex.add(code);
@@ -165,4 +170,8 @@ function all(object, key) {
   }
 
   return results;
+}
+
+function filter(code) {
+  return code !== 'ccp';
 }

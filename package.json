@@ -33,7 +33,7 @@
     "remark-preset-wooorm": "^3.0.0",
     "tape": "^4.6.3",
     "trigram-utils": "^0.1.0",
-    "udhr": "^2.0.0",
+    "udhr": "^3.0.0",
     "unist-builder": "^1.0.2",
     "xo": "^0.18.1"
   },
