@@ -64,6 +64,9 @@
     "branches": 100
   },
   "remarkConfig": {
+    "settings": {
+      "paddedTable": false
+    },
     "plugins": [
       "preset-wooorm",
       "./script/build-support"
