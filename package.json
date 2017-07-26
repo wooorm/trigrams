@@ -28,9 +28,9 @@
   "dependencies": {},
   "devDependencies": {
     "mdast-zone": "^3.0.0",
-    "nyc": "^10.1.2",
-    "remark-cli": "^3.0.0",
-    "remark-preset-wooorm": "^2.0.0",
+    "nyc": "^11.0.0",
+    "remark-cli": "^4.0.0",
+    "remark-preset-wooorm": "^3.0.0",
     "tape": "^4.6.3",
     "trigram-utils": "^0.1.0",
     "udhr": "^2.0.0",
