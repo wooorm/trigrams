@@ -15,7 +15,7 @@
     "detection",
     "guessing"
   ],
-  "repository": "https://github.com/wooorm/trigrams",
+  "repository": "wooorm/trigrams",
   "bugs": "https://github.com/wooorm/trigrams/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
