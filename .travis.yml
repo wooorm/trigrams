@@ -4,11 +4,3 @@ node_js:
 - '8.0'
 after_script: bash <(curl -s https://codecov.io/bash)
 sudo: false
-deploy:
-  provider: npm
-  email: tituswormer@gmail.com
-  api_key:
-    secure: AYEUdOYZcalRsKXdagnHSUK/QgLZVgO3ZUjaK6Uy7eIsiz8hd6k9t+QGD1toXcRIL86z6+PX4RS+5EyRb4E42acclg55EqlpdxTCtfM9+n2zhDFNcB3+SuHZYeY83PfxtgqipdQds6xqpDwmlLZTBgcLgxVsC2lc70rCXrM9Dd8=
-  on:
-    tags: true
-    node: '8.0'
