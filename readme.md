@@ -15,7 +15,7 @@ npm install trigrams
 ###### `trigrams.all()`
 
 ```js
-trigrams.all().eng;
+trigrams.all().eng
 ```
 
 Yields:
@@ -43,7 +43,7 @@ integers (occurrence counts) as its values.
 ###### `trigrams.top()`
 
 ```js
-trigrams.top().pam;
+trigrams.top().pam
 ```
 
 Yields:
@@ -66,7 +66,7 @@ only the top 300 trigrams.
 ###### `trigrams.min()`
 
 ```js
-trigrams.min().nld;
+trigrams.min().nld
 ```
 
 Yields:
@@ -128,6 +128,11 @@ Additionally, the input is padded with two spaces.
 | 019_deva | (Tokpegola, Devanagari) | [tok](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tok) | No | No | No |
 | 019_tibt | (Tokpegola, Tibetan) | [tok](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tok) | No | No | No |
 | 020 | Drung | [ty1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ty1) | [Yes](data/all/020.json) | [Yes](data/top/020.json) | [Yes](data/min/020.json) |
+| 021 | (Muzzi) | [mz1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mz1) | No | No | No |
+| 022 | (Klau) | [kl1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kl1) | No | No | No |
+| 023 | (Jinan) | [ji1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ji1) | No | No | No |
+| 024 | (Tajpuriya) | [Ta1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=Ta1) | No | No | No |
+| 025 | (Bizisa) | [Bz1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=Bz1) | No | No | No |
 | abk | Abkhaz | [abk](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=abk) | [Yes](data/all/abk.json) | [Yes](data/top/abk.json) | [Yes](data/min/abk.json) |
 | ace | Aceh | [atj](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=atj) | [Yes](data/all/ace.json) | [Yes](data/top/ace.json) | [Yes](data/min/ace.json) |
 | acu | Achuar-Shiwiar | [acu](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=acu) | [Yes](data/all/acu.json) | [Yes](data/top/acu.json) | [Yes](data/min/acu.json) |
@@ -146,6 +151,7 @@ Additionally, the input is padded with two spaces.
 | amc | Amahuaca | [amc](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=amc) | [Yes](data/all/amc.json) | [Yes](data/top/amc.json) | [Yes](data/min/amc.json) |
 | ame | Yaneshaʼ | [ame](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ame) | [Yes](data/all/ame.json) | [Yes](data/top/ame.json) | [Yes](data/min/ame.json) |
 | amh | Amharic | [amh](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=amh) | [Yes](data/all/amh.json) | [Yes](data/top/amh.json) | [Yes](data/min/amh.json) |
+| ami | Amis | [ami](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ami) | [Yes](data/all/ami.json) | [Yes](data/top/ami.json) | [Yes](data/min/ami.json) |
 | amr | Amarakaeri | [amr](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=amr) | [Yes](data/all/amr.json) | [Yes](data/top/amr.json) | [Yes](data/min/amr.json) |
 | arb | Arabic, Standard | [arz](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=arz) | [Yes](data/all/arb.json) | [Yes](data/top/arb.json) | [Yes](data/min/arb.json) |
 | arl | Arabela | [arl](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=arl) | [Yes](data/all/arl.json) | [Yes](data/top/arl.json) | [Yes](data/min/arl.json) |
@@ -155,12 +161,14 @@ Additionally, the input is padded with two spaces.
 | auc | Waorani | [1127](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1127) | [Yes](data/all/auc.json) | [Yes](data/top/auc.json) | [Yes](data/min/auc.json) |
 | auv | Occitan (Auvergnat) | [auv1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=auv1) | [Yes](data/all/auv.json) | [Yes](data/top/auv.json) | [Yes](data/min/auv.json) |
 | awa | Awadhi | [awa](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=awa) | No | No | No |
+| ayo | Ayoreo | [ayo](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ayo) | No | No | No |
 | ayr | Aymara, Central | [aym](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=aym) | [Yes](data/all/ayr.json) | [Yes](data/top/ayr.json) | [Yes](data/min/ayr.json) |
 | azj_cyrl | Azerbaijani, North (Cyrillic) | [azb1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=azb1) | [Yes](data/all/azj_cyrl.json) | [Yes](data/top/azj_cyrl.json) | [Yes](data/min/azj_cyrl.json) |
 | azj_latn | Azerbaijani, North (Latin) | [azb](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=azb) | [Yes](data/all/azj_latn.json) | [Yes](data/top/azj_latn.json) | [Yes](data/min/azj_latn.json) |
 | bam | Bamanankan | [bra](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bra) | [Yes](data/all/bam.json) | [Yes](data/top/bam.json) | [Yes](data/min/bam.json) |
 | ban | Bali | [bzc](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bzc) | [Yes](data/all/ban.json) | [Yes](data/top/ban.json) | [Yes](data/min/ban.json) |
 | bap | Bantawa | [bap](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bap) | No | No | No |
+| bax | Bamun | [bax](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bax) | [Yes](data/all/bax.json) | [Yes](data/top/bax.json) | [Yes](data/min/bax.json) |
 | bba | Baatonum | [bba](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bba) | [Yes](data/all/bba.json) | [Yes](data/top/bba.json) | [Yes](data/min/bba.json) |
 | bci | Baoulé | [bci](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bci) | [Yes](data/all/bci.json) | [Yes](data/top/bci.json) | [Yes](data/min/bci.json) |
 | bcl | Bicolano, Central | [bkl](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bkl) | [Yes](data/all/bcl.json) | [Yes](data/top/bcl.json) | [Yes](data/min/bcl.json) |
@@ -192,6 +200,7 @@ Additionally, the input is padded with two spaces.
 | byh | Bhujel | [byh](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=byh) | No | No | No |
 | cab | Garifuna | [cab](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cab) | [Yes](data/all/cab.json) | [Yes](data/top/cab.json) | [Yes](data/min/cab.json) |
 | cak | Kaqchikel, Central | [cak1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cak1) | [Yes](data/all/cak.json) | [Yes](data/top/cak.json) | [Yes](data/min/cak.json) |
+| cas | Tsimané | [cas](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cas) | No | No | No |
 | cat | Catalan-Valencian-Balear | [cln](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cln) | [Yes](data/all/cat.json) | [Yes](data/top/cat.json) | [Yes](data/min/cat.json) |
 | cax | Chiquitano | [cax](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cax) | No | No | No |
 | cbi | Chachi | [1122](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1122) | [Yes](data/all/cbi.json) | [Yes](data/top/cbi.json) | [Yes](data/min/cbi.json) |
@@ -214,8 +223,14 @@ Additionally, the input is padded with two spaces.
 | cjk | Chokwe | [cjk](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjk) | [Yes](data/all/cjk.json) | [Yes](data/top/cjk.json) | [Yes](data/min/cjk.json) |
 | cjk_AO | Chokwe (Angola) | [cjk](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjk) | [Yes](data/all/cjk_AO.json) | [Yes](data/top/cjk_AO.json) | [Yes](data/min/cjk_AO.json) |
 | cjs | Shor | [cjs](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjs) | [Yes](data/all/cjs.json) | [Yes](data/top/cjs.json) | [Yes](data/min/cjs.json) |
+| cjy | Chinese, Jinyu | [cjy](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjy) | [Yes](data/all/cjy.json) | No | No |
 | ckb | Kurdish, Central | [kdb1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kdb1) | [Yes](data/all/ckb.json) | [Yes](data/top/ckb.json) | [Yes](data/min/ckb.json) |
 | cmn_hans | Chinese, Mandarin (Simplified) | [chn](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=chn) | [Yes](data/all/cmn_hans.json) | No | No |
+| cmn_hans_beijing | Chinese, Mandarin (Beijing) | [be1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=be1) | No | No | No |
+| cmn_hans_guiyang | Chinese, Mandarin (Guiyang) | [gu1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gu1) | No | No | No |
+| cmn_hans_harbin | Chinese, Mandarin (Harbin) | [ha2](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ha2) | No | No | No |
+| cmn_hans_nanjing | Chinese, Mandarin (Nanjing) | [na1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=na1) | No | No | No |
+| cmn_hans_tianjin | Chinese, Mandarin (Tianjin) | [ti1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ti1) | No | No | No |
 | cmn_hant | Chinese, Mandarin (Traditional) | No | [Yes](data/all/cmn_hant.json) | No | No |
 | cnh | Chin, Haka | [hak](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hak) | [Yes](data/all/cnh.json) | [Yes](data/top/cnh.json) | [Yes](data/min/cnh.json) |
 | cni | Asháninka | [cni](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cni) | [Yes](data/all/cni.json) | [Yes](data/top/cni.json) | [Yes](data/min/cni.json) |
@@ -246,9 +261,10 @@ Additionally, the input is padded with two spaces.
 | ell_monotonic | Greek (monotonic) | [grk](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=grk) | [Yes](data/all/ell_monotonic.json) | [Yes](data/top/ell_monotonic.json) | [Yes](data/min/ell_monotonic.json) |
 | ell_polytonic | Greek (polytonic) | No | [Yes](data/all/ell_polytonic.json) | [Yes](data/top/ell_polytonic.json) | [Yes](data/min/ell_polytonic.json) |
 | emk | Maninkakan, Eastern | [mni](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mni) | [Yes](data/all/emk.json) | [Yes](data/top/emk.json) | [Yes](data/min/emk.json) |
-| eml | Emiliano-Romagnolo | [eml](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eml) | [Yes](data/all/eml.json) | [Yes](data/top/eml.json) | [Yes](data/min/eml.json) |
+| eml | Romagnolo | [eml](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eml) | [Yes](data/all/eml.json) | [Yes](data/top/eml.json) | [Yes](data/min/eml.json) |
 | eng | English | [eng](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eng) | [Yes](data/all/eng.json) | [Yes](data/top/eng.json) | [Yes](data/min/eng.json) |
 | epo | Esperanto | [1115](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1115) | [Yes](data/all/epo.json) | [Yes](data/top/epo.json) | [Yes](data/min/epo.json) |
+| ese | Ese Ejja | [ese](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ese) | No | No | No |
 | est | Estonian | [est](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=est) | [Yes](data/all/est.json) | [Yes](data/top/est.json) | [Yes](data/min/est.json) |
 | eus | Basque | [bsq](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bsq) | [Yes](data/all/eus.json) | [Yes](data/top/eus.json) | [Yes](data/min/eus.json) |
 | eve | Even | [eve](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eve) | [Yes](data/all/eve.json) | [Yes](data/top/eve.json) | [Yes](data/min/eve.json) |
@@ -260,28 +276,32 @@ Additionally, the input is padded with two spaces.
 | flm | Chin, Falam | [fal](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fal) | [Yes](data/all/flm.json) | [Yes](data/top/flm.json) | [Yes](data/min/flm.json) |
 | fon | Fon | [foa](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=foa) | [Yes](data/all/fon.json) | [Yes](data/top/fon.json) | [Yes](data/min/fon.json) |
 | fra | French | [frn](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=frn) | [Yes](data/all/fra.json) | [Yes](data/top/fra.json) | [Yes](data/min/fra.json) |
-| fri | Frisian | [fri](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fri) | [Yes](data/all/fri.json) | [Yes](data/top/fri.json) | [Yes](data/min/fri.json) |
-| fuf | Pular | [fuf](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fuf) | No | No | No |
+| fri | Frisian, Western | [fri](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fri) | [Yes](data/all/fri.json) | [Yes](data/top/fri.json) | [Yes](data/min/fri.json) |
+| fuf | Pular | [fuf](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fuf) | [Yes](data/all/fuf.json) | [Yes](data/top/fuf.json) | [Yes](data/min/fuf.json) |
+| fuf_adlm | Pular (Adlam) | No | No | No | No |
 | fur | Friulian | [frl](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=frl) | [Yes](data/all/fur.json) | [Yes](data/top/fur.json) | [Yes](data/min/fur.json) |
 | fuv | Fulfulde, Nigerian | [fum](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fum) | [Yes](data/all/fuv.json) | [Yes](data/top/fuv.json) | [Yes](data/min/fuv.json) |
 | gaa | Ga | [gac2](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gac2) | [Yes](data/all/gaa.json) | [Yes](data/top/gaa.json) | [Yes](data/min/gaa.json) |
 | gag | Gagauz | [gag](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gag) | [Yes](data/all/gag.json) | [Yes](data/top/gag.json) | [Yes](data/min/gag.json) |
+| gan | Chinese, Gan | [gan](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gan) | [Yes](data/all/gan.json) | No | No |
 | gax | Oromo, Borana-Arsi-Guji | [gax](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gax) | [Yes](data/all/gax.json) | [Yes](data/top/gax.json) | [Yes](data/min/gax.json) |
 | gbm | Garhwali | [gbm](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gbm) | No | No | No |
 | gjn | Gonja | [dum](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=dum) | [Yes](data/all/gjn.json) | [Yes](data/top/gjn.json) | [Yes](data/min/gjn.json) |
 | gkp | Kpelle, Guinea | [gkp1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gkp1) | [Yes](data/all/gkp.json) | [Yes](data/top/gkp.json) | [Yes](data/min/gkp.json) |
 | gla | Gaelic, Scottish | [gls](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gls) | [Yes](data/all/gla.json) | [Yes](data/top/gla.json) | [Yes](data/min/gla.json) |
-| gld | Nanai | [gld](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gld) | No | No | No |
+| gld | Nanai | [gld](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gld) | [Yes](data/all/gld.json) | [Yes](data/top/gld.json) | [Yes](data/min/gld.json) |
 | gle | Gaelic, Irish | [gli1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gli1) | [Yes](data/all/gle.json) | [Yes](data/top/gle.json) | [Yes](data/min/gle.json) |
 | glg | Galician | [gln](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gln) | [Yes](data/all/glg.json) | [Yes](data/top/glg.json) | [Yes](data/min/glg.json) |
 | glv | Manx | No | [Yes](data/all/glv.json) | [Yes](data/top/glv.json) | [Yes](data/min/glv.json) |
 | gno | Gondi, Northern | [gno](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gno) | No | No | No |
+| gnw | Guarani, Western Bolivian | [gnw](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gnw) | No | No | No |
 | guc | Wayuu | [guc](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=guc) | [Yes](data/all/guc.json) | [Yes](data/top/guc.json) | [Yes](data/min/guc.json) |
 | gug | Guaraní, Paraguayan | [gun](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gun) | [Yes](data/all/gug.json) | [Yes](data/top/gug.json) | [Yes](data/min/gug.json) |
 | guj | Gujarati | [gjr](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gjr) | [Yes](data/all/guj.json) | [Yes](data/top/guj.json) | [Yes](data/min/guj.json) |
 | guu | Yanomamö | [guu](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=guu) | [Yes](data/all/guu.json) | [Yes](data/top/guu.json) | [Yes](data/min/guu.json) |
 | gvr | Gurung, Western | [gvr](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gvr) | No | No | No |
 | gyr | Guarayu | [gua](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gua) | [Yes](data/all/gyr.json) | [Yes](data/top/gyr.json) | [Yes](data/min/gyr.json) |
+| hak | Chinese, Hakka | [ha1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ha1) | [Yes](data/all/hak.json) | No | No |
 | hat_kreyol | Haitian Creole French (Kreyol) | [hat](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hat) | [Yes](data/all/hat_kreyol.json) | [Yes](data/top/hat_kreyol.json) | [Yes](data/min/hat_kreyol.json) |
 | hat_popular | Haitian Creole French (Popular) | [hat1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hat1) | [Yes](data/all/hat_popular.json) | [Yes](data/top/hat_popular.json) | [Yes](data/min/hat_popular.json) |
 | hau_NE | Hausa (Niger) | [gej](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gej) | [Yes](data/all/hau_NE.json) | [Yes](data/top/hau_NE.json) | [Yes](data/min/hau_NE.json) |
@@ -302,9 +322,9 @@ Additionally, the input is padded with two spaces.
 | hsb | Sorbian, Upper | [wee](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=wee) | [Yes](data/all/hsb.json) | [Yes](data/top/hsb.json) | [Yes](data/min/hsb.json) |
 | hsf | Huastec (Sierra de Otontepec) | [hus](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hus) | [Yes](data/all/hsf.json) | [Yes](data/top/hsf.json) | [Yes](data/min/hsf.json) |
 | hun | Hungarian | [hng](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hng) | [Yes](data/all/hun.json) | [Yes](data/top/hun.json) | [Yes](data/min/hun.json) |
-| hus | Huastec, Veracruz | [1118](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1118) | [Yes](data/all/hus.json) | [Yes](data/top/hus.json) | [Yes](data/min/hus.json) |
+| hus | Huastec (Veracruz) | [1118](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1118) | [Yes](data/all/hus.json) | [Yes](data/top/hus.json) | [Yes](data/min/hus.json) |
 | huu | Huitoto, Murui | [huu](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=huu) | [Yes](data/all/huu.json) | [Yes](data/top/huu.json) | [Yes](data/min/huu.json) |
-| hva | Huastec | [hva](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hva) | [Yes](data/all/hva.json) | [Yes](data/top/hva.json) | [Yes](data/min/hva.json) |
+| hva | Huastec (San Luís Potosí) | [hva](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hva) | [Yes](data/all/hva.json) | [Yes](data/top/hva.json) | [Yes](data/min/hva.json) |
 | hye | Armenian | [arm](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=arm) | [Yes](data/all/hye.json) | [Yes](data/top/hye.json) | [Yes](data/min/hye.json) |
 | ibb | Ibibio | [ibb](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ibb) | [Yes](data/all/ibb.json) | [Yes](data/top/ibb.json) | [Yes](data/min/ibb.json) |
 | ibo | Igbo | [igr](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=igr) | [Yes](data/all/ibo.json) | [Yes](data/top/ibo.json) | [Yes](data/min/ibo.json) |
@@ -316,9 +336,12 @@ Additionally, the input is padded with two spaces.
 | ind | Indonesian | [inz](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=inz) | [Yes](data/all/ind.json) | [Yes](data/top/ind.json) | [Yes](data/min/ind.json) |
 | isl | Icelandic | [ice](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ice) | [Yes](data/all/isl.json) | [Yes](data/top/isl.json) | [Yes](data/min/isl.json) |
 | ita | Italian | [itn](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=itn) | [Yes](data/all/ita.json) | [Yes](data/top/ita.json) | [Yes](data/min/ita.json) |
-| jav | Javanese | [jan](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=jan) | [Yes](data/all/jav.json) | [Yes](data/top/jav.json) | [Yes](data/min/jav.json) |
+| jav | Javanese (Latin) | [jan](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=jan) | [Yes](data/all/jav.json) | [Yes](data/top/jav.json) | [Yes](data/min/jav.json) |
+| jav_java | Javanese (Javanese) | No | [Yes](data/all/jav_java.json) | [Yes](data/top/jav_java.json) | [Yes](data/min/jav_java.json) |
 | jiv | Shuar | [1125](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1125) | [Yes](data/all/jiv.json) | [Yes](data/top/jiv.json) | [Yes](data/min/jiv.json) |
 | jpn | Japanese | [jpn](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=jpn) | [Yes](data/all/jpn.json) | [Yes](data/top/jpn.json) | [Yes](data/min/jpn.json) |
+| jpn_tokyo | Japanese (Tokyo) | [to1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=to1) | No | No | No |
+| jpn_osaka | Japanese (Osaka) | [obe](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=obe) | No | No | No |
 | jul | Jirel | [jul](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=jul) | No | No | No |
 | kal | Inuktitut, Greenlandic | [esg](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=esg) | [Yes](data/all/kal.json) | [Yes](data/top/kal.json) | [Yes](data/min/kal.json) |
 | kan | Kannada | [kjv](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kjv) | [Yes](data/all/kan.json) | [Yes](data/top/kan.json) | [Yes](data/min/kan.json) |
@@ -344,7 +367,8 @@ Additionally, the input is padded with two spaces.
 | kjh | Khakas | [kjh](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kjh) | [Yes](data/all/kjh.json) | [Yes](data/top/kjh.json) | [Yes](data/min/kjh.json) |
 | kkh_lana | Khün | No | [Yes](data/all/kkh_lana.json) | [Yes](data/top/kkh_lana.json) | [Yes](data/min/kkh_lana.json) |
 | kmb | Mbundu | [mlo](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mlo) | [Yes](data/all/kmb.json) | [Yes](data/top/kmb.json) | [Yes](data/min/kmb.json) |
-| kmr | Kurdish, Northern | [kur](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kur) | No | No | No |
+| kmr | Kurdish, Northern | [kur](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kur) | [Yes](data/all/kmr.json) | [Yes](data/top/kmr.json) | [Yes](data/min/kmr.json) |
+| kmr_arab | Kurdish, Northern (Arabic) | [kur](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kur) | No | No | No |
 | knc | Kanuri, Central | [kph](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kph) | [Yes](data/all/knc.json) | [Yes](data/top/knc.json) | [Yes](data/min/knc.json) |
 | kng | Koongo | [kon](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kon) | [Yes](data/all/kng.json) | [Yes](data/top/kng.json) | [Yes](data/min/kng.json) |
 | kng_AO | Koongo (Angola) | [kng](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kng) | [Yes](data/all/kng_AO.json) | [Yes](data/top/kng_AO.json) | [Yes](data/min/kng_AO.json) |
@@ -409,12 +433,14 @@ Additionally, the input is padded with two spaces.
 | mos | Mòoré | [mhm](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mhm) | [Yes](data/all/mos.json) | [Yes](data/top/mos.json) | [Yes](data/min/mos.json) |
 | mri | Maori | [mbf](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mbf) | [Yes](data/all/mri.json) | [Yes](data/top/mri.json) | [Yes](data/min/mri.json) |
 | mto | Mixe, Totontepec | [mto](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mto) | [Yes](data/all/mto.json) | [Yes](data/top/mto.json) | [Yes](data/min/mto.json) |
+| mtp | Wichí Lhamtés Nocten | [mtp](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mtp) | No | No | No |
 | mve | Marwari | [mkd](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mkd) | No | No | No |
 | mvf_mong | Mongolian, Peripheral (Mongolian) | [mvf](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mvf) | No | No | No |
 | mxi | Mozarabic | [moz](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=moz) | [Yes](data/all/mxi.json) | [Yes](data/top/mxi.json) | [Yes](data/min/mxi.json) |
 | mxv | Mixtec, Metlatónoc | [mxv](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mxv) | [Yes](data/all/mxv.json) | [Yes](data/top/mxv.json) | [Yes](data/min/mxv.json) |
 | mya | Burmese | [bms](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bms) | [Yes](data/all/mya.json) | [Yes](data/top/mya.json) | [Yes](data/min/mya.json) |
 | mzi | Mazatec, Ixcatlán | [mao](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mao) | [Yes](data/all/mzi.json) | [Yes](data/top/mzi.json) | [Yes](data/min/mzi.json) |
+| nan | Chinese, Min Nan | [nan](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nan) | [Yes](data/all/nan.json) | No | No |
 | nav | Navajo | [nav](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nav) | [Yes](data/all/nav.json) | [Yes](data/top/nav.json) | [Yes](data/min/nav.json) |
 | nba | Nyemba | [nba](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nba) | [Yes](data/all/nba.json) | [Yes](data/top/nba.json) | [Yes](data/min/nba.json) |
 | nbl | Ndebele | [nel](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nel) | [Yes](data/all/nbl.json) | [Yes](data/top/nbl.json) | [Yes](data/min/nbl.json) |
@@ -438,15 +464,15 @@ Additionally, the input is padded with two spaces.
 | nym | Nyamwezi | [nyz](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nyz) | [Yes](data/all/nym.json) | [Yes](data/top/nym.json) | [Yes](data/min/nym.json) |
 | nyn | Nyankore | [nyn1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nyn1) | [Yes](data/all/nyn.json) | [Yes](data/top/nyn.json) | [Yes](data/min/nyn.json) |
 | nzi | Nzema | [nze](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nze) | [Yes](data/all/nzi.json) | [Yes](data/top/nzi.json) | [Yes](data/min/nzi.json) |
-| oaa | Orok | [oaa](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=oaa) | No | No | No |
+| oaa | Orok | [oaa](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=oaa) | [Yes](data/all/oaa.json) | [Yes](data/top/oaa.json) | [Yes](data/min/oaa.json) |
 | oci_1 | Occitan (Francoprovençal, Fribourg) | [Fr3](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=Fr3) | [Yes](data/all/oci_1.json) | [Yes](data/top/oci_1.json) | [Yes](data/min/oci_1.json) |
 | oci_2 | Occitan (Francoprovençal, Savoie) | [fr2](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fr2) | [Yes](data/all/oci_2.json) | [Yes](data/top/oci_2.json) | [Yes](data/min/oci_2.json) |
 | oci_3 | Occitan (Francoprovençal, Vaud) | [fr4](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fr4) | [Yes](data/all/oci_3.json) | [Yes](data/top/oci_3.json) | [Yes](data/min/oci_3.json) |
 | oci_4 | Occitan (Francoprovençal, Valais) | [frp](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=frp) | [Yes](data/all/oci_4.json) | [Yes](data/top/oci_4.json) | [Yes](data/min/oci_4.json) |
 | ojb | Ojibwa, Northwestern | [ojb](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ojb) | [Yes](data/all/ojb.json) | [Yes](data/top/ojb.json) | [Yes](data/min/ojb.json) |
 | oki | Okiek | [oki](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=oki) | [Yes](data/all/oki.json) | [Yes](data/top/oki.json) | [Yes](data/min/oki.json) |
-| orh | Oroqen | [orh](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=orh) | No | No | No |
-| ori | Oriya | [ory](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ory) | No | No | No |
+| orh | Oroqen | [orh](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=orh) | [Yes](data/all/orh.json) | [Yes](data/top/orh.json) | [Yes](data/min/orh.json) |
+| ori | Odia | [ory](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ory) | No | No | No |
 | oss | Osetin | [ose](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ose) | [Yes](data/all/oss.json) | [Yes](data/top/oss.json) | [Yes](data/min/oss.json) |
 | ote | Otomi, Mezquital | [1111](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1111) | [Yes](data/all/ote.json) | [Yes](data/top/ote.json) | [Yes](data/min/ote.json) |
 | pam | Pampangan | [pmp](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pmp) | [Yes](data/all/pam.json) | [Yes](data/top/pam.json) | [Yes](data/min/pam.json) |
@@ -454,7 +480,7 @@ Additionally, the input is padded with two spaces.
 | pap | Papiamentu | [pap](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pap) | [Yes](data/all/pap.json) | [Yes](data/top/pap.json) | [Yes](data/min/pap.json) |
 | pau | Palauan | [plu](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=plu) | [Yes](data/all/pau.json) | [Yes](data/top/pau.json) | [Yes](data/min/pau.json) |
 | pbb | Páez | [pbb](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pbb) | [Yes](data/all/pbb.json) | [Yes](data/top/pbb.json) | [Yes](data/min/pbb.json) |
-| pbu | Pashto, Northern | [pbu](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pbu) | [Yes](data/all/pbu.json) | No | No |
+| pbu | Pashto, Northern | [pbu](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pbu) | [Yes](data/all/pbu.json) | [Yes](data/top/pbu.json) | [Yes](data/min/pbu.json) |
 | pcd | Picard | [frn2](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=frn2) | [Yes](data/all/pcd.json) | [Yes](data/top/pcd.json) | [Yes](data/min/pcd.json) |
 | pcm | Pidgin, Nigerian | [pcm](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pcm) | [Yes](data/all/pcm.json) | [Yes](data/top/pcm.json) | [Yes](data/min/pcm.json) |
 | pes_1 | Farsi, Western | [prs](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=prs) | [Yes](data/all/pes_1.json) | [Yes](data/top/pes_1.json) | [Yes](data/min/pes_1.json) |
@@ -475,6 +501,7 @@ Additionally, the input is padded with two spaces.
 | quc | K'iche', Central | [1117](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1117) | [Yes](data/all/quc.json) | [Yes](data/top/quc.json) | [Yes](data/min/quc.json) |
 | qud | Quechua (Unified Quichua, old Hispanic orthography) | [qud1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=qud1) | [Yes](data/all/qud.json) | [Yes](data/top/qud.json) | [Yes](data/min/qud.json) |
 | qug | Quichua, Chimborazo Highland | [qug](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=qug) | [Yes](data/all/qug.json) | [Yes](data/top/qug.json) | [Yes](data/min/qug.json) |
+| qul | Quechua, North Bolivian | [qul](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=qul) | No | No | No |
 | quy | Quechua, Ayacucho | [quy](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=quy) | [Yes](data/all/quy.json) | [Yes](data/top/quy.json) | [Yes](data/min/quy.json) |
 | quz | Quechua, Cusco | [quz](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=quz) | [Yes](data/all/quz.json) | [Yes](data/top/quz.json) | [Yes](data/min/quz.json) |
 | qva | Quechua, Ambo-Pasco | [qeg](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=qeg) | [Yes](data/all/qva.json) | [Yes](data/top/qva.json) | [Yes](data/min/qva.json) |
@@ -509,6 +536,7 @@ Additionally, the input is padded with two spaces.
 | sag | Sango | [saj](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=saj) | [Yes](data/all/sag.json) | [Yes](data/top/sag.json) | [Yes](data/min/sag.json) |
 | sah | Yakut | [sah](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=sah) | [Yes](data/all/sah.json) | [Yes](data/top/sah.json) | [Yes](data/min/sah.json) |
 | san | Sanskrit | [skt](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=skt) | [Yes](data/all/san.json) | [Yes](data/top/san.json) | [Yes](data/min/san.json) |
+| san_gran | Sanskrit (Grantha) | No | No | No | No |
 | sat | Santhali | [sat](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=sat) | No | No | No |
 | sck | Sadri | [kis](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kis) | No | No | No |
 | sco | Scots | [sco](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=sco) | [Yes](data/all/sco.json) | [Yes](data/top/sco.json) | [Yes](data/min/sco.json) |
@@ -522,6 +550,7 @@ Additionally, the input is padded with two spaces.
 | sjk_deva | Seke | [skj](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=skj) | No | No | No |
 | skr | Seraiki | [skr](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=skr) | [Yes](data/all/skr.json) | [Yes](data/top/skr.json) | [Yes](data/min/skr.json) |
 | slk | Slovak | [slo](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=slo) | [Yes](data/all/slk.json) | [Yes](data/top/slk.json) | [Yes](data/min/slk.json) |
+| slr | Salar | [slr](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=slr) | No | No | No |
 | slv | Slovenian | [slv](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=slv) | [Yes](data/all/slv.json) | [Yes](data/top/slv.json) | [Yes](data/min/slv.json) |
 | sme | Saami, North | [lpi](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=lpi) | [Yes](data/all/sme.json) | [Yes](data/top/sme.json) | [Yes](data/min/sme.json) |
 | smo | Samoan | [smy](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=smy) | [Yes](data/all/smo.json) | [Yes](data/top/smo.json) | [Yes](data/min/smo.json) |
@@ -535,19 +564,21 @@ Additionally, the input is padded with two spaces.
 | src | Sardinian, Logudorese | [srd](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=srd) | [Yes](data/all/src.json) | [Yes](data/top/src.json) | [Yes](data/min/src.json) |
 | srp_cyrl | Serbian (Cyrillic) | [src5](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src5) | [Yes](data/all/srp_cyrl.json) | [Yes](data/top/srp_cyrl.json) | [Yes](data/min/srp_cyrl.json) |
 | srp_latn | Serbian (Latin) | [src3](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src3) | [Yes](data/all/srp_latn.json) | [Yes](data/top/srp_latn.json) | [Yes](data/min/srp_latn.json) |
+| srq | Sirionó | [srq](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=srq) | No | No | No |
 | srr | Serer-Sine | [ses](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ses) | [Yes](data/all/srr.json) | [Yes](data/top/srr.json) | [Yes](data/min/srr.json) |
 | ssw | Swati | [swz1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=swz1) | [Yes](data/all/ssw.json) | [Yes](data/top/ssw.json) | [Yes](data/min/ssw.json) |
 | suk | Sukuma | [sua](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=sua) | [Yes](data/all/suk.json) | [Yes](data/top/suk.json) | [Yes](data/min/suk.json) |
 | sun | Sunda | [suo](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=suo) | [Yes](data/all/sun.json) | [Yes](data/top/sun.json) | [Yes](data/min/sun.json) |
 | sus | Susu | [sus](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=sus) | [Yes](data/all/sus.json) | [Yes](data/top/sus.json) | [Yes](data/min/sus.json) |
 | suz | Sunwar | [suz](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=suz) | No | No | No |
-| suz_1 | Sunwar (2) | [suz](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=suz) | No | No | No |
+| suz_1 | Sunwar (2) | [suz1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=suz1) | No | No | No |
 | swb | Comorian, Maore | [swb](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=swb) | [Yes](data/all/swb.json) | [Yes](data/top/swb.json) | [Yes](data/min/swb.json) |
 | swe | Swedish | [swd](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=swd) | [Yes](data/all/swe.json) | [Yes](data/top/swe.json) | [Yes](data/min/swe.json) |
 | swh | Swahili | [swa](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=swa) | [Yes](data/all/swh.json) | [Yes](data/top/swh.json) | [Yes](data/min/swh.json) |
 | tah | Tahitian | [tht](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tht) | [Yes](data/all/tah.json) | [Yes](data/top/tah.json) | [Yes](data/min/tah.json) |
 | taj | Tamang, Eastern | [taj](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=taj) | [Yes](data/all/taj.json) | No | No |
 | tam | Tamil | [tcv](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tcv) | [Yes](data/all/tam.json) | [Yes](data/top/tam.json) | [Yes](data/min/tam.json) |
+| tam_LK | Tamil (Sri Lanka) | No | [Yes](data/all/tam_LK.json) | [Yes](data/top/tam_LK.json) | [Yes](data/min/tam_LK.json) |
 | taq | Tamasheq | [taq](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=taq) | No | No | No |
 | taq_tfng | Tamasheq (Tifinagh) | [taq](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=taq) | No | No | No |
 | tat | Tatar | [ttr](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ttr) | [Yes](data/all/tat.json) | [Yes](data/top/tat.json) | [Yes](data/min/tat.json) |
@@ -566,23 +597,28 @@ Additionally, the input is padded with two spaces.
 | ths | Thakali | [ths](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ths) | No | No | No |
 | tir | Tigrigna | [tgn](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tgn) | [Yes](data/all/tir.json) | [Yes](data/top/tir.json) | [Yes](data/min/tir.json) |
 | tiv | Tiv | [tiv](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tiv) | [Yes](data/all/tiv.json) | [Yes](data/top/tiv.json) | [Yes](data/min/tiv.json) |
+| tji | Tujia, Nothern | [tji](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tji) | No | No | No |
 | tly | Talysh | [tly](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tly) | [Yes](data/all/tly.json) | [Yes](data/top/tly.json) | [Yes](data/min/tly.json) |
+| tna | Tacana | [tna](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tna) | No | No | No |
 | tob | Toba | [tob](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tob) | [Yes](data/all/tob.json) | [Yes](data/top/tob.json) | [Yes](data/min/tob.json) |
 | toi | Tonga | [toi](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=toi) | [Yes](data/all/toi.json) | [Yes](data/top/toi.json) | [Yes](data/min/toi.json) |
 | toj | Tojolabal | [toj](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=toj) | [Yes](data/all/toj.json) | [Yes](data/top/toj.json) | [Yes](data/min/toj.json) |
 | ton | Tongan | [tov](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tov) | [Yes](data/all/ton.json) | [Yes](data/top/ton.json) | [Yes](data/min/ton.json) |
 | top | Totonac, Papantla | [top](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=top) | [Yes](data/all/top.json) | [Yes](data/top/top.json) | [Yes](data/min/top.json) |
 | tpi | Tok Pisin | [pdg](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pdg) | [Yes](data/all/tpi.json) | [Yes](data/top/tpi.json) | [Yes](data/min/tpi.json) |
+| trn | Trinitario | [trn](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=trn) | No | No | No |
 | tsn | Tswana | [tsw](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tsw) | [Yes](data/all/tsn.json) | [Yes](data/top/tsn.json) | [Yes](data/min/tsn.json) |
 | tso_MZ | Tsonga (Mozambique) | [tso](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tso) | [Yes](data/all/tso_MZ.json) | [Yes](data/top/tso_MZ.json) | [Yes](data/min/tso_MZ.json) |
+| tso_ZW | Tsonga (Zimbabwe) | [tso1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tso1) | [Yes](data/all/tso_ZW.json) | [Yes](data/top/tso_ZW.json) | [Yes](data/min/tso_ZW.json) |
 | tsz | Purepecha | [1112](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1112) | [Yes](data/all/tsz.json) | [Yes](data/top/tsz.json) | [Yes](data/min/tsz.json) |
 | tuk_cyrl | Turkmen (Cyrillic) | [tck](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tck) | [Yes](data/all/tuk_cyrl.json) | [Yes](data/top/tuk_cyrl.json) | [Yes](data/min/tuk_cyrl.json) |
 | tuk_latn | Turkmen (Latin) | No | [Yes](data/all/tuk_latn.json) | [Yes](data/top/tuk_latn.json) | [Yes](data/min/tuk_latn.json) |
 | tur | Turkish | [trk](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=trk) | [Yes](data/all/tur.json) | [Yes](data/top/tur.json) | [Yes](data/min/tur.json) |
 | tyv | Tuva | [tyv](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tyv) | [Yes](data/all/tyv.json) | [Yes](data/top/tyv.json) | [Yes](data/min/tyv.json) |
-| tzc | Tzotzil | [tzc](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tzc) | [Yes](data/all/tzc.json) | [Yes](data/top/tzc.json) | [Yes](data/min/tzc.json) |
+| tzc | Tzotzil (Chamula) | [tzc](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tzc) | [Yes](data/all/tzc.json) | [Yes](data/top/tzc.json) | [Yes](data/min/tzc.json) |
 | tzh | Tzeltal, Oxchuc | [tzc1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tzc1) | [Yes](data/all/tzh.json) | [Yes](data/top/tzh.json) | [Yes](data/min/tzh.json) |
 | tzm | Tamazight, Central Atlas | [tzm](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tzm) | [Yes](data/all/tzm.json) | [Yes](data/top/tzm.json) | [Yes](data/min/tzm.json) |
+| tzm_tfng | Tamazight, Central Atlas (Tifinagh) | No | [Yes](data/all/tzm_tfng.json) | No | No |
 | uig_arab | Uyghur (Arabic) | [uig](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=uig) | [Yes](data/all/uig_arab.json) | [Yes](data/top/uig_arab.json) | [Yes](data/min/uig_arab.json) |
 | uig_latn | Uyghur (Latin) | No | [Yes](data/all/uig_latn.json) | [Yes](data/top/uig_latn.json) | [Yes](data/min/uig_latn.json) |
 | ukr | Ukrainian | [ukr](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ukr) | [Yes](data/all/ukr.json) | [Yes](data/top/ukr.json) | [Yes](data/min/ukr.json) |
@@ -604,6 +640,7 @@ Additionally, the input is padded with two spaces.
 | war | Waray-Waray | [wry](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=wry) | [Yes](data/all/war.json) | [Yes](data/top/war.json) | [Yes](data/min/war.json) |
 | wln | Walloon | [frn1](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=frn1) | [Yes](data/all/wln.json) | [Yes](data/top/wln.json) | [Yes](data/min/wln.json) |
 | wol | Wolof | [wol](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=wol) | [Yes](data/all/wol.json) | [Yes](data/top/wol.json) | [Yes](data/min/wol.json) |
+| wuu | Chinese, Wu | [wuu](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=wuu) | [Yes](data/all/wuu.json) | No | No |
 | wwa | Waama | [ako](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ako) | [Yes](data/all/wwa.json) | [Yes](data/top/wwa.json) | [Yes](data/min/wwa.json) |
 | xho | Xhosa | [xos](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=xos) | [Yes](data/all/xho.json) | [Yes](data/top/xho.json) | [Yes](data/min/xho.json) |
 | xsm | Kasem | [kas](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kas) | [Yes](data/all/xsm.json) | [Yes](data/top/xsm.json) | [Yes](data/min/xsm.json) |
@@ -618,6 +655,7 @@ Additionally, the input is padded with two spaces.
 | yrk | Nenets | [yrk](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=yrk) | No | No | No |
 | yua | Maya, Yucatán | [yua](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=yua) | [Yes](data/all/yua.json) | [Yes](data/top/yua.json) | [Yes](data/min/yua.json) |
 | yue | Chinese, Yue | [yue](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=yue) | [Yes](data/all/yue.json) | No | No |
+| yuz | Yuracare | [yuz](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=yuz) | No | No | No |
 | zam | Zapotec, Miahuatlán | [zam](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=zam) | [Yes](data/all/zam.json) | [Yes](data/top/zam.json) | [Yes](data/min/zam.json) |
 | zdj | Comorian, Ngazidja | [zdj](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=zdj) | [Yes](data/all/zdj.json) | [Yes](data/top/zdj.json) | [Yes](data/min/zdj.json) |
 | zgh | Tamazight, Standard Morocan | [ama](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ama) | [Yes](data/all/zgh.json) | [Yes](data/top/zgh.json) | [Yes](data/min/zgh.json) |

@@ -189,5 +189,5 @@ function all(object, key) {
 }
 
 function filter(code) {
-  return code !== 'ccp'
+  return code !== 'ccp' && code !== 'fuf_adlm' && code !== 'san_gran'
 }

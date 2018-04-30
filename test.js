@@ -9,7 +9,7 @@ test('trigrams.all()', function(t) {
 
   t.doesNotThrow(function() {
     Object.keys(all).forEach(function(code) {
-      assert(typeof all[code] === 'object')
+      assert.equal(typeof all[code], 'object', code + ' should be an object')
     })
   }, 'trigrams.all().n should be an object')
 
@@ -18,8 +18,17 @@ test('trigrams.all()', function(t) {
       Object.keys(all[code]).forEach(function(trigram) {
         var value = all[code][trigram]
 
-        assert(typeof value === 'number')
-        assert(Math.round(value) === value)
+        assert.equal(
+          typeof value,
+          'number',
+          value + ' in ' + code + ' should be a number'
+        )
+
+        assert.equal(
+          Math.round(value),
+          value,
+          value + ' in ' + code + ' should be an integer'
+        )
       })
     })
   }, 'trigrams.all().n.n should be an integer')
@@ -32,23 +41,36 @@ test('trigrams.top()', function(t) {
 
   t.doesNotThrow(function() {
     Object.keys(top).forEach(function(code) {
-      assert(typeof top[code] === 'object')
+      assert.equal(typeof top[code], 'object', code + ' should be an object')
     })
   }, 'trigrams.top().n should be an object')
 
   t.doesNotThrow(function() {
     Object.keys(top).forEach(function(code) {
-      assert(Object.keys(top[code]).length === 300)
+      assert.equal(
+        Object.keys(top[code]).length,
+        300,
+        code + ' should have 300 values'
+      )
     })
-  }, 'trigrams.top().n should contain 300 attributes')
+  }, 'trigrams.top().n should contain 300 values')
 
   t.doesNotThrow(function() {
     Object.keys(top).forEach(function(code) {
       Object.keys(top[code]).forEach(function(trigram) {
         var value = top[code][trigram]
 
-        assert(typeof value === 'number')
-        assert(Math.round(value) === value)
+        assert.equal(
+          typeof value,
+          'number',
+          value + ' in ' + code + ' should be a number'
+        )
+
+        assert.equal(
+          Math.round(value),
+          value,
+          value + ' in ' + code + ' should be an integer'
+        )
       })
     })
   }, 'trigrams.top().n.n should be an integer')
@@ -61,20 +83,24 @@ test('trigrams.min()', function(t) {
 
   t.doesNotThrow(function() {
     Object.keys(min).forEach(function(code) {
-      assert(Array.isArray(min[code]))
+      assert.ok(Array.isArray(min[code]), code + ' should be an array')
     })
   }, 'trigrams.min().n should be an array')
 
   t.doesNotThrow(function() {
     Object.keys(min).forEach(function(code) {
-      assert(min[code].length === 300)
+      assert.equal(min[code].length, 300, code + ' should have 300 values')
     })
   }, 'trigrams.min().n should contain 300 values')
 
   t.doesNotThrow(function() {
     Object.keys(min).forEach(function(code) {
-      min[code].forEach(function(trigram) {
-        assert(typeof trigram === 'string')
+      min[code].forEach(function(value) {
+        assert.equal(
+          typeof value,
+          'string',
+          value + ' in ' + code + ' should be a string'
+        )
       })
     })
   }, 'trigrams.min().n[n] should be a string')
