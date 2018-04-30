@@ -5,9 +5,9 @@ var u = require('unist-builder');
 var udhr = require('udhr');
 
 var info = udhr.information();
-var all = require('../').all();
-var top = require('../').top();
-var min = require('../').min();
+var all = require('..').all();
+var top = require('..').top();
+var min = require('..').min();
 
 module.exports = support;
 

@@ -117,8 +117,8 @@ console.log(
 writeFile('./data/min.js', minIndex);
 
 console.log(
-'Finished writing ' + minIndex.count() + ' min files ' +
-'(ignoring ' + (allIndex.count() - minIndex.count()) + ').\n'
+  'Finished writing ' + minIndex.count() + ' min files ' +
+  '(ignoring ' + (allIndex.count() - minIndex.count()) + ').\n'
 );
 
 function createIndexFile(type) {

@@ -2,7 +2,7 @@
 
 var assert = require('assert');
 var test = require('tape');
-var trigrams = require('./');
+var trigrams = require('.');
 
 test('trigrams.all()', function (t) {
   var all = trigrams.all();
