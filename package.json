@@ -29,6 +29,7 @@
   "devDependencies": {
     "mdast-zone": "^3.0.0",
     "nyc": "^11.0.0",
+    "prettier": "^1.12.1",
     "remark-cli": "^5.0.0",
     "remark-preset-wooorm": "^4.0.0",
     "tape": "^4.6.3",
@@ -38,17 +39,22 @@
     "xo": "^0.20.0"
   },
   "scripts": {
-    "build-md": "remark . -qfo",
-    "build-data": "node script/build-data",
-    "build-support": "node script/build-support",
-    "build": "npm run build-md && npm run build-data && npm run build-support",
-    "lint": "xo",
+    "generate": "node script/build-data && node script/build-support",
+    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",
-    "test": "npm run build && npm run lint && npm run test-coverage"
+    "test": "npm run format && npm run test-coverage"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
   },
   "xo": {
-    "space": true,
+    "prettier": true,
     "esnext": false,
     "rules": {
       "guard-for-in": "off",
