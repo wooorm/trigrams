@@ -28,15 +28,15 @@
   "dependencies": {},
   "devDependencies": {
     "mdast-zone": "^3.0.0",
-    "nyc": "^11.0.0",
+    "nyc": "^14.0.0",
     "prettier": "^1.12.1",
-    "remark-cli": "^5.0.0",
+    "remark-cli": "^6.0.0",
     "remark-preset-wooorm": "^4.0.0",
     "tape": "^4.6.3",
     "trigram-utils": "^1.0.0",
     "udhr": "^4.0.0",
     "unist-builder": "^1.0.2",
-    "xo": "^0.20.0"
+    "xo": "^0.24.0"
   },
   "scripts": {
     "generate": "node script/build-data && node script/build-support",

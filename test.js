@@ -9,7 +9,11 @@ test('trigrams.all()', function(t) {
 
   t.doesNotThrow(function() {
     Object.keys(all).forEach(function(code) {
-      assert.equal(typeof all[code], 'object', code + ' should be an object')
+      assert.strictEqual(
+        typeof all[code],
+        'object',
+        code + ' should be an object'
+      )
     })
   }, 'trigrams.all().n should be an object')
 
@@ -18,13 +22,13 @@ test('trigrams.all()', function(t) {
       Object.keys(all[code]).forEach(function(trigram) {
         var value = all[code][trigram]
 
-        assert.equal(
+        assert.strictEqual(
           typeof value,
           'number',
           value + ' in ' + code + ' should be a number'
         )
 
-        assert.equal(
+        assert.strictEqual(
           Math.round(value),
           value,
           value + ' in ' + code + ' should be an integer'
@@ -41,13 +45,17 @@ test('trigrams.top()', function(t) {
 
   t.doesNotThrow(function() {
     Object.keys(top).forEach(function(code) {
-      assert.equal(typeof top[code], 'object', code + ' should be an object')
+      assert.strictEqual(
+        typeof top[code],
+        'object',
+        code + ' should be an object'
+      )
     })
   }, 'trigrams.top().n should be an object')
 
   t.doesNotThrow(function() {
     Object.keys(top).forEach(function(code) {
-      assert.equal(
+      assert.strictEqual(
         Object.keys(top[code]).length,
         300,
         code + ' should have 300 values'
@@ -60,13 +68,13 @@ test('trigrams.top()', function(t) {
       Object.keys(top[code]).forEach(function(trigram) {
         var value = top[code][trigram]
 
-        assert.equal(
+        assert.strictEqual(
           typeof value,
           'number',
           value + ' in ' + code + ' should be a number'
         )
 
-        assert.equal(
+        assert.strictEqual(
           Math.round(value),
           value,
           value + ' in ' + code + ' should be an integer'
@@ -89,14 +97,18 @@ test('trigrams.min()', function(t) {
 
   t.doesNotThrow(function() {
     Object.keys(min).forEach(function(code) {
-      assert.equal(min[code].length, 300, code + ' should have 300 values')
+      assert.strictEqual(
+        min[code].length,
+        300,
+        code + ' should have 300 values'
+      )
     })
   }, 'trigrams.min().n should contain 300 values')
 
   t.doesNotThrow(function() {
     Object.keys(min).forEach(function(code) {
       min[code].forEach(function(value) {
-        assert.equal(
+        assert.strictEqual(
           typeof value,
           'string',
           value + ' in ' + code + ' should be a string'
