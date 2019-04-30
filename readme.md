@@ -689,7 +689,7 @@ Additionally, the input is padded with two spaces.
 
 [author]: http://wooorm.com
 
-[license]: LICENSE
+[license]: license
 
 [coverage-status]: https://codecov.io/github/wooorm/trigrams
 
