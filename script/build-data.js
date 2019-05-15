@@ -9,17 +9,17 @@ var writeFile = fs.writeFileSync
 var json = udhr.json()
 var information = udhr.information()
 
-/* Variables to keep track of some information. */
+// Variables to keep track of some information.
 var highestTrigramCount = 0
 var highestTrigram
 var highestTrigramLanguage
 
-/* Automated index files. */
+// Automated index files.
 var allIndex = createIndexFile('all')
 var minIndex = createIndexFile('min')
 var topIndex = createIndexFile('top')
 
-/* Create data. */
+// Create data.
 Object.keys(json)
   .filter(filter)
   .forEach(function(code) {
@@ -102,7 +102,7 @@ Object.keys(json)
     console.log('')
   })
 
-/* Log information regarding the highest trigram. */
+// Log information regarding the highest trigram.
 console.log(
   'The highest trigram was "%s" which occurred %s times in %s.\n',
   highestTrigram,
@@ -110,12 +110,12 @@ console.log(
   highestTrigramLanguage
 )
 
-/* Write the file containing all trigrams. */
+// Write the file containing all trigrams.
 writeFile('./data/all.js', allIndex)
 
 console.log('Finished writing %s files.\n', allIndex.count())
 
-/* Write the file containing top trigrams. */
+// Write the file containing top trigrams.
 writeFile('./data/top.js', topIndex)
 
 console.log(
@@ -124,7 +124,7 @@ console.log(
   allIndex.count() - topIndex.count()
 )
 
-/* Write the file containing top trigrams as an array. */
+// Write the file containing top trigrams as an array.
 writeFile('./data/min.js', minIndex)
 
 console.log(
