@@ -1,4 +1,8 @@
-# trigrams [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status]
+# trigrams
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
 
 Trigrams for 400+ languages.
 
@@ -683,15 +687,19 @@ Additionally, the input is padded with two spaces.
 
 [build-badge]: https://img.shields.io/travis/wooorm/trigrams.svg
 
-[build-status]: https://travis-ci.org/wooorm/trigrams
+[build]: https://travis-ci.org/wooorm/trigrams
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/trigrams.svg
+
+[coverage]: https://codecov.io/github/wooorm/trigrams
+
+[downloads-badge]: https://img.shields.io/npm/dm/trigrams.svg
+
+[downloads]: https://www.npmjs.com/package/trigrams
 
 [author]: https://wooorm.com
 
 [license]: license
-
-[coverage-status]: https://codecov.io/github/wooorm/trigrams
 
 [npm]: https://docs.npmjs.com/cli/install
 
