@@ -65,7 +65,7 @@ function table() {
             'link',
             {
               url:
-                'http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' +
+                'https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' +
                 info[code].OHCHR
             },
             [u('text', info[code].OHCHR)]
