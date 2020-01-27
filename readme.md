@@ -6,7 +6,7 @@
 
 Trigrams for 400+ languages.
 
-## Installation
+## Install
 
 [npm][]:
 
@@ -14,7 +14,7 @@ Trigrams for 400+ languages.
 npm install trigrams
 ```
 
-## Usage
+## Use
 
 ###### `trigrams.all()`
 
@@ -29,20 +29,15 @@ Yields:
   'nou': 1,
   'n  ': 1,
   ' ai': 1,
-  // ...
+  // …
   ' an': 129,
   'the': 152,
   ' th': 154
 }
 ```
 
-Returns information about all trigrams occurring in a certain
-declaration, in the form of an object.
-
-Every attribute is the code used by [_UDHR in Unicode_][unicode].
-
-Every value is the an object containing trigrams as its keys and
-integers (occurrence counts) as its values.
+Returns an object mapping [*UDHR in Unicode*][unicode] codes to objects mapping
+trigrams to occurrence counts.
 
 ###### `trigrams.top()`
 
@@ -57,15 +52,14 @@ Yields:
   'anm': 8,
   'obr': 8,
   'gpa': 8,
-  // ...
+  // …
   'ang': 374,
   'ing': 420,
   'ng ': 805
 }
 ```
 
-Same as `trigrams.all()`, but for every declaration object, returns
-only the top 300 trigrams.
+Same as `trigrams.all()` but for results are only the top 300 trigrams.
 
 ###### `trigrams.min()`
 
@@ -80,21 +74,20 @@ Yields:
   'als',
   'oon',
   'rdi',
-  // ...
+  // …
   'an ',
   'de ',
   'en '
 ]
 ```
 
-A bit like `trigrams.top()`, but instead of a declaration object,
-returns an array containing trigrams (without occurrence counts, as
-its indice is the indicator).
+A bit like `trigrams.top()`, but returns an array containing the top 300
+trigrams sorted from least occuring to most occurring.
 
 ## Data
 
-The trigrams are based on the [Unicode][unicode] versions of the
-[Universal Declaration of Human Rights][udhr].
+The trigrams are based on the [unicode][] versions of the [universal declaration
+of human rights][udhr].
 
 The files are created from all paragraphs made available by
 [`wooorm/udhr`][wooorm-udhr] and do not include headings and such.
@@ -103,13 +96,12 @@ The files are created from all paragraphs made available by
 
 Before creating trigrams,
 
-*   The unicode characters from `\u0021` to `\u0040` (both including)
-    are removed
-*   One or more white space characters (`\s+`) are replaced with a
-    single space
+*   The unicode characters from `\u0021` to `\u0040` (both including) are
+    removed
+*   One or more white space characters (`\s+`) are replaced with a single space
 *   Alphabetic characters are lower cased (`[A-Z]`)
 
-Additionally, the input is padded with two spaces.
+Additionally, the input is padded with two spaces on both sides.
 
 ## Support
 
@@ -388,6 +380,7 @@ Additionally, the input is padded with two spaces.
 | koo | Konjo | [koo1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=koo1) | [Yes](data/all/koo.json) | [Yes](data/top/koo.json) | [Yes](data/min/koo.json) |
 | kor | Korean | [kkn](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kkn) | [Yes](data/all/kor.json) | [Yes](data/top/kor.json) | [Yes](data/min/kor.json) |
 | kqn | Kaonde | [kqn](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kqn) | [Yes](data/all/kqn.json) | [Yes](data/top/kqn.json) | [Yes](data/min/kqn.json) |
+| kqs | Kissi, Northern | [kqs](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kqs) | No | No | No |
 | kra | Kumhali | [kra](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kra) | No | No | No |
 | kri | Krio | [kri](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kri) | [Yes](data/all/kri.json) | [Yes](data/top/kri.json) | [Yes](data/min/kri.json) |
 | krl | Karelian | [krl](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=krl) | [Yes](data/all/krl.json) | [Yes](data/top/krl.json) | [Yes](data/min/krl.json) |
