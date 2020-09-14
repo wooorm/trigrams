@@ -82,7 +82,7 @@ Yields:
 ```
 
 A bit like `trigrams.top()`, but returns an array containing the top 300
-trigrams sorted from least occuring to most occurring.
+trigrams sorted from least occurring to most occurring.
 
 ## Data
 
