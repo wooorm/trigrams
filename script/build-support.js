@@ -9,6 +9,8 @@ var all = require('..').all()
 var top = require('..').top()
 var min = require('..').min()
 
+var own = {}.hasOwnProperty
+
 module.exports = support
 
 function support() {
@@ -24,72 +26,60 @@ function replace(start, nodes, end) {
 }
 
 function table() {
-  var header = ['Code', 'Name', 'OHCHR', 'All?', 'Top?', 'Min?']
+  var content = [
+    u(
+      'tableRow',
+      ['Code', 'Name', 'OHCHR', 'All?', 'Top?', 'Min?'].map((d) => cell(d))
+    )
+  ]
+  var code
 
-  return u(
-    'table',
-    {align: []},
-    [
-      u(
-        'tableRow',
-        header.map((d) => cell(d))
-      )
-    ].concat(
-      Object.keys(info).map(function (code) {
-        var hasAll
-        var hasMin
-        var hasTop
-        var ohchr
-
-        if (code in all) {
-          hasAll = u('link', {url: 'data/all/' + code + '.json'}, [
-            u('text', 'Yes')
-          ])
-        } else {
-          hasAll = u('text', 'No')
-        }
-
-        if (code in min) {
-          hasMin = u('link', {url: 'data/min/' + code + '.json'}, [
-            u('text', 'Yes')
-          ])
-        } else {
-          hasMin = u('text', 'No')
-        }
-
-        if (code in top) {
-          hasTop = u('link', {url: 'data/top/' + code + '.json'}, [
-            u('text', 'Yes')
-          ])
-        } else {
-          hasTop = u('text', 'No')
-        }
-
-        if (info[code].OHCHR) {
-          ohchr = u(
-            'link',
-            {
-              url:
-                'https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' +
-                info[code].OHCHR
-            },
-            [u('text', info[code].OHCHR)]
-          )
-        } else {
-          ohchr = u('text', 'No')
-        }
-
-        return u('tableRow', [
+  for (code in info) {
+    if (own.call(info, code)) {
+      content.push(
+        u('tableRow', [
           cell(code),
           cell(info[code].name),
-          cell(ohchr || ''),
-          cell(hasAll),
-          cell(hasTop),
-          cell(hasMin)
+          cell(
+            info[code].OHCHR
+              ? u(
+                  'link',
+                  {
+                    url:
+                      'https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' +
+                      info[code].OHCHR
+                  },
+                  [u('text', info[code].OHCHR)]
+                )
+              : 'No'
+          ),
+          cell(
+            code in all
+              ? u('link', {url: 'data/all/' + code + '.json'}, [
+                  u('text', 'Yes')
+                ])
+              : 'No'
+          ),
+          cell(
+            code in top
+              ? u('link', {url: 'data/top/' + code + '.json'}, [
+                  u('text', 'Yes')
+                ])
+              : 'No'
+          ),
+          cell(
+            code in min
+              ? u('link', {url: 'data/min/' + code + '.json'}, [
+                  u('text', 'Yes')
+                ])
+              : 'No'
+          )
         ])
-      })
-    )
-  )
+      )
+    }
+  }
+
+  return u('table', {align: []}, content)
 
   function cell(value) {
     return u('tableCell', [

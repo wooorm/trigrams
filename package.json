@@ -61,12 +61,8 @@
     "prettier": true,
     "esnext": false,
     "rules": {
-      "guard-for-in": "off",
-      "unicorn/no-array-for-each": "off"
-    },
-    "ignores": [
-      "data/*.js"
-    ]
+      "camelcase": "off"
+    }
   },
   "nyc": {
     "check-coverage": true,

@@ -4,14 +4,13 @@ var fs = require('fs')
 var udhr = require('udhr')
 var trigramUtils = require('trigram-utils')
 
-var writeFile = fs.writeFileSync
+var own = {}.hasOwnProperty
 
 var json = udhr.json()
 var information = udhr.information()
 
 // Variables to keep track of some information.
-var highestTrigramCount = 0
-var highestTrigram
+var highestTrigram = ['', 0]
 var highestTrigramLanguage
 
 // Automated index files.
@@ -19,107 +18,111 @@ var allIndex = createIndexFile('all')
 var minIndex = createIndexFile('min')
 var topIndex = createIndexFile('top')
 
-// Create data.
-Object.keys(json)
-  .filter(function (code) {
-    return code !== 'ccp' && code !== 'fuf_adlm' && code !== 'san_gran'
-  })
-  .forEach(function (code) {
-    var plain = all(json[code], 'para').join('')
-    var trigrams = trigramUtils.asTuples(plain)
-    var topTrigrams = trigrams.slice(-300)
-    var trigram = topTrigrams[topTrigrams.length - 1]
-    var language = information[code].name
-    var totalTopTrigramOccurrences = 0
-    var index = -1
+var ignore = new Set(['ccp', 'fuf_adlm', 'san_gran'])
+var key
+var plain
+var trigrams
+var topTrigrams
+var totalTopTrigramOccurrences
+var trigramIndex
 
-    while (++index < topTrigrams.length) {
-      totalTopTrigramOccurrences += topTrigrams[index][1]
-    }
+for (key in json) {
+  if (!own.call(json, key) || ignore.has(key)) {
+    continue
+  }
+
+  plain = all(json[key], 'para').join('')
+  trigrams = trigramUtils.asTuples(plain)
+  topTrigrams = trigrams.slice(-300)
+  totalTopTrigramOccurrences = 0
+  trigramIndex = -1
+
+  while (++trigramIndex < topTrigrams.length) {
+    totalTopTrigramOccurrences += topTrigrams[trigramIndex][1]
+  }
+
+  console.log(
+    [
+      'Writing trigram file for: %s',
+      '',
+      '*   Code:                  `%s`;',
+      '*   Highest trigram:       `%s`;',
+      '*   Highest trigram count:  %s;',
+      '*   Total trigrams:         %s;',
+      '*   Top trigrams count:     %s;',
+      '*   String length:          %s;'
+    ].join('\n'),
+    information[key].name,
+    key,
+    trigrams[trigrams.length - 1][0],
+    trigrams[trigrams.length - 1][1],
+    trigrams.length,
+    totalTopTrigramOccurrences,
+    plain.length
+  )
+
+  if (trigrams[trigrams.length - 1][1] > highestTrigram[1]) {
+    highestTrigram = trigrams[trigrams.length - 1]
+    highestTrigramLanguage = information[key].name
+  }
+
+  allIndex.add(key)
+
+  fs.writeFileSync(
+    './data/all/' + key + '.json',
+    JSON.stringify(trigramUtils.tuplesAsDictionary(trigrams), null, 2) + '\n'
+  )
+
+  if (
+    trigrams.length > 300 &&
+    trigrams[trigrams.length - 1][1] > 30 &&
+    plain.length / totalTopTrigramOccurrences < 2.5
+  ) {
+    fs.writeFileSync(
+      './data/top/' + key + '.json',
+      JSON.stringify(trigramUtils.tuplesAsDictionary(topTrigrams), null, 2) +
+        '\n'
+    )
+
+    fs.writeFileSync(
+      './data/min/' + key + '.json',
+      JSON.stringify(
+        topTrigrams.map((d) => d[0]),
+        null,
+        2
+      ) + '\n'
+    )
+
+    topIndex.add(key)
+    minIndex.add(key)
 
     console.log(
-      [
-        'Writing trigram file for: %s',
-        '- Code:                  "%s";',
-        '- Highest trigram:       "%s";',
-        '- Highest trigram count:  %s;',
-        '- Total trigrams:         %s;',
-        '- Top trigrams count:     %s;',
-        '- String length:          %s;'
-      ].join('\n'),
-      language,
-      code,
-      trigram[0],
-      trigram[1],
-      trigrams.length,
-      totalTopTrigramOccurrences,
-      plain.length
+      '*   Top trigram file:       yes;\n- Min trigram file:       yes.'
     )
-
-    if (trigram[1] > highestTrigramCount) {
-      highestTrigramCount = trigram[1]
-      highestTrigram = trigram[0]
-      highestTrigramLanguage = language
-    }
-
-    allIndex.add(code)
-
-    writeFile(
-      './data/all/' + code + '.json',
-      JSON.stringify(trigramUtils.tuplesAsDictionary(trigrams), 0, 2)
+  } else {
+    console.log(
+      '*   Top trigram file:       no;\n- Min trigram file:       no.'
     )
+  }
 
-    if (
-      topTrigrams.length === 300 &&
-      trigram[1] > 30 &&
-      plain.length / totalTopTrigramOccurrences < 2.5
-    ) {
-      writeFile(
-        './data/top/' + code + '.json',
-        JSON.stringify(trigramUtils.tuplesAsDictionary(topTrigrams), 0, 2)
-      )
-
-      writeFile(
-        './data/min/' + code + '.json',
-        JSON.stringify(
-          topTrigrams.map(function (trigram) {
-            return trigram[0]
-          }),
-          0,
-          2
-        )
-      )
-
-      topIndex.add(code)
-      minIndex.add(code)
-
-      console.log(
-        '- Top trigram file:       yes;\n- Min trigram file:       yes.'
-      )
-    } else {
-      console.log(
-        '- Top trigram file:       no;\n- Min trigram file:       no.'
-      )
-    }
-
-    console.log('')
-  })
+  console.log('')
+}
 
 // Log information regarding the highest trigram.
 console.log(
-  'The highest trigram was "%s" which occurred %s times in %s.\n',
-  highestTrigram,
-  highestTrigramCount,
+  'The highest trigram was `%s` which occurred %s times in %s.\n',
+  highestTrigram[0],
+  highestTrigram[1],
   highestTrigramLanguage
 )
 
 // Write the file containing all trigrams.
-writeFile('./data/all.js', allIndex)
+fs.writeFileSync('./data/all.js', allIndex)
 
 console.log('Finished writing %s files.\n', allIndex.count())
 
 // Write the file containing top trigrams.
-writeFile('./data/top.js', topIndex)
+fs.writeFileSync('./data/top.js', topIndex)
 
 console.log(
   'Finished writing %s top files (ignoring %s).\n',
@@ -128,7 +131,7 @@ console.log(
 )
 
 // Write the file containing top trigrams as an array.
-writeFile('./data/min.js', minIndex)
+fs.writeFileSync('./data/min.js', minIndex)
 
 console.log(
   'Finished writing %s min files (ignoring %s).\n',
@@ -139,30 +142,23 @@ console.log(
 function createIndexFile(type) {
   var queue = []
 
-  return {
-    toString: done,
-    add: addFile,
-    count: count
+  return {toString, add, count}
+
+  function add(code) {
+    queue.push({code: code, path: code + '.json'})
   }
 
-  function addFile(code) {
-    queue.push({
-      code: code,
-      path: code + '.json'
-    })
-  }
-
-  function done() {
-    var lines = queue.map(function (file) {
-      return '"' + file.code + '": require("./' + type + '/' + file.path + '")'
-    })
-
+  function toString() {
     return (
       "'use strict'\n" +
       '\n' +
       'module.exports = {\n' +
       '  ' +
-      lines.join(',\n') +
+      queue
+        .map(
+          (d) => '"' + d.code + '": require("./' + type + '/' + d.path + '")'
+        )
+        .join(',\n') +
       '\n' +
       '}\n'
     )
@@ -179,12 +175,14 @@ function all(object, key) {
   var value
 
   for (property in object) {
-    value = object[property]
+    if (own.call(object, property)) {
+      value = object[property]
 
-    if (property === key) {
-      results.push(value)
-    } else if (typeof value === 'object') {
-      results = results.concat(all(value, key))
+      if (property === key) {
+        results.push(value)
+      } else if (typeof value === 'object') {
+        results = results.concat(all(value, key))
+      }
     }
   }
 
