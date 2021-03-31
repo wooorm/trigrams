@@ -1,38 +1,48 @@
-'use strict'
-
-var fs = require('fs')
-var udhr = require('udhr')
-var trigramUtils = require('trigram-utils')
-
-var own = {}.hasOwnProperty
-
-var json = udhr.json()
-var information = udhr.information()
+import fs from 'fs'
+import path from 'path'
+import unified from 'unified'
+import rehypeParse from 'rehype-parse'
+import $ from 'hast-util-select'
+import toString from 'hast-util-to-string'
+import {udhr} from 'udhr'
+import {asTuples, tuplesAsDictionary} from 'trigram-utils'
 
 // Variables to keep track of some information.
 var highestTrigram = ['', 0]
 var highestTrigramLanguage
 
 // Automated index files.
-var minIndex = createIndexFile('min')
-var topIndex = createIndexFile('top')
+var min = createIndexFile()
+var top = createIndexFile()
 
 var ignore = new Set(['ccp', 'fuf_adlm', 'san_gran'])
-var key
+var index = -1
+var pipeline = unified().use(rehypeParse)
+var allCount = 0
 var plain
 var trigrams
 var topTrigrams
 var totalTopTrigramOccurrences
 var trigramIndex
-var allCount = 0
+var code
+var tree
 
-for (key in json) {
-  if (!own.call(json, key) || ignore.has(key)) {
+while (++index < udhr.length) {
+  code = udhr[index].code
+
+  if (ignore.has(code)) {
     continue
   }
 
-  plain = all(json[key], 'para').join('')
-  trigrams = trigramUtils.asTuples(plain)
+  tree = pipeline.parse(
+    fs.readFileSync(
+      path.join('node_modules', 'udhr', 'declaration', code + '.html')
+    )
+  )
+  plain = $.selectAll('article p', tree)
+    .map((d) => toString(d))
+    .join(' ')
+  trigrams = asTuples(plain)
   topTrigrams = trigrams.slice(-300)
   totalTopTrigramOccurrences = 0
   trigramIndex = -1
@@ -52,8 +62,8 @@ for (key in json) {
       '*   Top trigrams count:     %s;',
       '*   String length:          %s;'
     ].join('\n'),
-    information[key].name,
-    key,
+    udhr[index].name,
+    code,
     trigrams[trigrams.length - 1][0],
     trigrams[trigrams.length - 1][1],
     trigrams.length,
@@ -63,7 +73,7 @@ for (key in json) {
 
   if (trigrams[trigrams.length - 1][1] > highestTrigram[1]) {
     highestTrigram = trigrams[trigrams.length - 1]
-    highestTrigramLanguage = information[key].name
+    highestTrigramLanguage = udhr[index].name
   }
 
   allCount++
@@ -73,23 +83,11 @@ for (key in json) {
     trigrams[trigrams.length - 1][1] > 30 &&
     plain.length / totalTopTrigramOccurrences < 2.5
   ) {
-    fs.writeFileSync(
-      './data/top/' + key + '.json',
-      JSON.stringify(trigramUtils.tuplesAsDictionary(topTrigrams), null, 2) +
-        '\n'
+    top.add(code, tuplesAsDictionary(topTrigrams))
+    min.add(
+      code,
+      topTrigrams.map((d) => d[0])
     )
-
-    fs.writeFileSync(
-      './data/min/' + key + '.json',
-      JSON.stringify(
-        topTrigrams.map((d) => d[0]),
-        null,
-        2
-      ) + '\n'
-    )
-
-    topIndex.add(key)
-    minIndex.add(key)
 
     console.log(
       '*   Top trigram file:       yes;\n- Min trigram file:       yes.'
@@ -112,69 +110,37 @@ console.log(
 )
 
 // Write the file containing top trigrams.
-fs.writeFileSync('./data/top.js', topIndex)
+fs.writeFileSync(path.join('lib', 'top.json'), top)
 
 console.log(
   'Finished writing %s top files (ignoring %s).\n',
-  topIndex.count(),
-  allCount - topIndex.count()
+  top.count(),
+  allCount - top.count()
 )
 
 // Write the file containing top trigrams as an array.
-fs.writeFileSync('./data/min.js', minIndex)
+fs.writeFileSync(path.join('lib', 'min.json'), min)
 
 console.log(
   'Finished writing %s min files (ignoring %s).\n',
-  minIndex.count(),
-  allCount - minIndex.count()
+  min.count(),
+  allCount - min.count()
 )
 
-function createIndexFile(type) {
-  var queue = []
+function createIndexFile() {
+  var index = {}
 
   return {toString, add, count}
 
-  function add(code) {
-    queue.push({code: code, path: code + '.json'})
+  function add(code, data) {
+    index[code] = data
   }
 
   function toString() {
-    return (
-      "'use strict'\n" +
-      '\n' +
-      'module.exports = {\n' +
-      '  ' +
-      queue
-        .map(
-          (d) => '"' + d.code + '": require("./' + type + '/' + d.path + '")'
-        )
-        .join(',\n') +
-      '\n' +
-      '}\n'
-    )
+    return JSON.stringify(index, null, 2)
   }
 
   function count() {
-    return queue.length
+    return Object.keys(index).length
   }
-}
-
-function all(object, key) {
-  var results = []
-  var property
-  var value
-
-  for (property in object) {
-    if (own.call(object, property)) {
-      value = object[property]
-
-      if (property === key) {
-        results.push(value)
-      } else if (typeof value === 'object') {
-        results = results.concat(all(value, key))
-      }
-    }
-  }
-
-  return results
 }

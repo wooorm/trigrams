@@ -1,81 +1,57 @@
-'use strict'
+import zone from 'mdast-zone'
+import u from 'unist-builder'
+import {udhr} from 'udhr'
+import {min} from '../index.js'
 
-var zone = require('mdast-zone')
-var u = require('unist-builder')
-var udhr = require('udhr')
-
-var info = udhr.information()
-var top = require('..').top()
-var min = require('..').min()
-
-var own = {}.hasOwnProperty
-
-module.exports = support
-
-function support() {
+export default function support() {
   return transformer
 }
 
-function transformer(tree) {
+async function transformer(tree) {
+  var data = await min()
+
   zone(tree, 'support', replace)
-}
 
-function replace(start, nodes, end) {
-  return [start, table(), end]
-}
+  function replace(start, _, end) {
+    return [start, table(), end]
+  }
 
-function table() {
-  var content = [
-    u(
-      'tableRow',
-      ['Code', 'Name', 'OHCHR', 'Top?', 'Min?'].map((d) => cell(d))
-    )
-  ]
-  var code
+  function table() {
+    var content = [u('tableRow', [cell('Code'), cell('Name'), cell('OHCHR')])]
+    var index = -1
 
-  for (code in info) {
-    if (own.call(info, code)) {
+    while (++index < udhr.length) {
+      if (!(udhr[index].code in data)) {
+        continue
+      }
+
       content.push(
         u('tableRow', [
-          cell(code),
-          cell(info[code].name),
+          cell(udhr[index].code),
+          cell(udhr[index].name),
           cell(
-            info[code].OHCHR
+            udhr[index].ohchr
               ? u(
                   'link',
                   {
                     url:
                       'https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' +
-                      info[code].OHCHR
+                      udhr[index].ohchr
                   },
-                  [u('text', info[code].OHCHR)]
+                  [u('text', udhr[index].ohchr)]
                 )
-              : 'No'
-          ),
-          cell(
-            code in top
-              ? u('link', {url: 'data/top/' + code + '.json'}, [
-                  u('text', 'Yes')
-                ])
-              : 'No'
-          ),
-          cell(
-            code in min
-              ? u('link', {url: 'data/min/' + code + '.json'}, [
-                  u('text', 'Yes')
-                ])
               : 'No'
           )
         ])
       )
     }
-  }
 
-  return u('table', {align: []}, content)
+    return u('table', {align: []}, content)
 
-  function cell(value) {
-    return u('tableCell', [
-      typeof value === 'string' ? u('text', value) : value
-    ])
+    function cell(value) {
+      return u('tableCell', [
+        typeof value === 'string' ? u('text', value) : value
+      ])
+    }
   }
 }

@@ -1,21 +1,19 @@
-'use strict'
-
-var assert = require('assert')
-var test = require('tape')
-var trigrams = require('.')
+import assert from 'assert'
+import test from 'tape'
+import {top, min} from './index.js'
 
 var own = {}.hasOwnProperty
 
-test('trigrams.top()', function (t) {
-  var top = trigrams.top()
+test('trigrams.top()', async function (t) {
+  var data = await top()
 
   t.doesNotThrow(function () {
     var code
 
-    for (code in top) {
-      if (own.call(top, code)) {
+    for (code in data) {
+      if (own.call(data, code)) {
         assert.strictEqual(
-          typeof top[code],
+          typeof data[code],
           'object',
           code + ' should be an object'
         )
@@ -26,10 +24,10 @@ test('trigrams.top()', function (t) {
   t.doesNotThrow(function () {
     var code
 
-    for (code in top) {
-      if (own.call(top, code)) {
+    for (code in data) {
+      if (own.call(data, code)) {
         assert.strictEqual(
-          Object.keys(top[code]).length,
+          Object.keys(data[code]).length,
           300,
           code + ' should have 300 values'
         )
@@ -41,19 +39,19 @@ test('trigrams.top()', function (t) {
     var code
     var trigram
 
-    for (code in top) {
-      if (own.call(top, code)) {
-        for (trigram in top[code]) {
-          if (own.call(top[code], trigram)) {
+    for (code in data) {
+      if (own.call(data, code)) {
+        for (trigram in data[code]) {
+          if (own.call(data[code], trigram)) {
             assert.strictEqual(
-              typeof top[code][trigram],
+              typeof data[code][trigram],
               'number',
               trigram + ' in ' + code + ' should be a number'
             )
 
             assert.strictEqual(
-              Math.round(top[code][trigram]),
-              top[code][trigram],
+              Math.round(data[code][trigram]),
+              data[code][trigram],
               trigram + ' in ' + code + ' should be an integer'
             )
           }
@@ -65,15 +63,15 @@ test('trigrams.top()', function (t) {
   t.end()
 })
 
-test('trigrams.min()', function (t) {
-  var min = trigrams.min()
+test('trigrams.min()', async function (t) {
+  var data = await min()
 
   t.doesNotThrow(function () {
     var code
 
-    for (code in min) {
-      if (own.call(min, code)) {
-        assert.ok(Array.isArray(min[code]), code + ' should be an array')
+    for (code in data) {
+      if (own.call(data, code)) {
+        assert.ok(Array.isArray(data[code]), code + ' should be an array')
       }
     }
   }, 'trigrams.min()[] should be an array')
@@ -81,10 +79,10 @@ test('trigrams.min()', function (t) {
   t.doesNotThrow(function () {
     var code
 
-    for (code in min) {
-      if (own.call(min, code)) {
+    for (code in data) {
+      if (own.call(data, code)) {
         assert.strictEqual(
-          min[code].length,
+          data[code].length,
           300,
           code + ' should have 300 values'
         )
@@ -96,12 +94,12 @@ test('trigrams.min()', function (t) {
     var code
     var index
 
-    for (code in min) {
-      if (own.call(min, code)) {
+    for (code in data) {
+      if (own.call(data, code)) {
         index = -1
-        while (++index < min[code].length) {
+        while (++index < data[code].length) {
           assert.strictEqual(
-            typeof min[code][index],
+            typeof data[code][index],
             'string',
             index + ' in ' + code + ' should be a string'
           )
