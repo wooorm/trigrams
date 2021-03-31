@@ -4,11 +4,11 @@ var assert = require('assert')
 var test = require('tape')
 var trigrams = require('.')
 
-test('trigrams.all()', function(t) {
+test('trigrams.all()', function (t) {
   var all = trigrams.all()
 
-  t.doesNotThrow(function() {
-    Object.keys(all).forEach(function(code) {
+  t.doesNotThrow(function () {
+    Object.keys(all).forEach(function (code) {
       assert.strictEqual(
         typeof all[code],
         'object',
@@ -17,9 +17,9 @@ test('trigrams.all()', function(t) {
     })
   }, 'trigrams.all().n should be an object')
 
-  t.doesNotThrow(function() {
-    Object.keys(all).forEach(function(code) {
-      Object.keys(all[code]).forEach(function(trigram) {
+  t.doesNotThrow(function () {
+    Object.keys(all).forEach(function (code) {
+      Object.keys(all[code]).forEach(function (trigram) {
         var value = all[code][trigram]
 
         assert.strictEqual(
@@ -40,11 +40,11 @@ test('trigrams.all()', function(t) {
   t.end()
 })
 
-test('trigrams.top()', function(t) {
+test('trigrams.top()', function (t) {
   var top = trigrams.top()
 
-  t.doesNotThrow(function() {
-    Object.keys(top).forEach(function(code) {
+  t.doesNotThrow(function () {
+    Object.keys(top).forEach(function (code) {
       assert.strictEqual(
         typeof top[code],
         'object',
@@ -53,8 +53,8 @@ test('trigrams.top()', function(t) {
     })
   }, 'trigrams.top().n should be an object')
 
-  t.doesNotThrow(function() {
-    Object.keys(top).forEach(function(code) {
+  t.doesNotThrow(function () {
+    Object.keys(top).forEach(function (code) {
       assert.strictEqual(
         Object.keys(top[code]).length,
         300,
@@ -63,9 +63,9 @@ test('trigrams.top()', function(t) {
     })
   }, 'trigrams.top().n should contain 300 values')
 
-  t.doesNotThrow(function() {
-    Object.keys(top).forEach(function(code) {
-      Object.keys(top[code]).forEach(function(trigram) {
+  t.doesNotThrow(function () {
+    Object.keys(top).forEach(function (code) {
+      Object.keys(top[code]).forEach(function (trigram) {
         var value = top[code][trigram]
 
         assert.strictEqual(
@@ -86,17 +86,17 @@ test('trigrams.top()', function(t) {
   t.end()
 })
 
-test('trigrams.min()', function(t) {
+test('trigrams.min()', function (t) {
   var min = trigrams.min()
 
-  t.doesNotThrow(function() {
-    Object.keys(min).forEach(function(code) {
+  t.doesNotThrow(function () {
+    Object.keys(min).forEach(function (code) {
       assert.ok(Array.isArray(min[code]), code + ' should be an array')
     })
   }, 'trigrams.min().n should be an array')
 
-  t.doesNotThrow(function() {
-    Object.keys(min).forEach(function(code) {
+  t.doesNotThrow(function () {
+    Object.keys(min).forEach(function (code) {
       assert.strictEqual(
         min[code].length,
         300,
@@ -105,9 +105,9 @@ test('trigrams.min()', function(t) {
     })
   }, 'trigrams.min().n should contain 300 values')
 
-  t.doesNotThrow(function() {
-    Object.keys(min).forEach(function(code) {
-      min[code].forEach(function(value) {
+  t.doesNotThrow(function () {
+    Object.keys(min).forEach(function (code) {
+      min[code].forEach(function (value) {
         assert.strictEqual(
           typeof value,
           'string',

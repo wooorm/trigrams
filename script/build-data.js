@@ -21,18 +21,21 @@ var topIndex = createIndexFile('top')
 
 // Create data.
 Object.keys(json)
-  .filter(filter)
-  .forEach(function(code) {
+  .filter(function (code) {
+    return code !== 'ccp' && code !== 'fuf_adlm' && code !== 'san_gran'
+  })
+  .forEach(function (code) {
     var plain = all(json[code], 'para').join('')
     var trigrams = trigramUtils.asTuples(plain)
     var topTrigrams = trigrams.slice(-300)
     var trigram = topTrigrams[topTrigrams.length - 1]
     var language = information[code].name
-    var totalTopTrigramOccurrences
+    var totalTopTrigramOccurrences = 0
+    var index = -1
 
-    totalTopTrigramOccurrences = topTrigrams.reduce(function(a, b) {
-      return a + b[1]
-    }, 0)
+    while (++index < topTrigrams.length) {
+      totalTopTrigramOccurrences += topTrigrams[index][1]
+    }
 
     console.log(
       [
@@ -79,7 +82,7 @@ Object.keys(json)
       writeFile(
         './data/min/' + code + '.json',
         JSON.stringify(
-          topTrigrams.map(function(trigram) {
+          topTrigrams.map(function (trigram) {
             return trigram[0]
           }),
           0,
@@ -150,7 +153,7 @@ function createIndexFile(type) {
   }
 
   function done() {
-    var lines = queue.map(function(file) {
+    var lines = queue.map(function (file) {
       return '"' + file.code + '": require("./' + type + '/' + file.path + '")'
     })
 
@@ -186,8 +189,4 @@ function all(object, key) {
   }
 
   return results
-}
-
-function filter(code) {
-  return code !== 'ccp' && code !== 'fuf_adlm' && code !== 'san_gran'
 }

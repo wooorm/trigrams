@@ -29,8 +29,13 @@ function table() {
   return u(
     'table',
     {align: []},
-    [u('tableRow', header.map(cell))].concat(
-      Object.keys(info).map(function(code) {
+    [
+      u(
+        'tableRow',
+        header.map((d) => cell(d))
+      )
+    ].concat(
+      Object.keys(info).map(function (code) {
         var hasAll
         var hasMin
         var hasTop
@@ -87,7 +92,8 @@ function table() {
   )
 
   function cell(value) {
-    var val = typeof value === 'string' ? u('text', value) : value
-    return u('tableCell', [val])
+    return u('tableCell', [
+      typeof value === 'string' ? u('text', value) : value
+    ])
   }
 }

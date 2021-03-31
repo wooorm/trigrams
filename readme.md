@@ -108,7 +108,7 @@ Additionally, the input is padded with two spaces on both sides.
 <!--support start-->
 
 | Code | Name | OHCHR | All? | Top? | Min? |
-| ---- | ---- | ----- | ---- | ---- | ---- |
+| - | - | - | - | - | - |
 | 007 | Sãotomense | [1128](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1128) | [Yes](data/all/007.json) | [Yes](data/top/007.json) | [Yes](data/min/007.json) |
 | 008 | Crioulo, Upper Guinea (008) | No | [Yes](data/all/008.json) | [Yes](data/top/008.json) | [Yes](data/min/008.json) |
 | 009 | Mbundu (009) | No | [Yes](data/all/009.json) | [Yes](data/top/009.json) | [Yes](data/min/009.json) |
