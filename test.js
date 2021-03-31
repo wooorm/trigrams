@@ -6,51 +6,6 @@ var trigrams = require('.')
 
 var own = {}.hasOwnProperty
 
-test('trigrams.all()', function (t) {
-  var all = trigrams.all()
-
-  t.doesNotThrow(function () {
-    var code
-
-    for (code in all) {
-      if (own.call(all, code)) {
-        assert.strictEqual(
-          typeof all[code],
-          'object',
-          code + ' should be an object'
-        )
-      }
-    }
-  }, 'trigrams.all()[] should be an object')
-
-  t.doesNotThrow(function () {
-    var code
-    var trigram
-
-    for (code in all) {
-      if (own.call(all, code)) {
-        for (trigram in all[code]) {
-          if (own.call(all[code], trigram)) {
-            assert.strictEqual(
-              typeof all[code][trigram],
-              'number',
-              trigram + ' in ' + code + ' should be a number'
-            )
-
-            assert.strictEqual(
-              Math.round(all[code][trigram]),
-              all[code][trigram],
-              trigram + ' in ' + code + ' should be an integer'
-            )
-          }
-        }
-      }
-    }
-  }, 'trigrams.all()[][] should be an integer')
-
-  t.end()
-})
-
 test('trigrams.top()', function (t) {
   var top = trigrams.top()
 

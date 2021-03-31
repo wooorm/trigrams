@@ -14,7 +14,6 @@ var highestTrigram = ['', 0]
 var highestTrigramLanguage
 
 // Automated index files.
-var allIndex = createIndexFile('all')
 var minIndex = createIndexFile('min')
 var topIndex = createIndexFile('top')
 
@@ -25,6 +24,7 @@ var trigrams
 var topTrigrams
 var totalTopTrigramOccurrences
 var trigramIndex
+var allCount = 0
 
 for (key in json) {
   if (!own.call(json, key) || ignore.has(key)) {
@@ -66,12 +66,7 @@ for (key in json) {
     highestTrigramLanguage = information[key].name
   }
 
-  allIndex.add(key)
-
-  fs.writeFileSync(
-    './data/all/' + key + '.json',
-    JSON.stringify(trigramUtils.tuplesAsDictionary(trigrams), null, 2) + '\n'
-  )
+  allCount++
 
   if (
     trigrams.length > 300 &&
@@ -116,18 +111,13 @@ console.log(
   highestTrigramLanguage
 )
 
-// Write the file containing all trigrams.
-fs.writeFileSync('./data/all.js', allIndex)
-
-console.log('Finished writing %s files.\n', allIndex.count())
-
 // Write the file containing top trigrams.
 fs.writeFileSync('./data/top.js', topIndex)
 
 console.log(
   'Finished writing %s top files (ignoring %s).\n',
   topIndex.count(),
-  allIndex.count() - topIndex.count()
+  allCount - topIndex.count()
 )
 
 // Write the file containing top trigrams as an array.
@@ -136,7 +126,7 @@ fs.writeFileSync('./data/min.js', minIndex)
 console.log(
   'Finished writing %s min files (ignoring %s).\n',
   minIndex.count(),
-  allIndex.count() - minIndex.count()
+  allCount - minIndex.count()
 )
 
 function createIndexFile(type) {

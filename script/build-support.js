@@ -5,7 +5,6 @@ var u = require('unist-builder')
 var udhr = require('udhr')
 
 var info = udhr.information()
-var all = require('..').all()
 var top = require('..').top()
 var min = require('..').min()
 
@@ -29,7 +28,7 @@ function table() {
   var content = [
     u(
       'tableRow',
-      ['Code', 'Name', 'OHCHR', 'All?', 'Top?', 'Min?'].map((d) => cell(d))
+      ['Code', 'Name', 'OHCHR', 'Top?', 'Min?'].map((d) => cell(d))
     )
   ]
   var code
@@ -51,13 +50,6 @@ function table() {
                   },
                   [u('text', info[code].OHCHR)]
                 )
-              : 'No'
-          ),
-          cell(
-            code in all
-              ? u('link', {url: 'data/all/' + code + '.json'}, [
-                  u('text', 'Yes')
-                ])
               : 'No'
           ),
           cell(
