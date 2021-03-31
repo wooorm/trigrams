@@ -8,6 +8,7 @@ test('trigrams.top()', async function (t) {
   var data = await top()
 
   t.doesNotThrow(function () {
+    /** @type {string} */
     var code
 
     for (code in data) {
@@ -22,6 +23,7 @@ test('trigrams.top()', async function (t) {
   }, 'trigrams.top()[] should be an object')
 
   t.doesNotThrow(function () {
+    /** @type {string} */
     var code
 
     for (code in data) {
@@ -36,7 +38,9 @@ test('trigrams.top()', async function (t) {
   }, 'trigrams.top()[] should contain 300 values')
 
   t.doesNotThrow(function () {
+    /** @type {string} */
     var code
+    /** @type {string} */
     var trigram
 
     for (code in data) {
@@ -67,6 +71,7 @@ test('trigrams.min()', async function (t) {
   var data = await min()
 
   t.doesNotThrow(function () {
+    /** @type {string} */
     var code
 
     for (code in data) {
@@ -77,6 +82,7 @@ test('trigrams.min()', async function (t) {
   }, 'trigrams.min()[] should be an array')
 
   t.doesNotThrow(function () {
+    /** @type {string} */
     var code
 
     for (code in data) {
@@ -91,7 +97,9 @@ test('trigrams.min()', async function (t) {
   }, 'trigrams.min()[] should contain 300 values')
 
   t.doesNotThrow(function () {
+    /** @type {string} */
     var code
+    /** @type {number} */
     var index
 
     for (code in data) {

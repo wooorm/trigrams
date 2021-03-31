@@ -2,45 +2,62 @@ import fs from 'fs'
 import path from 'path'
 import unified from 'unified'
 import rehypeParse from 'rehype-parse'
+// @ts-ignore remove when typed
 import $ from 'hast-util-select'
+// @ts-ignore remove when typed
 import toString from 'hast-util-to-string'
 import {udhr} from 'udhr'
 import {asTuples, tuplesAsDictionary} from 'trigram-utils'
 
-// Variables to keep track of some information.
-var highestTrigram = ['', 0]
-var highestTrigramLanguage
+/**
+ * @typedef {import('trigram-utils').TrigramTuple} TrigramTuple
+ * @typedef {import('hast').Root} Root
+ * @typedef {import('hast').Element} Element
+ */
 
 // Automated index files.
 var min = createIndexFile()
 var top = createIndexFile()
 
+// Variables to keep track of some information.
+/** @type {TrigramTuple} */
+var highestTrigram = ['', 0]
+/** @type {string} */
+var highestTrigramLanguage
 var ignore = new Set(['ccp', 'fuf_adlm', 'san_gran'])
 var index = -1
 var pipeline = unified().use(rehypeParse)
 var allCount = 0
+/** @type {string} */
 var plain
+/** @type {TrigramTuple[]} */
 var trigrams
+/** @type {TrigramTuple[]} */
 var topTrigrams
+/** @type {number} */
 var totalTopTrigramOccurrences
+/** @type {number} */
 var trigramIndex
-var code
+/** @type {Root} */
 var tree
 
 while (++index < udhr.length) {
-  code = udhr[index].code
-
-  if (ignore.has(code)) {
+  if (ignore.has(udhr[index].code)) {
     continue
   }
 
   tree = pipeline.parse(
     fs.readFileSync(
-      path.join('node_modules', 'udhr', 'declaration', code + '.html')
+      path.join(
+        'node_modules',
+        'udhr',
+        'declaration',
+        udhr[index].code + '.html'
+      )
     )
   )
   plain = $.selectAll('article p', tree)
-    .map((d) => toString(d))
+    .map((/** @type {Element} */ d) => /** @type {string} */ toString(d))
     .join(' ')
   trigrams = asTuples(plain)
   topTrigrams = trigrams.slice(-300)
@@ -63,7 +80,7 @@ while (++index < udhr.length) {
       '*   String length:          %s;'
     ].join('\n'),
     udhr[index].name,
-    code,
+    udhr[index].code,
     trigrams[trigrams.length - 1][0],
     trigrams[trigrams.length - 1][1],
     trigrams.length,
@@ -83,9 +100,9 @@ while (++index < udhr.length) {
     trigrams[trigrams.length - 1][1] > 30 &&
     plain.length / totalTopTrigramOccurrences < 2.5
   ) {
-    top.add(code, tuplesAsDictionary(topTrigrams))
+    top.add(udhr[index].code, tuplesAsDictionary(topTrigrams))
     min.add(
-      code,
+      udhr[index].code,
       topTrigrams.map((d) => d[0])
     )
 
@@ -128,18 +145,31 @@ console.log(
 )
 
 function createIndexFile() {
+  /**
+   * @type {Object.<string, unknown>}
+   */
   var index = {}
 
   return {toString, add, count}
 
+  /**
+   * @param {string} code
+   * @param {unknown} data
+   */
   function add(code, data) {
     index[code] = data
   }
 
+  /**
+   * @returns {string}
+   */
   function toString() {
     return JSON.stringify(index, null, 2)
   }
 
+  /**
+   * @returns {number}
+   */
   function count() {
     return Object.keys(index).length
   }
