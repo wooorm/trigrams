@@ -656,9 +656,9 @@ Additionally, the input is padded with two spaces on both sides.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/trigrams.svg
+[build-badge]: https://github.com/wooorm/trigrams/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/trigrams
+[build]: https://github.com/wooorm/trigrams/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/trigrams.svg
 
