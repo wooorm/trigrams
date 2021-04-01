@@ -87,9 +87,9 @@
     }
   },
   "remarkConfig": {
-    "#to do: add back when `unified-engine` supports ESM": "./script/build-support",
     "plugins": [
       "preset-wooorm",
+      "./script/build-support.js",
       [
         "gfm",
         {
