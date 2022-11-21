@@ -9,42 +9,28 @@ import {asTuples, tuplesAsDictionary} from 'trigram-utils'
 
 /**
  * @typedef {import('trigram-utils').TrigramTuple} TrigramTuple
- * @typedef {import('hast').Root} Root
- * @typedef {import('hast').Element} Element
  */
 
 // Automated index files.
-var min = createIndexFile()
-var top = createIndexFile()
+const min = createIndexFile()
+const top = createIndexFile()
 
 // Variables to keep track of some information.
 /** @type {TrigramTuple} */
-var highestTrigram = ['', 0]
-/** @type {string} */
-var highestTrigramLanguage
-var ignore = new Set(['ccp', 'fuf_adlm', 'san_gran'])
-var index = -1
-var pipeline = unified().use(rehypeParse)
-var allCount = 0
-/** @type {string} */
-var plain
-/** @type {TrigramTuple[]} */
-var trigrams
-/** @type {TrigramTuple[]} */
-var topTrigrams
-/** @type {number} */
-var totalTopTrigramOccurrences
-/** @type {number} */
-var trigramIndex
-/** @type {Root} */
-var tree
+let highestTrigram = ['', 0]
+/** @type {string|undefined} */
+let highestTrigramLanguage
+const ignore = new Set(['ccp', 'fuf_adlm', 'san_gran'])
+let index = -1
+const pipeline = unified().use(rehypeParse)
+let allCount = 0
 
 while (++index < udhr.length) {
   if (ignore.has(udhr[index].code)) {
     continue
   }
 
-  tree = pipeline.parse(
+  const tree = pipeline.parse(
     fs.readFileSync(
       path.join(
         'node_modules',
@@ -54,13 +40,14 @@ while (++index < udhr.length) {
       )
     )
   )
-  plain = selectAll('article p', tree)
-    .map((/** @type {Element} */ d) => /** @type {string} */ toString(d))
+
+  const plain = selectAll('article p', tree)
+    .map((d) => toString(d))
     .join(' ')
-  trigrams = asTuples(plain)
-  topTrigrams = trigrams.slice(-300)
-  totalTopTrigramOccurrences = 0
-  trigramIndex = -1
+  const trigrams = asTuples(plain)
+  const topTrigrams = trigrams.slice(-300)
+  let totalTopTrigramOccurrences = 0
+  let trigramIndex = -1
 
   while (++trigramIndex < topTrigrams.length) {
     totalTopTrigramOccurrences += topTrigrams[trigramIndex][1]
@@ -146,7 +133,7 @@ function createIndexFile() {
   /**
    * @type {Object.<string, unknown>}
    */
-  var index = {}
+  const index = {}
 
   return {toString, add, count}
 

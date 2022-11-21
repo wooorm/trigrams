@@ -1,8 +1,3 @@
-import {zone} from 'mdast-zone'
-import {u} from 'unist-builder'
-import {udhr} from 'udhr'
-import {min} from '../index.js'
-
 /**
  * @typedef {import('unist').Node} Node
  * @typedef {import('mdast').Root} Root
@@ -10,6 +5,11 @@ import {min} from '../index.js'
  * @typedef {import('mdast').TableCell} TableCell
  * @typedef {import('mdast').PhrasingContent} PhrasingContent
  */
+
+import {zone} from 'mdast-zone'
+import {u} from 'unist-builder'
+import {udhr} from 'udhr'
+import {min} from '../index.js'
 
 export default function support() {
   return transformer
@@ -19,7 +19,7 @@ export default function support() {
  * @param {Root} tree
  */
 async function transformer(tree) {
-  var data = await min()
+  const data = await min()
 
   zone(tree, 'support', replace)
 
@@ -36,8 +36,8 @@ async function transformer(tree) {
    * @returns {Table}
    */
   function table() {
-    var content = [u('tableRow', [cell('Code'), cell('Name'), cell('OHCHR')])]
-    var index = -1
+    const content = [u('tableRow', [cell('Code'), cell('Name'), cell('OHCHR')])]
+    let index = -1
 
     while (++index < udhr.length) {
       if (!(udhr[index].code in data)) {

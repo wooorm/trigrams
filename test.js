@@ -2,14 +2,14 @@ import assert from 'node:assert'
 import test from 'tape'
 import {top, min} from './index.js'
 
-var own = {}.hasOwnProperty
+const own = {}.hasOwnProperty
 
 test('trigrams.top()', async function (t) {
-  var data = await top()
+  const data = await top()
 
   t.doesNotThrow(function () {
     /** @type {string} */
-    var code
+    let code
 
     for (code in data) {
       if (own.call(data, code)) {
@@ -24,7 +24,7 @@ test('trigrams.top()', async function (t) {
 
   t.doesNotThrow(function () {
     /** @type {string} */
-    var code
+    let code
 
     for (code in data) {
       if (own.call(data, code)) {
@@ -39,12 +39,13 @@ test('trigrams.top()', async function (t) {
 
   t.doesNotThrow(function () {
     /** @type {string} */
-    var code
-    /** @type {string} */
-    var trigram
+    let code
 
     for (code in data) {
       if (own.call(data, code)) {
+        /** @type {string} */
+        let trigram
+
         for (trigram in data[code]) {
           if (own.call(data[code], trigram)) {
             assert.strictEqual(
@@ -68,11 +69,11 @@ test('trigrams.top()', async function (t) {
 })
 
 test('trigrams.min()', async function (t) {
-  var data = await min()
+  const data = await min()
 
   t.doesNotThrow(function () {
     /** @type {string} */
-    var code
+    let code
 
     for (code in data) {
       if (own.call(data, code)) {
@@ -83,7 +84,7 @@ test('trigrams.min()', async function (t) {
 
   t.doesNotThrow(function () {
     /** @type {string} */
-    var code
+    let code
 
     for (code in data) {
       if (own.call(data, code)) {
@@ -98,13 +99,11 @@ test('trigrams.min()', async function (t) {
 
   t.doesNotThrow(function () {
     /** @type {string} */
-    var code
-    /** @type {number} */
-    var index
+    let code
 
     for (code in data) {
       if (own.call(data, code)) {
-        index = -1
+        let index = -1
         while (++index < data[code].length) {
           assert.strictEqual(
             typeof data[code][index],
