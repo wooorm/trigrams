@@ -1,11 +1,9 @@
-import fs from 'fs'
-import path from 'path'
-import unified from 'unified'
+import fs from 'node:fs'
+import path from 'node:path'
+import {unified} from 'unified'
 import rehypeParse from 'rehype-parse'
-// @ts-ignore remove when typed
-import $ from 'hast-util-select'
-// @ts-ignore remove when typed
-import toString from 'hast-util-to-string'
+import {selectAll} from 'hast-util-select'
+import {toString} from 'hast-util-to-string'
 import {udhr} from 'udhr'
 import {asTuples, tuplesAsDictionary} from 'trigram-utils'
 
@@ -56,7 +54,7 @@ while (++index < udhr.length) {
       )
     )
   )
-  plain = $.selectAll('article p', tree)
+  plain = selectAll('article p', tree)
     .map((/** @type {Element} */ d) => /** @type {string} */ toString(d))
     .join(' ')
   trigrams = asTuples(plain)
@@ -127,7 +125,7 @@ console.log(
 )
 
 // Write the file containing top trigrams.
-fs.writeFileSync(path.join('lib', 'top.json'), top)
+fs.writeFileSync(path.join('lib', 'top.json'), String(top) + '\n')
 
 console.log(
   'Finished writing %s top files (ignoring %s).\n',
@@ -136,7 +134,7 @@ console.log(
 )
 
 // Write the file containing top trigrams as an array.
-fs.writeFileSync(path.join('lib', 'min.json'), min)
+fs.writeFileSync(path.join('lib', 'min.json'), String(min) + '\n')
 
 console.log(
   'Finished writing %s min files (ignoring %s).\n',

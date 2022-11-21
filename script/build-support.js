@@ -1,6 +1,5 @@
-// @ts-ignore remove when typed
-import zone from 'mdast-zone'
-import u from 'unist-builder'
+import {zone} from 'mdast-zone'
+import {u} from 'unist-builder'
 import {udhr} from 'udhr'
 import {min} from '../index.js'
 

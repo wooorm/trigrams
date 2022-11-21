@@ -105,24 +105,24 @@ Additionally, the input is padded with two spaces on both sides.
 | 012 | (Bizisa) | [bz1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bz1) |
 | 013 | (Mijisa) | [bz2](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bz2) |
 | 014 | (Maiunan) | [ma1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ma1) |
-| 016 | (Minjiang, spoken) | [mi1_spok](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mi1_spok) |
-| 017 | (Minjiang, written) | [mi1_written](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mi1_written) |
+| 016 | (Minjiang, spoken) | [mi1\_spok](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mi1_spok) |
+| 017 | (Minjiang, written) | [mi1\_written](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mi1_written) |
 | 020 | Drung | [ty1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ty1) |
 | 026 | (Yeonbyeon) | [ye1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ye1) |
 | aar | Afar | [aar](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=aar) |
 | abk | Abkhaz | [abk](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=abk) |
 | ace | Aceh | [atj](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=atj) |
 | acu | Achuar-Shiwiar | [acu](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=acu) |
-| acu_1 | Achuar-Shiwiar (1) | [jiv](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=jiv) |
+| acu\_1 | Achuar-Shiwiar (1) | [jiv](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=jiv) |
 | ada | Dangme | [gac1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gac1) |
 | ady | Adyghe | [ady](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ady) |
 | afr | Afrikaans | [afk](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=afk) |
 | agr | Aguaruna | [agr](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=agr) |
 | aii | Assyrian Neo-Aramaic | [aii](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=aii) |
 | ajg | Aja | [ajg](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ajg) |
-| aka_akuapem | Twi (Akuapem) | [tws1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tws1) |
-| aka_asante | Twi (Asante) | [ass](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ass) |
-| aka_fante | Fante | [tws3](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tws3) |
+| aka\_akuapem | Twi (Akuapem) | [tws1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tws1) |
+| aka\_asante | Twi (Asante) | [ass](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ass) |
+| aka\_fante | Fante | [tws3](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tws3) |
 | als | Albanian, Tosk | [aln](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=aln) |
 | alt | Altai, Southern | [alt](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=alt) |
 | amc | Amahuaca | [amc](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=amc) |
@@ -137,8 +137,8 @@ Additionally, the input is padded with two spaces on both sides.
 | auc | Waorani | [1127](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1127) |
 | auv | Occitan (Auvergnat) | [auv1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=auv1) |
 | ayr | Aymara, Central | [aym](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=aym) |
-| azj_cyrl | Azerbaijani, North (Cyrillic) | [azb1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=azb1) |
-| azj_latn | Azerbaijani, North (Latin) | [azb](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=azb) |
+| azj\_cyrl | Azerbaijani, North (Cyrillic) | [azb1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=azb1) |
+| azj\_latn | Azerbaijani, North (Latin) | [azb](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=azb) |
 | bam | Bamanankan | [bra](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bra) |
 | ban | Bali | [bzc](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bzc) |
 | bax | Bamun | [bax](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bax) |
@@ -156,8 +156,8 @@ Additionally, the input is padded with two spaces on both sides.
 | blu | Hmong Njua | [blu](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=blu) |
 | boa | Bora | [boa](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=boa) |
 | bod | Tibetan, Central | [tic](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tic) |
-| bos_cyrl | Bosnian (Cyrillic) | [src4](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src4) |
-| bos_latn | Bosnian (Latin) | [src1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src1) |
+| bos\_cyrl | Bosnian (Cyrillic) | [src4](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src4) |
+| bos\_latn | Bosnian (Latin) | [src1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src1) |
 | bre | Breton | [brt](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=brt) |
 | btb | Bulu | [btb](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=btb) |
 | buc | Bushi | [buc](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=buc) |
@@ -177,11 +177,11 @@ Additionally, the input is padded with two spaces on both sides.
 | cha | Chamorro | [cjd](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjd) |
 | chj | Chinantec, Ojitlán | [chj](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=chj) |
 | chk | Chuukese | [tru1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tru1) |
-| chr_cased | Cherokee (cased) | No |
-| chr_uppercase | Cherokee (uppercase) | No |
+| chr\_cased | Cherokee (cased) | No |
+| chr\_uppercase | Cherokee (uppercase) | No |
 | cic | Chickasaw | [cic](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cic) |
 | cjk | Chokwe | [cjk](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjk) |
-| cjk_AO | Chokwe (Angola) | [cjk](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjk) |
+| cjk\_AO | Chokwe (Angola) | [cjk](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjk) |
 | cjs | Shor | [cjs](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=cjs) |
 | ckb | Kurdish, Central | [kdb1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kdb1) |
 | cnh | Chin, Haka | [hak](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hak) |
@@ -199,16 +199,16 @@ Additionally, the input is padded with two spaces on both sides.
 | dag | Dagbani | [dag](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=dag) |
 | dan | Danish | [dns](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=dns) |
 | ddn | Dendi | [den](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=den) |
-| deu_1901 | German, Standard (1901) | [ger](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ger) |
-| deu_1996 | German, Standard (1996) | No |
+| deu\_1901 | German, Standard (1901) | [ger](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ger) |
+| deu\_1996 | German, Standard (1996) | No |
 | dga | Dagaare, Southern | [dga](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=dga) |
 | dip | Dinka, Northeastern | [dinka](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=dinka) |
 | div | Maldivian | [div](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=div) |
 | dyo | Jola-Fonyi | [dyo](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=dyo) |
 | dyu | Jula | [dyu](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=dyu) |
 | dzo | Dzongkha | [dzo](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=dzo) |
-| ell_monotonic | Greek (monotonic) | [grk](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=grk) |
-| ell_polytonic | Greek (polytonic) | No |
+| ell\_monotonic | Greek (monotonic) | [grk](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=grk) |
+| ell\_polytonic | Greek (polytonic) | No |
 | emk | Maninkakan, Eastern | [mni](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mni) |
 | eml | Romagnolo | [eml](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eml) |
 | eng | English | [eng](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eng) |
@@ -247,10 +247,10 @@ Additionally, the input is padded with two spaces on both sides.
 | guj | Gujarati | [gjr](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gjr) |
 | guu | Yanomamö | [guu](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=guu) |
 | gyr | Guarayu | [gua](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gua) |
-| hat_kreyol | Haitian Creole French (Kreyol) | [hat](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hat) |
-| hat_popular | Haitian Creole French (Popular) | [hat1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hat1) |
-| hau_NE | Hausa (Niger) | [gej](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gej) |
-| hau_NG | Hausa (Nigeria) | [gej](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gej) |
+| hat\_kreyol | Haitian Creole French (Kreyol) | [hat](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hat) |
+| hat\_popular | Haitian Creole French (Popular) | [hat1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hat1) |
+| hau\_NE | Hausa (Niger) | [gej](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gej) |
+| hau\_NG | Hausa (Nigeria) | [gej](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gej) |
 | haw | Hawaiian | [hwi](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hwi) |
 | hea | Hmong, Northern Qiandong | [hea](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hea) |
 | heb | Hebrew | [hbr](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hbr) |
@@ -279,7 +279,7 @@ Additionally, the input is padded with two spaces on both sides.
 | isl | Icelandic | [ice](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ice) |
 | ita | Italian | [itn](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=itn) |
 | jav | Javanese (Latin) | [jan](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=jan) |
-| jav_java | Javanese (Javanese) | No |
+| jav\_java | Javanese (Javanese) | No |
 | jiv | Shuar | [1125](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1125) |
 | jpn | Japanese | [jpn](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=jpn) |
 | kal | Inuktitut, Greenlandic | [esg](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=esg) |
@@ -298,12 +298,12 @@ Additionally, the input is padded with two spaces on both sides.
 | kin | Rwanda | [rua1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rua1) |
 | kir | Kirghiz | [kdo](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kdo) |
 | kjh | Khakas | [kjh](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kjh) |
-| kkh_lana | Khün | No |
+| kkh\_lana | Khün | No |
 | kmb | Mbundu | [mlo](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mlo) |
 | kmr | Kurdish, Northern | [kur](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kur) |
 | knc | Kanuri, Central | [kph](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kph) |
 | kng | Koongo | [kon](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kon) |
-| kng_AO | Koongo (Angola) | [kng](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kng) |
+| kng\_AO | Koongo (Angola) | [kng](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kng) |
 | koi | Komi-Permyak | [koi](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=koi) |
 | koo | Konjo | [koo1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=koo1) |
 | kor | Korean | [kkn](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kkn) |
@@ -316,12 +316,12 @@ Additionally, the input is padded with two spaces on both sides.
 | lad | Ladino | [lad](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=lad) |
 | lao | Lao | [nol](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nol) |
 | lat | Latin | [ltn](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ltn) |
-| lat_1 | Latin (1) | [ltn1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ltn1) |
+| lat\_1 | Latin (1) | [ltn1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ltn1) |
 | lav | Latvian | [lat](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=lat) |
 | lia | Limba, West-Central | [lia](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=lia) |
 | lij | Ligurian | [lij](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=lij) |
 | lin | Lingala | [lin](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=lin) |
-| lin_tones | Lingala (tones) | No |
+| lin\_tones | Lingala (tones) | No |
 | lit | Lithuanian | [lit](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=lit) |
 | lld | Ladin | [lld](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=lld) |
 | lnc | Occitan (Languedocien) | [prv1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=prv1) |
@@ -340,7 +340,7 @@ Additionally, the input is padded with two spaces on both sides.
 | mah | Marshallese | [mzm](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mzm) |
 | mai | Maithili | No |
 | mal | Malayalam | [mjs](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mjs) |
-| mal_chillus | Malayalam | [mjs](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mjs) |
+| mal\_chillus | Malayalam | [mjs](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mjs) |
 | mam | Mam, Northern | [mam](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mam) |
 | mar | Marathi | [mrt](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mrt) |
 | maz | Mazahua Central | [maz](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=maz) |
@@ -353,8 +353,8 @@ Additionally, the input is padded with two spaces on both sides.
 | miq | Mískito | [miq](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=miq) |
 | mkd | Macedonian | [mkj](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mkj) |
 | mlt | Maltese | [mls](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mls) |
-| mly_arab | Malay (Arabic) | No |
-| mly_latn | Malay (Latin) | [mli](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mli) |
+| mly\_arab | Malay (Arabic) | No |
+| mly\_latn | Malay (Latin) | [mli](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mli) |
 | mnw | Mon | No |
 | mos | Mòoré | [mhm](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mhm) |
 | mri | Maori | [mbf](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mbf) |
@@ -379,16 +379,16 @@ Additionally, the input is padded with two spaces on both sides.
 | nob | Norwegian, Bokmål | [nrr](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nrr) |
 | not | Nomatsiguenga | [not](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=not) |
 | nso | Sotho, Northern | [srt](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=srt) |
-| nya_chechewa | Nyanja (Chechewa) | [nyj1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nyj1) |
-| nya_chinyanja | Nyanja (Chinyanja) | [nyj](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nyj) |
+| nya\_chechewa | Nyanja (Chechewa) | [nyj1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nyj1) |
+| nya\_chinyanja | Nyanja (Chinyanja) | [nyj](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nyj) |
 | nym | Nyamwezi | [nyz](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nyz) |
 | nyn | Nyankore | [nyn1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nyn1) |
 | nzi | Nzema | [nze](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nze) |
 | oaa | Orok | [oaa](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=oaa) |
-| oci_1 | Occitan (Francoprovençal, Fribourg) | [Fr3](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=Fr3) |
-| oci_2 | Occitan (Francoprovençal, Savoie) | [fr2](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fr2) |
-| oci_3 | Occitan (Francoprovençal, Vaud) | [fr4](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fr4) |
-| oci_4 | Occitan (Francoprovençal, Valais) | [frp](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=frp) |
+| oci\_1 | Occitan (Francoprovençal, Fribourg) | [Fr3](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=Fr3) |
+| oci\_2 | Occitan (Francoprovençal, Savoie) | [fr2](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fr2) |
+| oci\_3 | Occitan (Francoprovençal, Vaud) | [fr4](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=fr4) |
+| oci\_4 | Occitan (Francoprovençal, Valais) | [frp](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=frp) |
 | ojb | Ojibwa, Northwestern | [ojb](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ojb) |
 | oki | Okiek | [oki](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=oki) |
 | orh | Oroqen | [orh](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=orh) |
@@ -402,16 +402,16 @@ Additionally, the input is padded with two spaces on both sides.
 | pbu | Pashto, Northern | [pbu](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pbu) |
 | pcd | Picard | [frn2](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=frn2) |
 | pcm | Pidgin, Nigerian | [pcm](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pcm) |
-| pes_1 | Farsi, Western | [prs](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=prs) |
-| pes_2 | Dari | [prs1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=prs1) |
+| pes\_1 | Farsi, Western | [prs](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=prs) |
+| pes\_2 | Dari | [prs1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=prs1) |
 | pis | Pijin | [pis](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pis) |
 | piu | Pintupi-Luritja | [piu](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=piu) |
 | plt | Malagasy, Plateau | [mex](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mex) |
 | pnb | Panjabi, Western | No |
 | pol | Polish | [pql](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pql) |
 | pon | Pohnpeian | [pnf](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pnf) |
-| por_BR | Portuguese (Brazil) | No |
-| por_PT | Portuguese (Portugal) | [por](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=por) |
+| por\_BR | Portuguese (Brazil) | No |
+| por\_PT | Portuguese (Portugal) | [por](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=por) |
 | pov | Crioulo, Upper Guinea | [gbc](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gbc) |
 | ppl | Pipil | [ppl](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ppl) |
 | prv | Occitan | [pro](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pro) |
@@ -431,18 +431,18 @@ Additionally, the input is padded with two spaces on both sides.
 | qxu | Quechua, Arequipa-La Unión | [qar](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=qar) |
 | rar | Rarotongan | [rrt](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rrt) |
 | rmn | Romani, Balkan | [rmn](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rmn) |
-| rmn_1 | Romani, Balkan (1) | [rmn1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rmn1) |
+| rmn\_1 | Romani, Balkan (1) | [rmn1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rmn1) |
 | rmy | Aromanian | [rmy1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rmy1) |
 | roh | Romansch | No |
-| roh_puter | Romansch (Puter) | No |
-| roh_rumgr | Romansch (Grischun) | [rhe](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rhe) |
-| roh_surmiran | Romansch (Surmiran) | No |
-| roh_sursilv | Romansch (Sursilvan) | No |
-| roh_sutsilv | Romansch (Sutsilvan) | No |
-| roh_vallader | Romansch (Vallader) | No |
-| ron_1953 | Romanian (1953) | [rum](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rum) |
-| ron_1993 | Romanian (1993) | No |
-| ron_2006 | Romanian (2006) | No |
+| roh\_puter | Romansch (Puter) | No |
+| roh\_rumgr | Romansch (Grischun) | [rhe](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rhe) |
+| roh\_surmiran | Romansch (Surmiran) | No |
+| roh\_sursilv | Romansch (Sursilvan) | No |
+| roh\_sutsilv | Romansch (Sutsilvan) | No |
+| roh\_vallader | Romansch (Vallader) | No |
+| ron\_1953 | Romanian (1953) | [rum](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rum) |
+| ron\_1993 | Romanian (1993) | No |
+| ron\_2006 | Romanian (2006) | No |
 | run | Rundi | [rud1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rud1) |
 | rus | Russian | [rus](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=rus) |
 | sag | Sango | [saj](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=saj) |
@@ -466,8 +466,8 @@ Additionally, the input is padded with two spaces on both sides.
 | sot | Sotho, Southern | [sso](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=sso) |
 | spa | Spanish | [spn](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=spn) |
 | src | Sardinian, Logudorese | [srd](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=srd) |
-| srp_cyrl | Serbian (Cyrillic) | [src5](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src5) |
-| srp_latn | Serbian (Latin) | [src3](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src3) |
+| srp\_cyrl | Serbian (Cyrillic) | [src5](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src5) |
+| srp\_latn | Serbian (Latin) | [src3](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=src3) |
 | srr | Serer-Sine | [ses](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ses) |
 | ssw | Swati | [swz1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=swz1) |
 | suk | Sukuma | [sua](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=sua) |
@@ -478,7 +478,7 @@ Additionally, the input is padded with two spaces on both sides.
 | swh | Swahili | [swa](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=swa) |
 | tah | Tahitian | [tht](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tht) |
 | tam | Tamil | [tcv](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tcv) |
-| tam_LK | Tamil (Sri Lanka) | No |
+| tam\_LK | Tamil (Sri Lanka) | No |
 | tat | Tatar | [ttr](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ttr) |
 | tbz | Ditammari | [tbz](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tbz) |
 | tca | Ticuna | [tca](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tca) |
@@ -499,25 +499,25 @@ Additionally, the input is padded with two spaces on both sides.
 | top | Totonac, Papantla | [top](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=top) |
 | tpi | Tok Pisin | [pdg](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pdg) |
 | tsn | Tswana | [tsw](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tsw) |
-| tso_MZ | Tsonga (Mozambique) | [tso](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tso) |
-| tso_ZW | Tsonga (Zimbabwe) | [tso1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tso1) |
+| tso\_MZ | Tsonga (Mozambique) | [tso](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tso) |
+| tso\_ZW | Tsonga (Zimbabwe) | [tso1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tso1) |
 | tsz | Purepecha | [1112](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=1112) |
-| tuk_cyrl | Turkmen (Cyrillic) | [tck](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tck) |
-| tuk_latn | Turkmen (Latin) | No |
+| tuk\_cyrl | Turkmen (Cyrillic) | [tck](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tck) |
+| tuk\_latn | Turkmen (Latin) | No |
 | tur | Turkish | [trk](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=trk) |
 | tyv | Tuva | [tyv](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tyv) |
 | tzc | Tzotzil (Chamula) | [tzc](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tzc) |
 | tzh | Tzeltal, Oxchuc | [tzc1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tzc1) |
 | tzm | Tamazight, Central Atlas | [tzm](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tzm) |
-| uig_arab | Uyghur (Arabic) | [uig](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=uig) |
-| uig_latn | Uyghur (Latin) | No |
+| uig\_arab | Uyghur (Arabic) | [uig](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=uig) |
+| uig\_latn | Uyghur (Latin) | No |
 | ukr | Ukrainian | [ukr](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ukr) |
 | umb | Umbundu | [mnf](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mnf) |
 | ura | Urarina | [ura](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ura) |
 | urd | Urdu | [urd](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=urd) |
-| urd_2 | Urdu (2) | [urd](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=urd) |
-| uzn_cyrl | Uzbek, Northern (Cyrillic) | [uzb1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=uzb1) |
-| uzn_latn | Uzbek, Northern (Latin) | [uzb](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=uzb) |
+| urd\_2 | Urdu (2) | [urd](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=urd) |
+| uzn\_cyrl | Uzbek, Northern (Cyrillic) | [uzb1](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=uzb1) |
+| uzn\_latn | Uzbek, Northern (Latin) | [uzb](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=uzb) |
 | vai | Vai | [vai](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=vai) |
 | vec | Venetian | [vec](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=vec) |
 | ven | Venda | [tsh](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tsh) |
