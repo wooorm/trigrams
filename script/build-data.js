@@ -1,15 +1,14 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import {unified} from 'unified'
-import rehypeParse from 'rehype-parse'
+/**
+ * @typedef {import('trigram-utils').TrigramTuple} TrigramTuple
+ */
+
+import fs from 'node:fs/promises'
+import {resolve} from 'import-meta-resolve'
+import {fromHtml} from 'hast-util-from-html'
 import {selectAll} from 'hast-util-select'
 import {toString} from 'hast-util-to-string'
 import {udhr} from 'udhr'
 import {asTuples, tuplesAsDictionary} from 'trigram-utils'
-
-/**
- * @typedef {import('trigram-utils').TrigramTuple} TrigramTuple
- */
 
 // Automated index files.
 const min = createIndexFile()
@@ -22,23 +21,21 @@ let highestTrigram = ['', 0]
 let highestTrigramLanguage
 const ignore = new Set(['ccp', 'fuf_adlm', 'san_gran'])
 let index = -1
-const pipeline = unified().use(rehypeParse)
 let allCount = 0
 
+const base = new URL(await resolve('udhr', import.meta.url))
+
+/* eslint-disable no-await-in-loop */
+
 while (++index < udhr.length) {
-  if (ignore.has(udhr[index].code)) {
+  const info = udhr[index]
+
+  if (ignore.has(info.code)) {
     continue
   }
 
-  const tree = pipeline.parse(
-    fs.readFileSync(
-      path.join(
-        'node_modules',
-        'udhr',
-        'declaration',
-        udhr[index].code + '.html'
-      )
-    )
+  const tree = fromHtml(
+    await fs.readFile(new URL('declaration/' + info.code + '.html', base))
   )
 
   const plain = selectAll('article p', tree)
@@ -64,8 +61,8 @@ while (++index < udhr.length) {
       '*   Top trigrams count:     %s;',
       '*   String length:          %s;'
     ].join('\n'),
-    udhr[index].name,
-    udhr[index].code,
+    info.name,
+    info.code,
     trigrams[trigrams.length - 1][0],
     trigrams[trigrams.length - 1][1],
     trigrams.length,
@@ -75,7 +72,7 @@ while (++index < udhr.length) {
 
   if (trigrams[trigrams.length - 1][1] > highestTrigram[1]) {
     highestTrigram = trigrams[trigrams.length - 1]
-    highestTrigramLanguage = udhr[index].name
+    highestTrigramLanguage = info.name
   }
 
   allCount++
@@ -85,9 +82,9 @@ while (++index < udhr.length) {
     trigrams[trigrams.length - 1][1] > 30 &&
     plain.length / totalTopTrigramOccurrences < 2.5
   ) {
-    top.add(udhr[index].code, tuplesAsDictionary(topTrigrams))
+    top.add(info.code, tuplesAsDictionary(topTrigrams))
     min.add(
-      udhr[index].code,
+      info.code,
       topTrigrams.map((d) => d[0])
     )
 
@@ -112,7 +109,10 @@ console.log(
 )
 
 // Write the file containing top trigrams.
-fs.writeFileSync(path.join('lib', 'top.json'), String(top) + '\n')
+await fs.writeFile(
+  new URL('../lib/top.json', import.meta.url),
+  String(top) + '\n'
+)
 
 console.log(
   'Finished writing %s top files (ignoring %s).\n',
@@ -121,7 +121,10 @@ console.log(
 )
 
 // Write the file containing top trigrams as an array.
-fs.writeFileSync(path.join('lib', 'min.json'), String(min) + '\n')
+await fs.writeFile(
+  new URL('../lib/min.json', import.meta.url),
+  String(min) + '\n'
+)
 
 console.log(
   'Finished writing %s min files (ignoring %s).\n',
@@ -159,3 +162,5 @@ function createIndexFile() {
     return Object.keys(index).length
   }
 }
+
+/* eslint-enable no-await-in-loop */
