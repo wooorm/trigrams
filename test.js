@@ -1,13 +1,13 @@
-import assert from 'node:assert'
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {top, min} from './index.js'
 
 const own = {}.hasOwnProperty
 
-test('trigrams.top()', async function (t) {
+test('trigrams.top()', async function () {
   const data = await top()
 
-  t.doesNotThrow(function () {
+  assert.doesNotThrow(function () {
     /** @type {string} */
     let code
 
@@ -22,7 +22,7 @@ test('trigrams.top()', async function (t) {
     }
   }, 'trigrams.top()[] should be an object')
 
-  t.doesNotThrow(function () {
+  assert.doesNotThrow(function () {
     /** @type {string} */
     let code
 
@@ -37,7 +37,7 @@ test('trigrams.top()', async function (t) {
     }
   }, 'trigrams.top()[] should contain 300 values')
 
-  t.doesNotThrow(function () {
+  assert.doesNotThrow(function () {
     /** @type {string} */
     let code
 
@@ -64,14 +64,12 @@ test('trigrams.top()', async function (t) {
       }
     }
   }, 'trigrams.top()[][] should be an integer')
-
-  t.end()
 })
 
-test('trigrams.min()', async function (t) {
+test('trigrams.min()', async function () {
   const data = await min()
 
-  t.doesNotThrow(function () {
+  assert.doesNotThrow(function () {
     /** @type {string} */
     let code
 
@@ -82,7 +80,7 @@ test('trigrams.min()', async function (t) {
     }
   }, 'trigrams.min()[] should be an array')
 
-  t.doesNotThrow(function () {
+  assert.doesNotThrow(function () {
     /** @type {string} */
     let code
 
@@ -97,7 +95,7 @@ test('trigrams.min()', async function (t) {
     }
   }, 'trigrams.min()[] should contain 300 values')
 
-  t.doesNotThrow(function () {
+  assert.doesNotThrow(function () {
     /** @type {string} */
     let code
 
@@ -114,6 +112,4 @@ test('trigrams.min()', async function (t) {
       }
     }
   }, 'trigrams.min()[][] should be a string')
-
-  t.end()
 })

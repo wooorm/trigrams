@@ -1,5 +1,4 @@
 /**
- * @typedef {import('unist').Node} Node
  * @typedef {import('mdast').Root} Root
  * @typedef {import('mdast').Table} Table
  * @typedef {import('mdast').TableCell} TableCell
