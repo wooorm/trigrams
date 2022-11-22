@@ -31,24 +31,26 @@ export default function support() {
       let index = -1
 
       while (++index < udhr.length) {
-        if (!(udhr[index].code in data)) {
+        const info = udhr[index]
+
+        if (!(info.code in data)) {
           continue
         }
 
         content.push(
           u('tableRow', [
-            cell(udhr[index].code),
-            cell(udhr[index].name),
+            cell(info.code),
+            cell(info.name),
             cell(
-              udhr[index].ohchr
+              info.ohchr
                 ? u(
                     'link',
                     {
                       url:
                         'https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' +
-                        udhr[index].ohchr
+                        info.ohchr
                     },
-                    [u('text', udhr[index].ohchr)]
+                    [u('text', info.ohchr)]
                   )
                 : 'No'
             )
