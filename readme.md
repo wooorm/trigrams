@@ -4,73 +4,115 @@
 [![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 
-Trigrams for 400+ languages.
+Trigrams for 460+ languages.
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`top()`](#top)
+    *   [`min()`](#min)
+*   [Data](#data)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Contribute](#contribute)
+*   [Security](#security)
+*   [License](#license)
+
+## What is this?
+
+This package exposes all trigrams for natural languages.
+Based on the most translated copyright-free document on this planet: UDHR.
+
+## When should I use this?
+
+When you are dealing with natural language detection.
 
 ## Install
 
-This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
-instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 14.14+, 16.0+), install with [npm][]:
 
 ```sh
 npm install trigrams
 ```
 
-## API
-
-This package exports the following identifiers: `top`, `min`.
-There is no default export.
-
-### `top()`
+In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {top} from 'trigrams'
+import {top, min} from 'https://esm.sh/trigrams@5'
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {top, min} from 'https://esm.sh/trigrams@5?bundle'
+</script>
+```
+
+## Use
+
+```js
+import {top, min} from 'trigrams'
 
 console.log((await top()).pam)
-```
-
-Yields:
-
-```js
-{
-  'isa': 6,
-  'upa': 6,
-  'i k': 6,
-  // …
-  'ang': 273,
-  'ing': 282,
-  'ng ': 572
-}
-```
-
-Returns a promise resolving to an object mapping [*UDHR in Unicode*][unicode]
-codes to objects mapping the top 300 trigrams to occurrence counts.
-
-### `min()`
-
-```js
-import {min} from 'trigrams'
-
 console.log((await min()).nld)
 ```
 
 Yields:
 
 ```js
-[
+{ // 300 top trigrams.
+  'isa': 6,
+  'upa': 6,
+  'i k': 6,
+  // …
+  'ang': 273,
+  'ing': 282,
+  'ng ': 572 // Most common trigram with how often it was found.
+}
+```
+
+```js
+[ // 300 top trigrams.
   ' ar',
   'eer',
   'tij',
   // …
   'de ',
   'an ',
-  'en '
+  'en ' // Most common trigram.
 ]
 ```
 
-A bit like `top`, but returns a promise resolving to arrays containing the top
-300 trigrams sorted from least occurring to most occurring.
+## API
+
+This package exports the identifiers `top` and `min`.
+There is no default export.
+
+### `top()`
+
+Get top trigrams to occurrence counts.
+
+###### Returns
+
+Returns a promise resolving to an object mapping [*UDHR in Unicode*][unicode]
+codes to objects mapping the top 300 trigrams to occurrence counts
+(`Promise<Record<string, Record<string, number>>>`).
+
+### `min()`
+
+Get top trigrams.
+
+###### Returns
+
+Returns a promise resolving to arrays containing the top 300 trigrams sorted
+from least occurring to most occurring
+(`Promise<Record<string, Array<string>>>`).
 
 ## Data
 
@@ -80,18 +122,14 @@ of human rights][udhr].
 The files are created from all paragraphs made available by
 [`wooorm/udhr`][wooorm-udhr] and do not include headings and such.
 
-## Cleaning
-
 Before creating trigrams,
 
-*   The unicode characters from `\u0021` to `\u0040` (both including) are
+*   the unicode characters from `\u0021` to `\u0040` (both including) are
     removed
-*   One or more white space characters (`\s+`) are replaced with a single space
-*   Alphabetic characters are lower cased (`[A-Z]`)
+*   one or more white space characters (`\s+`) are replaced with a single space
+*   alphabetic characters are lower cased (`[A-Z]`)
 
 Additionally, the input is padded with two spaces on both sides.
-
-## Support
 
 <!--support start-->
 
@@ -564,6 +602,26 @@ Additionally, the input is padded with two spaces on both sides.
 
 <!--support end-->
 
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports no additional types.
+
+## Compatibility
+
+This package is at least compatible with all maintained versions of Node.js.
+As of now, that is Node.js 14.14+ and 16.0+.
+It also works in Deno and modern browsers.
+
+## Contribute
+
+Yes please!
+See [How to Contribute to Open Source][contribute].
+
+## Security
+
+This package is safe.
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
@@ -583,6 +641,14 @@ Additionally, the input is padded with two spaces on both sides.
 [downloads]: https://www.npmjs.com/package/trigrams
 
 [author]: https://wooorm.com
+
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
+[contribute]: https://opensource.guide/how-to-contribute/
 
 [license]: license
 
