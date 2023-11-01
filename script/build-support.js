@@ -28,9 +28,7 @@ export default function support() {
      * @returns {Table}
      */
     function table() {
-      const content = [
-        u('tableRow', [cell('Code'), cell('Name'), cell('OHCHR')])
-      ]
+      const content = [u('tableRow', [cell('Code'), cell('Name')])]
       let index = -1
 
       while (++index < udhr.length) {
@@ -40,12 +38,18 @@ export default function support() {
           continue
         }
 
+        const ohchrUrl = info.ohchr
+          ? /^https?:/.test(info.ohchr)
+            ? info.ohchr
+            : 'https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' +
+              info.ohchr
+          : undefined
+
         content.push(
           u('tableRow', [
             cell(info.code),
-            cell(info.name),
             cell(
-              info.ohchr
+              ohchrUrl
                 ? u(
                     'link',
                     {
@@ -53,9 +57,9 @@ export default function support() {
                         'https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' +
                         info.ohchr
                     },
-                    [u('text', info.ohchr)]
+                    [u('text', info.name)]
                   )
-                : 'No'
+                : info.name
             )
           ])
         )
