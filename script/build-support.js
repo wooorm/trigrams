@@ -10,10 +10,13 @@ import {u} from 'unist-builder'
 import {udhr} from 'udhr'
 import {min} from '../index.js'
 
-/**
- * @type {import('unified').Plugin<[], Root, Root>}
- */
 export default function support() {
+  /**
+   * @param {Root} tree
+   *   Tree.
+   * @returns {Promise<undefined>}
+   *   Nothing.
+   */
   return async function (tree) {
     const data = await min()
 
