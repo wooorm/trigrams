@@ -16,7 +16,6 @@ Trigrams for 460+ languages.
   * [`top()`](#top)
   * [`min()`](#min)
 * [Data](#data)
-* [Types](#types)
 * [Compatibility](#compatibility)
 * [Contribute](#contribute)
 * [Security](#security)
@@ -25,7 +24,8 @@ Trigrams for 460+ languages.
 ## What is this?
 
 This package exposes all trigrams for natural languages.
-Based on the most translated copyright-free document on this planet: UDHR.
+Based on the most translated copyright-free document on this planet:
+UDHR.
 
 ## When should I use this?
 
@@ -34,7 +34,9 @@ When you are dealing with natural language detection.
 ## Install
 
 This package is [ESM only][github-gist-esm].
-In Node.js (version 14.14+, 16.0+), install with [npm][npmjs-install]:
+In Node.js
+(version 14+, 16+),
+install with [npm][npmjs-install]:
 
 ```sh
 npm install trigrams
@@ -43,39 +45,27 @@ npm install trigrams
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {top, min} from 'https://esm.sh/trigrams@5'
+import {min, top} from 'https://esm.sh/trigrams@5'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {top, min} from 'https://esm.sh/trigrams@5?bundle'
+  import {min, top} from 'https://esm.sh/trigrams@5?bundle'
 </script>
 ```
 
 ## Use
 
 ```js
-import {top, min} from 'trigrams'
+import {min, top} from 'trigrams'
 
-console.log((await top()).pam)
 console.log((await min()).nld)
+console.log((await top()).pam)
 ```
 
 Yields:
-
-```js
-{ // 300 top trigrams.
-  'isa': 6,
-  'upa': 6,
-  'i k': 6,
-  // …
-  'ang': 273,
-  'ing': 282,
-  'ng ': 572 // Most common trigram with how often it was found.
-}
-```
 
 ```js
 [ // 300 top trigrams.
@@ -89,9 +79,24 @@ Yields:
 ]
 ```
 
+```js
+{ // 300 top trigrams.
+  'isa': 6,
+  'upa': 6,
+  'i k': 6,
+  // …
+  'ang': 273,
+  'ing': 282,
+  'ng ': 572 // Most common trigram with how often it was found.
+}
+```
+
 ## API
 
-This package exports the identifiers `top` and `min`.
+This package exports the identifiers
+[`min`][api-min] and
+[`top`][api-top].
+It exports no [TypeScript][] types.
 There is no default export.
 
 ### `top()`
@@ -100,7 +105,8 @@ Get top trigrams to occurrence counts.
 
 ###### Returns
 
-Returns a promise resolving to an object mapping [*UDHR in Unicode*][unicode]
+Returns a promise resolving to an object mapping
+*[UDHR in Unicode][unicode]*
 codes to objects mapping the top 300 trigrams to occurrence counts
 (`Promise<Record<string, Record<string, number>>>`).
 
@@ -129,7 +135,8 @@ Before creating trigrams,
 * one or more white space characters (`\s+`) are replaced with a single space
 * alphabetic characters are lower cased (`[A-Z]`)
 
-Additionally, the input is padded with two spaces on both sides.
+Additionally,
+the input is padded with two spaces on both sides.
 
 <!--support start-->
 
@@ -609,15 +616,11 @@ Additionally, the input is padded with two spaces on both sides.
 
 <!--support end-->
 
-## Types
-
-This package is fully typed with [TypeScript][].
-It exports no additional types.
-
 ## Compatibility
 
 This package is at least compatible with all maintained versions of Node.js.
-As of now, that is Node.js 14.14+ and 16.0+.
+As of now,
+that is Node.js 14+ and 16+.
 It also works in Deno and modern browsers.
 
 ## Contribute
@@ -634,6 +637,10 @@ This package is safe.
 [MIT][file-license] © [Titus Wormer][wooorm]
 
 <!-- Definitions -->
+
+[api-min]: #min
+
+[api-top]: #top
 
 [badge-build-image]: https://github.com/wooorm/trigrams/workflows/main/badge.svg
 
