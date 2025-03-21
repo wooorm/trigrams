@@ -1,39 +1,42 @@
 /**
- * @typedef {import('mdast').Root} Root
- * @typedef {import('mdast').Table} Table
- * @typedef {import('mdast').TableCell} TableCell
- * @typedef {import('mdast').PhrasingContent} PhrasingContent
+ * @import {Root, Table} from 'mdast'
  */
 
 import {zone} from 'mdast-zone'
-import {u} from 'unist-builder'
 import {udhr} from 'udhr'
 import {min} from '../index.js'
 
-export default function support() {
+const data = await min()
+
+/**
+ * @returns
+ *   Transform.
+ */
+export default function remarkInjectSupport() {
   /**
    * @param {Root} tree
    *   Tree.
-   * @returns {Promise<undefined>}
+   * @returns {undefined}
    *   Nothing.
    */
-  return async function (tree) {
-    const data = await min()
-
+  return function (tree) {
     zone(tree, 'support', function (start, _, end) {
-      return [start, table(), end]
-    })
+      /** @type {Table} */
+      const table = {
+        type: 'table',
+        align: [],
+        children: [
+          {
+            type: 'tableRow',
+            children: [
+              {type: 'tableCell', children: [{type: 'text', value: 'Code'}]},
+              {type: 'tableCell', children: [{type: 'text', value: 'Name'}]}
+            ]
+          }
+        ]
+      }
 
-    /**
-     * @returns {Table}
-     */
-    function table() {
-      const content = [u('tableRow', [cell('Code'), cell('Name')])]
-      let index = -1
-
-      while (++index < udhr.length) {
-        const info = udhr[index]
-
+      for (const info of Object.values(udhr)) {
         if (!(info.code in data)) {
           continue
         }
@@ -45,37 +48,30 @@ export default function support() {
               info.ohchr
           : undefined
 
-        content.push(
-          u('tableRow', [
-            cell(info.code),
-            cell(
-              ohchrUrl
-                ? u(
-                    'link',
+        table.children.push({
+          type: 'tableRow',
+          children: [
+            {
+              type: 'tableCell',
+              children: [{type: 'text', value: info.code}]
+            },
+            {
+              type: 'tableCell',
+              children: ohchrUrl
+                ? [
                     {
-                      url:
-                        'https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=' +
-                        info.ohchr
-                    },
-                    [u('text', info.name)]
-                  )
-                : info.name
-            )
-          ])
-        )
+                      type: 'link',
+                      url: ohchrUrl,
+                      children: [{type: 'text', value: info.name}]
+                    }
+                  ]
+                : [{type: 'text', value: info.name}]
+            }
+          ]
+        })
       }
 
-      return u('table', {align: []}, content)
-
-      /**
-       * @param {string|PhrasingContent} value
-       * @returns {TableCell}
-       */
-      function cell(value) {
-        return u('tableCell', [
-          typeof value === 'string' ? u('text', value) : value
-        ])
-      }
-    }
+      return [start, table, end]
+    })
   }
 }

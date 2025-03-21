@@ -13,8 +13,8 @@ Trigrams for 460+ languages.
 * [Install](#install)
 * [Use](#use)
 * [API](#api)
-  * [`top()`](#top)
   * [`min()`](#min)
+  * [`top()`](#top)
 * [Data](#data)
 * [Compatibility](#compatibility)
 * [Contribute](#contribute)
@@ -99,6 +99,16 @@ This package exports the identifiers
 It exports no [TypeScript][] types.
 There is no default export.
 
+### `min()`
+
+Get top trigrams.
+
+###### Returns
+
+Returns a promise resolving to arrays containing the top 300 trigrams sorted
+from least occurring to most occurring
+(`Promise<Record<string, Array<string>>>`).
+
 ### `top()`
 
 Get top trigrams to occurrence counts.
@@ -109,16 +119,6 @@ Returns a promise resolving to an object mapping
 *[UDHR in Unicode][unicode]*
 codes to objects mapping the top 300 trigrams to occurrence counts
 (`Promise<Record<string, Record<string, number>>>`).
-
-### `min()`
-
-Get top trigrams.
-
-###### Returns
-
-Returns a promise resolving to arrays containing the top 300 trigrams sorted
-from least occurring to most occurring
-(`Promise<Record<string, Array<string>>>`).
 
 ## Data
 
@@ -156,16 +156,16 @@ the input is padded with two spaces on both sides.
 | 022 | [(Klau)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kl1) |
 | 025 | [(Bizisa)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=Bz1) |
 | 026 | [(Yeonbyeon)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ye1) |
-| 027 | [Gumuz](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/gumuz) |
-| 028 | [Kafa](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/kafi-noono) |
-| 029 | [Sidamo](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/sidaamu-afoo) |
-| 030 | [Kituba (2)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/node/104406) |
-| 032 | [South Azerbaijani](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/node/104397) |
+| 027 | [Gumuz](https://www.ohchr.org/en/human-rights/universal-declaration/translations/gumuz) |
+| 028 | [Kafa](https://www.ohchr.org/en/human-rights/universal-declaration/translations/kafi-noono) |
+| 029 | [Sidamo](https://www.ohchr.org/en/human-rights/universal-declaration/translations/sidaamu-afoo) |
+| 030 | [Kituba (2)](https://www.ohchr.org/en/node/104406) |
+| 032 | [South Azerbaijani](https://www.ohchr.org/en/node/104397) |
 | 041 | [Latvian (2)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=lat) |
 | 042 | Spanish (resolution) |
 | 043 | [Zarma](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=zarma) |
 | aar | [Afar](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=aar) |
-| abk | [Abkhaz](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/abkhaz) |
+| abk | [Abkhaz](https://www.ohchr.org/en/human-rights/universal-declaration/translations/abkhaz) |
 | ace | [Aceh](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=atj) |
 | acu | [Achuar-Shiwiar](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=acu) |
 | acu\_1 | [Achuar-Shiwiar (1)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=jiv) |
@@ -177,7 +177,7 @@ the input is padded with two spaces on both sides.
 | ajg | [Aja](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ajg) |
 | aka\_akuapem | [Twi (Akuapem)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tws1) |
 | aka\_asante | [Twi (Asante)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ass) |
-| aka\_fante | [Fante](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/node/102556) |
+| aka\_fante | [Fante](https://www.ohchr.org/en/node/102556) |
 | als | [Albanian, Tosk](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=aln) |
 | alt | [Altai, Southern](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=alt) |
 | amc | [Amahuaca](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=amc) |
@@ -269,7 +269,7 @@ the input is padded with two spaces on both sides.
 | emk | [Maninkakan, Eastern](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=mni) |
 | eml | [Romagnolo](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eml) |
 | eng | [English](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=eng) |
-| epo | [Esperanto](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/esperanto) |
+| epo | [Esperanto](https://www.ohchr.org/en/human-rights/universal-declaration/translations/esperanto) |
 | ese | [Ese Ejja](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ese) |
 | est | [Estonian](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=est) |
 | eus | [Basque](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=bsq) |
@@ -324,18 +324,18 @@ the input is padded with two spaces on both sides.
 | hsb | [Sorbian, Upper](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=wee) |
 | hsf | [Huastec (Sierra de Otontepec)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hus) |
 | hun | [Hungarian](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hng) |
-| hus | [Huastec (Veracruz)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/tenek-huasteco) |
+| hus | [Huastec (Veracruz)](https://www.ohchr.org/en/human-rights/universal-declaration/translations/tenek-huasteco) |
 | huu | [Huitoto, Murui](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=huu) |
 | hva | [Huastec (San Luís Potosí)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=hva) |
 | hye | [Armenian](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=arm) |
 | ibb | [Ibibio](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ibb) |
 | ibo | [Igbo](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=igr) |
-| ido | [Ido](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/ido) |
+| ido | [Ido](https://www.ohchr.org/en/human-rights/universal-declaration/translations/ido) |
 | idu | [Idoma](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=idu) |
 | ijs | [Ijo, Southeast](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ijs) |
 | ike | [Inuktitut, Eastern Canadian](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=esb) |
 | ilo | [Ilocano](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ilo) |
-| ina | [Interlingua](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/interlingua) |
+| ina | [Interlingua](https://www.ohchr.org/en/human-rights/universal-declaration/translations/interlingua) |
 | ind | [Indonesian](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=inz) |
 | isl | [Icelandic](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ice) |
 | ita | [Italian](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=itn) |
@@ -355,7 +355,7 @@ the input is padded with two spaces on both sides.
 | kde | [Makonde](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kde) |
 | kdh | [Tem](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kdh) |
 | kea | [Kabuverdianu](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kea) |
-| kek | [Q'eqchi'](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/qechikekchi) |
+| kek | [Q'eqchi'](https://www.ohchr.org/en/human-rights/universal-declaration/translations/qechikekchi) |
 | kha | [Khasi](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=kha) |
 | khk | [Mongolian, Halh (Cyrillic)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=khk) |
 | khm | [Khmer, Central](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=khm) |
@@ -431,7 +431,7 @@ the input is padded with two spaces on both sides.
 | nav | [Navajo](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nav) |
 | nba | [Nyemba](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nba) |
 | nbl | [Ndebele](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nel) |
-| ndo | [Ndonga](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/oshiwambo-ndonga) |
+| ndo | [Ndonga](https://www.ohchr.org/en/human-rights/universal-declaration/translations/oshiwambo-ndonga) |
 | nds | [Saxon, Low](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ige) |
 | nep | [Nepali](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nep) |
 | nhn | [Nahuatl, Central](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=nhn) |
@@ -459,7 +459,7 @@ the input is padded with two spaces on both sides.
 | oki | [Okiek](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=oki) |
 | orh | [Oroqen](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=orh) |
 | oss | [Osetin](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ose) |
-| ote | [Otomi, Mezquital](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/nahnu-otomi) |
+| ote | [Otomi, Mezquital](https://www.ohchr.org/en/human-rights/universal-declaration/translations/nahnu-otomi) |
 | pam | [Pampangan](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pmp) |
 | pan | [Panjabi, Eastern](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pnj1) |
 | pap | [Papiamentu](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pap) |
@@ -481,7 +481,7 @@ the input is padded with two spaces on both sides.
 | pov | [Crioulo, Upper Guinea](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=gbc) |
 | ppl | [Pipil](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=ppl) |
 | prv | [Occitan](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=pro) |
-| quc | [K'iche', Central](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/kiche-quiche) |
+| quc | [K'iche', Central](https://www.ohchr.org/en/human-rights/universal-declaration/translations/kiche-quiche) |
 | qud | [Quechua (Unified Quichua, old Hispanic orthography)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=qud1) |
 | qug | [Quichua, Chimborazo Highland](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=qug) |
 | quy | [Quechua, Ayacucho](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=quy) |
@@ -568,7 +568,7 @@ the input is padded with two spaces on both sides.
 | tsn | [Tswana](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tsw) |
 | tso\_MZ | [Tsonga (Mozambique)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tso) |
 | tso\_ZW | [Tsonga (Zimbabwe)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tso1) |
-| tsz | [Purepecha](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=https://www.ohchr.org/en/human-rights/universal-declaration/translations/purhepecha) |
+| tsz | [Purepecha](https://www.ohchr.org/en/human-rights/universal-declaration/translations/purhepecha) |
 | tuk\_cyrl | [Turkmen (Cyrillic)](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=tck) |
 | tuk\_latn | Turkmen (Latin) |
 | tur | [Turkish](https://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=trk) |

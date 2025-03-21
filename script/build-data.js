@@ -1,31 +1,28 @@
-/**
- * @typedef {import('trigram-utils').TrigramTuple} TrigramTuple
- */
+/* eslint-disable no-await-in-loop */
 
 import fs from 'node:fs/promises'
-import {resolve} from 'import-meta-resolve'
 import {fromHtml} from 'hast-util-from-html'
 import {selectAll} from 'hast-util-select'
 import {toString} from 'hast-util-to-string'
-import {udhr} from 'udhr'
+import {resolve} from 'import-meta-resolve'
 import {asTuples, tuplesAsDictionary} from 'trigram-utils'
+import {udhr} from 'udhr'
 
-// Automated index files.
-const min = createIndexFile()
-const top = createIndexFile()
+/** @type {Record<string, Array<string>>} */
+const min = {}
+/** @type {Record<string, Record<string, number>>} */
+const top = {}
 
 // Variables to keep track of some information.
-/** @type {TrigramTuple} */
+/** @type {[string, number]} */
 let highestTrigram = ['', 0]
-/** @type {string|undefined} */
+/** @type {string | undefined} */
 let highestTrigramLanguage
 const ignore = new Set(['ccp', 'fuf_adlm', 'san_gran'])
 let index = -1
 let allCount = 0
 
 const base = new URL(await resolve('udhr', import.meta.url))
-
-/* eslint-disable no-await-in-loop */
 
 while (++index < udhr.length) {
   const info = udhr[index]
@@ -38,9 +35,12 @@ while (++index < udhr.length) {
     await fs.readFile(new URL('declaration/' + info.code + '.html', base))
   )
 
-  const plain = selectAll('article p', tree)
-    .map((d) => toString(d))
-    .join(' ')
+  let plain = ''
+
+  for (const paragraph of selectAll('article p', tree)) {
+    plain += ' ' + toString(paragraph)
+  }
+
   const trigrams = asTuples(plain)
   const topTrigrams = trigrams.slice(-300)
   let totalTopTrigramOccurrences = 0
@@ -82,11 +82,16 @@ while (++index < udhr.length) {
     trigrams[trigrams.length - 1][1] > 30 &&
     plain.length / totalTopTrigramOccurrences < 2.5
   ) {
-    top.add(info.code, tuplesAsDictionary(topTrigrams))
-    min.add(
-      info.code,
-      topTrigrams.map((d) => d[0])
-    )
+    top[info.code] = tuplesAsDictionary(topTrigrams)
+
+    /** @type {Array<string>} */
+    const values = []
+
+    for (const trigram of topTrigrams) {
+      values.push(trigram[0])
+    }
+
+    min[info.code] = values
 
     console.log(
       '*   Top trigram file:       yes;\n- Min trigram file:       yes.'
@@ -111,56 +116,23 @@ console.log(
 // Write the file containing top trigrams.
 await fs.writeFile(
   new URL('../lib/top.json', import.meta.url),
-  String(top) + '\n'
+  JSON.stringify(top, undefined, 2) + '\n'
 )
 
 console.log(
   'Finished writing %s top files (ignoring %s).\n',
-  top.count(),
-  allCount - top.count()
+  Object.keys(top).length,
+  allCount - Object.keys(top).length
 )
 
 // Write the file containing top trigrams as an array.
 await fs.writeFile(
   new URL('../lib/min.json', import.meta.url),
-  String(min) + '\n'
+  JSON.stringify(min, undefined, 2) + '\n'
 )
 
 console.log(
   'Finished writing %s min files (ignoring %s).\n',
-  min.count(),
-  allCount - min.count()
+  Object.keys(min).length,
+  allCount - Object.keys(min).length
 )
-
-function createIndexFile() {
-  /**
-   * @type {Object.<string, unknown>}
-   */
-  const index = {}
-
-  return {toString, add, count}
-
-  /**
-   * @param {string} code
-   * @param {unknown} data
-   */
-  function add(code, data) {
-    index[code] = data
-  }
-
-  /**
-   * @returns {string}
-   */
-  function toString() {
-    return JSON.stringify(index, null, 2)
-  }
-
-  /**
-   * @returns {number}
-   */
-  function count() {
-    return Object.keys(index).length
-  }
-}
-
-/* eslint-enable no-await-in-loop */

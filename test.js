@@ -1,115 +1,79 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import {top, min} from './index.js'
+import {min, top} from './index.js'
 
-const own = {}.hasOwnProperty
-
-test('trigrams.top()', async function () {
-  const data = await top()
-
-  assert.doesNotThrow(function () {
-    /** @type {string} */
-    let code
-
-    for (code in data) {
-      if (own.call(data, code)) {
-        assert.strictEqual(
-          typeof data[code],
-          'object',
-          code + ' should be an object'
-        )
-      }
-    }
-  }, 'trigrams.top()[] should be an object')
-
-  assert.doesNotThrow(function () {
-    /** @type {string} */
-    let code
-
-    for (code in data) {
-      if (own.call(data, code)) {
-        assert.strictEqual(
-          Object.keys(data[code]).length,
-          300,
-          code + ' should have 300 values'
-        )
-      }
-    }
-  }, 'trigrams.top()[] should contain 300 values')
-
-  assert.doesNotThrow(function () {
-    /** @type {string} */
-    let code
-
-    for (code in data) {
-      if (own.call(data, code)) {
-        /** @type {string} */
-        let trigram
-
-        for (trigram in data[code]) {
-          if (own.call(data[code], trigram)) {
-            assert.strictEqual(
-              typeof data[code][trigram],
-              'number',
-              trigram + ' in ' + code + ' should be a number'
-            )
-
-            assert.strictEqual(
-              Math.round(data[code][trigram]),
-              data[code][trigram],
-              trigram + ' in ' + code + ' should be an integer'
-            )
-          }
-        }
-      }
-    }
-  }, 'trigrams.top()[][] should be an integer')
+test('trigrams', async function (t) {
+  await t.test('should expose the public api', async function () {
+    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
+      'min',
+      'top'
+    ])
+  })
 })
 
-test('trigrams.min()', async function () {
-  const data = await min()
+test('top()[]', async function (t) {
+  const data = await top()
 
-  assert.doesNotThrow(function () {
-    /** @type {string} */
-    let code
-
-    for (code in data) {
-      if (own.call(data, code)) {
-        assert.ok(Array.isArray(data[code]), code + ' should be an array')
-      }
+  await t.test('should be an object', async function () {
+    for (const [code, value] of Object.entries(data)) {
+      assert.strictEqual(typeof value, 'object', code + ' should be an object')
     }
-  }, 'trigrams.min()[] should be an array')
+  })
 
-  assert.doesNotThrow(function () {
-    /** @type {string} */
-    let code
+  await t.test('should contain 300 values', async function () {
+    for (const [code, value] of Object.entries(data)) {
+      assert.strictEqual(
+        Object.keys(value).length,
+        300,
+        code + ' should have 300 values'
+      )
+    }
+  })
 
-    for (code in data) {
-      if (own.call(data, code)) {
+  await t.test('should contain integers', async function () {
+    for (const [code, value] of Object.entries(data)) {
+      for (const [trigram, count] of Object.entries(value)) {
         assert.strictEqual(
-          data[code].length,
-          300,
-          code + ' should have 300 values'
+          typeof count,
+          'number',
+          trigram + ' in ' + code + ' should be a number'
+        )
+
+        assert.strictEqual(
+          Math.round(count),
+          count,
+          trigram + ' in ' + code + ' should be an integer'
         )
       }
     }
-  }, 'trigrams.min()[] should contain 300 values')
+  })
+})
 
-  assert.doesNotThrow(function () {
-    /** @type {string} */
-    let code
+test('min()[]', async function (t) {
+  const data = await min()
 
-    for (code in data) {
-      if (own.call(data, code)) {
-        let index = -1
-        while (++index < data[code].length) {
-          assert.strictEqual(
-            typeof data[code][index],
-            'string',
-            index + ' in ' + code + ' should be a string'
-          )
-        }
+  await t.test('should be an array', async function () {
+    for (const [code, value] of Object.entries(data)) {
+      assert.ok(Array.isArray(value), code + ' should be an array')
+    }
+  })
+
+  await t.test('should contain 300 values', async function () {
+    for (const [code, value] of Object.entries(data)) {
+      assert.strictEqual(value.length, 300, code + ' should have 300 values')
+    }
+  })
+
+  await t.test('should contain strings', async function () {
+    for (const [code, value] of Object.entries(data)) {
+      let index = -1
+      while (++index < value.length) {
+        assert.strictEqual(
+          typeof value[index],
+          'string',
+          index + ' in ' + code + ' should be a string'
+        )
       }
     }
-  }, 'trigrams.min()[][] should be a string')
+  })
 })
