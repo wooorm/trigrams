@@ -45,14 +45,14 @@ npm install trigrams
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {min, top} from 'https://esm.sh/trigrams@5'
+import {min, top} from 'https://esm.sh/trigrams@6'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {min, top} from 'https://esm.sh/trigrams@5?bundle'
+  import {min, top} from 'https://esm.sh/trigrams@6?bundle'
 </script>
 ```
 
