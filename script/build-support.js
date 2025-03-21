@@ -53,7 +53,7 @@ export default function remarkInjectSupport() {
           children: [
             {
               type: 'tableCell',
-              children: [{type: 'text', value: info.code}]
+              children: [{type: 'inlineCode', value: info.code}]
             },
             {
               type: 'tableCell',
