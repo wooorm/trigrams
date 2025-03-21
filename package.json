@@ -1,42 +1,13 @@
 {
-  "name": "trigrams",
-  "version": "5.2.0",
-  "description": "Trigram files for 400+ languages",
-  "license": "MIT",
-  "keywords": [
-    "universal",
-    "declaration",
-    "human",
-    "rights",
-    "unicode",
-    "udhr",
-    "trigram",
-    "language",
-    "detection",
-    "guessing"
-  ],
-  "repository": "wooorm/trigrams",
-  "bugs": "https://github.com/wooorm/trigrams/issues",
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/wooorm"
-  },
   "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "bugs": "https://github.com/wooorm/trigrams/issues",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
-  ],
-  "sideEffects": false,
-  "type": "module",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "files": [
-    "lib/",
-    "index.d.ts",
-    "index.js"
   ],
   "dependencies": {
     "@types/node": "^22.0.0"
   },
+  "description": "Trigram files for 400+ languages",
   "devDependencies": {
     "@types/mdast": "^4.0.0",
     "c8": "^10.0.0",
@@ -55,35 +26,43 @@
     "unist-builder": "^4.0.0",
     "xo": "^0.60.0"
   },
-  "scripts": {
-    "prepack": "npm run generate && npm run build && npm run format",
-    "generate": "node --conditions development script/build-data.js && node --conditions development script/build-support.js",
-    "build": "tsc --build --clean && tsc --build && type-coverage",
-    "format": "remark . -qfo && prettier . -w --log-level warn && xo --fix",
-    "test-api": "node --conditions development test.js",
-    "test-coverage": "c8 --check-coverage --100 --reporter lcov npm run test-api",
-    "test": "npm run generate && npm run build && npm run format && npm run test-coverage"
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "lib/"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
   },
+  "keywords": [
+    "declaration",
+    "detection",
+    "guessing",
+    "human",
+    "language",
+    "rights",
+    "trigram",
+    "udhr",
+    "unicode",
+    "universal"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "trigrams",
   "prettier": {
-    "tabWidth": 2,
-    "useTabs": false,
-    "singleQuote": true,
     "bracketSpacing": false,
     "semi": false,
-    "trailingComma": "none"
-  },
-  "xo": {
-    "prettier": true,
-    "rules": {
-      "unicorn/prefer-at": "off"
-    }
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
   },
   "remarkConfig": {
     "plugins": [
       "remark-preset-wooorm",
-      "./script/build-support.js",
       [
-        "gfm",
+        "remark-gfm",
         {
           "tablePipeAlign": false
         }
@@ -91,12 +70,31 @@
       [
         "remark-lint-table-pipe-alignment",
         false
-      ]
+      ],
+      "./script/build-support.js"
     ]
   },
+  "repository": "wooorm/trigrams",
+  "scripts": {
+    "build": "tsc --build --clean && tsc --build && type-coverage",
+    "format": "remark --frail --output --quiet -- . && prettier --log-level warn --write -- . && xo --fix",
+    "generate": "node --conditions development script/build-data.js && node --conditions development script/build-support.js",
+    "test-api": "node --conditions development test.js",
+    "test-coverage": "c8 --100 --reporter lcov -- npm run test-api",
+    "test": "npm run generate && npm run build && npm run format && npm run test-coverage"
+  },
+  "sideEffects": false,
   "typeCoverage": {
     "atLeast": 100,
-    "detail": true,
     "strict": true
+  },
+  "types": "index.d.ts",
+  "type": "module",
+  "version": "5.2.0",
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "unicorn/prefer-at": "off"
+    }
   }
 }
