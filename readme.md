@@ -4,7 +4,7 @@
 [![Coverage][badge-coverage-image]][badge-coverage-url]
 [![Downloads][badge-downloads-image]][badge-downloads-url]
 
-Trigrams for 460+ languages.
+Trigrams for 500+ languages.
 
 ## Contents
 

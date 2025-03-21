@@ -5,7 +5,7 @@
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
   ],
   "dependencies": {},
-  "description": "Trigram files for 400+ languages",
+  "description": "Trigram files for 500+ languages",
   "devDependencies": {
     "@types/mdast": "^4.0.0",
     "@types/node": "^22.0.0",
