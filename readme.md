@@ -116,14 +116,14 @@ Get top trigrams to occurrence counts.
 ###### Returns
 
 Returns a promise resolving to an object mapping
-*[UDHR in Unicode][unicode]*
+*[UDHR in Unicode][efele-udhr]*
 codes to objects mapping the top 300 trigrams to occurrence counts
 (`Promise<Record<string, Record<string, number>>>`).
 
 ## Data
 
-The trigrams are based on the [unicode][] versions of the [universal declaration
-of human rights][ohchr-udhr].
+The trigrams are based on the [unicode][efele-udhr] versions of the
+[universal declaration of human rights][ohchr-udhr].
 
 The files are created from all paragraphs made available by
 [`wooorm/udhr`][github-wooorm-udhr] and do not include headings and such.
@@ -691,6 +691,8 @@ This package is safe.
 
 [badge-downloads-url]: https://www.npmjs.com/package/trigrams
 
+[efele-udhr]: http://efele.net/udhr/
+
 [esmsh]: https://esm.sh
 
 [file-license]: license
@@ -706,7 +708,5 @@ This package is safe.
 [opensource-guide-contribute]: https://opensource.guide/how-to-contribute/
 
 [typescript]: https://www.typescriptlang.org
-
-[unicode]: https://www.unicode.org/udhr/
 
 [wooorm]: https://wooorm.com
