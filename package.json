@@ -24,6 +24,7 @@
     "udhr": "^6.0.0",
     "xo": "^0.60.0"
   },
+  "exports": "./index.js",
   "files": [
     "index.d.ts.map",
     "index.d.ts",
@@ -47,7 +48,6 @@
     "universal"
   ],
   "license": "MIT",
-  "main": "index.js",
   "name": "trigrams",
   "prettier": {
     "bracketSpacing": false,
