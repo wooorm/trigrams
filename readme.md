@@ -1,26 +1,26 @@
 # trigrams
 
-[![Build][build-badge]][build]
-[![Coverage][coverage-badge]][coverage]
-[![Downloads][downloads-badge]][downloads]
+[![Build][badge-build-image]][badge-build-url]
+[![Coverage][badge-coverage-image]][badge-coverage-url]
+[![Downloads][badge-downloads-image]][badge-downloads-url]
 
 Trigrams for 460+ languages.
 
 ## Contents
 
-*   [What is this?](#what-is-this)
-*   [When should I use this?](#when-should-i-use-this)
-*   [Install](#install)
-*   [Use](#use)
-*   [API](#api)
-    *   [`top()`](#top)
-    *   [`min()`](#min)
-*   [Data](#data)
-*   [Types](#types)
-*   [Compatibility](#compatibility)
-*   [Contribute](#contribute)
-*   [Security](#security)
-*   [License](#license)
+* [What is this?](#what-is-this)
+* [When should I use this?](#when-should-i-use-this)
+* [Install](#install)
+* [Use](#use)
+* [API](#api)
+  * [`top()`](#top)
+  * [`min()`](#min)
+* [Data](#data)
+* [Types](#types)
+* [Compatibility](#compatibility)
+* [Contribute](#contribute)
+* [Security](#security)
+* [License](#license)
 
 ## What is this?
 
@@ -33,8 +33,8 @@ When you are dealing with natural language detection.
 
 ## Install
 
-This package is [ESM only][esm].
-In Node.js (version 14.14+, 16.0+), install with [npm][]:
+This package is [ESM only][github-gist-esm].
+In Node.js (version 14.14+, 16.0+), install with [npm][npmjs-install]:
 
 ```sh
 npm install trigrams
@@ -117,17 +117,17 @@ from least occurring to most occurring
 ## Data
 
 The trigrams are based on the [unicode][] versions of the [universal declaration
-of human rights][udhr].
+of human rights][ohchr-udhr].
 
 The files are created from all paragraphs made available by
-[`wooorm/udhr`][wooorm-udhr] and do not include headings and such.
+[`wooorm/udhr`][github-wooorm-udhr] and do not include headings and such.
 
 Before creating trigrams,
 
-*   the unicode characters from `\u0021` to `\u0040` (both including) are
-    removed
-*   one or more white space characters (`\s+`) are replaced with a single space
-*   alphabetic characters are lower cased (`[A-Z]`)
+* the unicode characters from `\u0021` to `\u0040` (both including) are
+  removed
+* one or more white space characters (`\s+`) are replaced with a single space
+* alphabetic characters are lower cased (`[A-Z]`)
 
 Additionally, the input is padded with two spaces on both sides.
 
@@ -623,7 +623,7 @@ It also works in Deno and modern browsers.
 ## Contribute
 
 Yes please!
-See [How to Contribute to Open Source][contribute].
+See [How to Contribute to Open Source][opensource-guide-contribute].
 
 ## Security
 
@@ -631,38 +631,38 @@ This package is safe.
 
 ## License
 
-[MIT][license] © [Titus Wormer][author]
+[MIT][file-license] © [Titus Wormer][wooorm]
 
 <!-- Definitions -->
 
-[build-badge]: https://github.com/wooorm/trigrams/workflows/main/badge.svg
+[badge-build-image]: https://github.com/wooorm/trigrams/workflows/main/badge.svg
 
-[build]: https://github.com/wooorm/trigrams/actions
+[badge-build-url]: https://github.com/wooorm/trigrams/actions
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/trigrams.svg
+[badge-coverage-image]: https://img.shields.io/codecov/c/github/wooorm/trigrams.svg
 
-[coverage]: https://codecov.io/github/wooorm/trigrams
+[badge-coverage-url]: https://codecov.io/github/wooorm/trigrams
 
-[downloads-badge]: https://img.shields.io/npm/dm/trigrams.svg
+[badge-downloads-image]: https://img.shields.io/npm/dm/trigrams.svg
 
-[downloads]: https://www.npmjs.com/package/trigrams
-
-[author]: https://wooorm.com
-
-[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+[badge-downloads-url]: https://www.npmjs.com/package/trigrams
 
 [esmsh]: https://esm.sh
 
+[file-license]: license
+
+[github-gist-esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[github-wooorm-udhr]: https://github.com/wooorm/udhr
+
+[npmjs-install]: https://docs.npmjs.com/cli/install
+
+[ohchr-udhr]: https://www.ohchr.org/EN/UDHR/Pages/UDHRIndex.aspx
+
+[opensource-guide-contribute]: https://opensource.guide/how-to-contribute/
+
 [typescript]: https://www.typescriptlang.org
-
-[contribute]: https://opensource.guide/how-to-contribute/
-
-[license]: license
-
-[npm]: https://docs.npmjs.com/cli/install
 
 [unicode]: https://www.unicode.org/udhr/
 
-[udhr]: https://www.ohchr.org/EN/UDHR/Pages/UDHRIndex.aspx
-
-[wooorm-udhr]: https://github.com/wooorm/udhr
+[wooorm]: https://wooorm.com
